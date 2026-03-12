@@ -26,13 +26,16 @@
 /* alternate light theme overrides */
 .light-theme {
   --theme-primary: #0056b3; /* darker blue for contrast */
-  --theme-secondary: #adb5bd; /* light grey */
+  --theme-secondary: #0a558c; /* keep gradient within blue family */
   --dark-bg: #f8f9fa;
   --glass: rgba(255, 255, 255, 0.6);
   --glass-border: rgba(0, 0, 0, 0.1);
   --theme-primary-glow: rgba(0, 86, 179, 0.3);
-  --theme-secondary-glow: rgba(173, 181, 189, 0.3);
+  --theme-secondary-glow: rgba(10, 85, 140, 0.3);
   color-scheme: light;
+  /* lighter gradient endpoints for text */
+  --gradient-start: #0056b3;
+  --gradient-end: #0a558c;
 }
 
 html {
@@ -70,7 +73,9 @@ html {
 
 .light-theme .hero-badge,
 .light-theme .section-title {
-  background: linear-gradient(45deg, var(--theme-primary), var(--theme-secondary));
+  /* use solid color for clarity on light backgrounds (gradient often clips poorly) */
+  background: none;
+  color: var(--theme-primary);
 }
 
 .light-theme .skill-item {
@@ -130,10 +135,8 @@ html {
 }
 
 .light-theme .gradient-text {
-  background: linear-gradient(45deg, var(--theme-primary), var(--theme-secondary));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: none;
+  color: var(--theme-primary);
 }
 
 .light-theme .floating-bgs {
@@ -353,6 +356,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: var(--theme-primary);
 }
 
 .typing {
@@ -499,6 +503,8 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 700;
+  /* fallback when clipping isn't supported */
+  color: var(--theme-primary);
 }
 
 /* ABOUT */
@@ -506,6 +512,17 @@ body {
   max-width: 800px;
   margin: 0 auto 4rem;
   text-align: center;
+}
+
+/* ensure light-theme headings stay visible even though base rules appear later */
+.light-theme .section-title {
+  background: none !important;
+  color: var(--theme-primary) !important;
+}
+
+.light-theme .gradient-text {
+  background: none !important;
+  color: var(--theme-primary) !important;
 }
 
 .about-content p {
