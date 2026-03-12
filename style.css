@@ -3,22 +3,163 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 :root {
-  --theme-primary: #6366f1;
-  /* Indigo */
-  --theme-secondary: #2dd4bf;
-  /* Teal */
+  /* make the browser honor dark/auto colour scheme for form controls, scrollbars etc */
+  color-scheme: dark;
+
+  --theme-primary: #0073e6;
+  /* Professional blue */
+  --theme-secondary: #6c757d;
+  /* Muted grey */
   --dark-bg: #09090b;
   /* Much deeper premium background */
   --glass: rgba(30, 30, 40, 0.4);
   /* Dark elegant glass */
   --glass-border: rgba(255, 255, 255, 0.06);
   /* Subtler frosted borders */
+  --theme-primary-glow: rgba(0, 115, 230, 0.4);
+  /* Theme primary glow */
+  --theme-secondary-glow: rgba(108, 117, 125, 0.4);
+  /* Theme secondary glow */
+}
+
+/* alternate light theme overrides */
+.light-theme {
+  --theme-primary: #0056b3; /* darker blue for contrast */
+  --theme-secondary: #adb5bd; /* light grey */
+  --dark-bg: #f8f9fa;
+  --glass: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --theme-primary-glow: rgba(0, 86, 179, 0.3);
+  --theme-secondary-glow: rgba(173, 181, 189, 0.3);
+  color-scheme: light;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* light theme specific tweaks */
+.light-theme body {
+  background: #f8f9fa;
+  color: #212529;
+}
+
+.light-theme .navbar {
+  background: rgba(255, 255, 255, 0.9);
+  color: #212529;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.light-theme .nav-links a {
+  color: #212529;
+}
+
+.light-theme .nav-links a::after {
+  background: linear-gradient(45deg, var(--theme-primary), var(--theme-secondary));
+}
+
+.light-theme .btn-secondary {
+  color: var(--theme-primary);
+  border-color: var(--theme-primary);
+}
+
+.light-theme .btn-primary {
+  box-shadow: 0 10px 30px rgba(0, 115, 230, 0.3);
+}
+
+.light-theme .hero-badge,
+.light-theme .section-title {
+  background: linear-gradient(45deg, var(--theme-primary), var(--theme-secondary));
+}
+
+.light-theme .skill-item {
+  background: rgba(255,255,255,0.8);
+  border: 1px solid var(--glass-border);
+}
+
+/* improve light theme overall backgrounds and cards */
+.light-theme body {
+  background: radial-gradient(circle at top right, #f8f9fa 0%, #e9ecef 40%, #fff 100%);
+  color: #212529;
+}
+
+.light-theme .hero {
+  background: radial-gradient(circle at top right, #e9ecef 0%, #fff 40%, #f8f9fa 100%);
+}
+
+.light-theme .skill-item:hover {
+  transform: translateY(-10px);
+  background: rgba(0, 115, 230, 0.1);
+  border-color: var(--theme-primary);
+  box-shadow: 0 20px 40px rgba(0, 115, 230, 0.2);
+}
+
+.light-theme .btn-secondary:hover {
+  background: linear-gradient(45deg, var(--theme-primary), var(--theme-secondary));
+  color: white;
+}
+
+.light-theme .btn-primary:hover {
+  box-shadow: 0 20px 40px rgba(0, 115, 230, 0.4);
+}
+
+.light-theme .stat-item {
+  background: rgba(255,255,255,0.7);
+  border-radius: 10px;
+}
+
+/* additional light theme fixes */
+.light-theme .hero-content h1,
+.light-theme .hero-content h2,
+.light-theme .typing,
+.light-theme .hero-content p {
+  color: #212529;
+}
+
+.light-theme .typing {
+  color: #495057;
+}
+
+.light-theme .hero-content p {
+  color: #495057;
+}
+
+.light-theme .hero-badge {
+  color: white;
+}
+
+.light-theme .gradient-text {
+  background: linear-gradient(45deg, var(--theme-primary), var(--theme-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.light-theme .floating-bgs {
+  display: none;
+}
+
+.light-theme .bg-circle {
+  background: linear-gradient(45deg, var(--theme-primary), var(--theme-secondary));
+  opacity: 0.03;
+  filter: blur(60px);
+}
+
+.light-theme .skill-item i,
+.light-theme .skill-item span {
+  color: #212529;
+}
+
+/* projects cards in light theme */
+.light-theme .project-card {
+  background: rgba(255,255,255,0.9);
+  border-color: rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.light-theme .project-card:hover {
+  box-shadow: 0 30px 60px rgba(0,115,230,0.2);
 }
 
 body {
@@ -101,6 +242,21 @@ body {
   font-size: 1.5rem;
   cursor: pointer;
   color: var(--theme-primary);
+}
+
+/* theme toggle button (navbar) */
+#theme-toggle {
+  margin-left: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--theme-primary);
+  transition: color 0.3s;
+}
+
+#theme-toggle:hover {
+  color: var(--theme-secondary);
 }
 
 /* HERO */
@@ -237,12 +393,12 @@ body {
 .btn-primary {
   background: linear-gradient(45deg, var(--theme-primary), var(--theme-secondary));
   color: white;
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 10px 30px var(--theme-primary-glow);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 20px 40px rgba(244, 63, 94, 0.4);
+  box-shadow: 0 20px 40px var(--theme-primary-glow);
 }
 
 .btn-secondary {
@@ -280,7 +436,7 @@ body {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 3px solid rgba(244, 63, 94, 0.3);
+  border: 3px solid rgba(0, 115, 230, 0.3);
   animation: pulse-ring 3s ease-in-out infinite;
 }
 
@@ -293,6 +449,7 @@ body {
   border-radius: 50%;
   position: relative;
   z-index: 2;
+  border: 1px solid var(--glass-border);
 }
 
 @keyframes rotate {
@@ -392,9 +549,9 @@ body {
 
 .skill-item:hover {
   transform: translateY(-10px);
-  background: rgba(250, 204, 21, 0.1);
-  border-color: var(--theme-secondary);
-  box-shadow: 0 20px 40px rgba(250, 204, 21, 0.2);
+  background: rgba(0, 115, 230, 0.1);
+  border-color: var(--theme-primary);
+  box-shadow: 0 20px 40px var(--theme-primary-glow);
 }
 
 .skill-item i {
@@ -429,7 +586,7 @@ body {
 
 .project-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 30px 60px rgba(244, 63, 94, 0.2);
+  box-shadow: 0 30px 60px var(--theme-primary-glow);
   border-color: var(--theme-primary);
 }
 
@@ -537,16 +694,16 @@ ul.project-features li {
 
 .link-github:hover {
   background: var(--theme-primary);
-  color: #06060c;
+  color: white;
   transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 5px 15px rgba(244, 63, 94, 0.4);
+  box-shadow: 0 5px 15px var(--theme-primary-glow);
 }
 
 .link-demo:hover {
   background: var(--theme-secondary);
   color: white;
   transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 5px 15px rgba(250, 204, 21, 0.4);
+  box-shadow: 0 5px 15px var(--theme-secondary-glow);
 }
 
 /* TIMELINE */
@@ -651,7 +808,7 @@ ul.project-features li {
 .contact-item:hover {
   transform: translateY(-5px);
   border-color: var(--theme-primary);
-  box-shadow: 0 20px 40px rgba(244, 63, 94, 0.1);
+  box-shadow: 0 20px 40px var(--theme-primary-glow);
 }
 
 .contact-item i {
@@ -662,7 +819,7 @@ ul.project-features li {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(244, 63, 94, 0.1);
+  background: rgba(0, 115, 230, 0.1);
   border-radius: 16px;
   flex-shrink: 0;
 }
@@ -899,7 +1056,7 @@ ul.project-features li {
   visibility: hidden;
   transform: translateY(20px);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 10px 20px var(--theme-primary-glow);
 }
 
 .back-to-top.visible {
@@ -910,7 +1067,7 @@ ul.project-features li {
 
 .back-to-top:hover {
   transform: scale(1.1) translateY(-5px);
-  box-shadow: 0 15px 30px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 15px 30px var(--theme-primary-glow);
 }
 
 /* ENHANCED HOVERS */

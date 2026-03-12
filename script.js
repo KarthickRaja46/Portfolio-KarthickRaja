@@ -128,6 +128,52 @@ window.addEventListener('scroll', () => {
   lastScroll = currentScroll;
 });
 
+// Theme toggle logic
+const themeToggle = document.getElementById('theme-toggle');
+const rootElement = document.documentElement;
+
+function applyTheme(theme) {
+  if (theme === 'light') {
+    rootElement.classList.add('light-theme');
+    themeToggle.textContent = '🌞';
+    themeToggle.setAttribute('aria-label', 'Switch to dark theme');
+    themeToggle.title = 'Switch to dark theme';
+  } else {
+    rootElement.classList.remove('light-theme');
+    themeToggle.textContent = '🌙';
+    themeToggle.setAttribute('aria-label', 'Switch to light theme');
+    themeToggle.title = 'Switch to light theme';
+  }
+  localStorage.setItem('preferred-theme', theme);
+}
+
+// initialize theme based on preference, system setting, or default
+const savedTheme = localStorage.getItem('preferred-theme');
+const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+if (savedTheme) {
+  applyTheme(savedTheme);
+} else if (prefersDark) {
+  applyTheme('dark');
+} else {
+  applyTheme('light');
+}
+
+// listen for changes to system preference and update automatically
+if (window.matchMedia) {
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    // only switch if user hasn't explicitly chosen
+    if (!localStorage.getItem('preferred-theme')) {
+      applyTheme(e.matches ? 'dark' : 'light');
+    }
+  });
+}
+
+themeToggle.addEventListener('click', () => {
+  const current = rootElement.classList.contains('light-theme') ? 'light' : 'dark';
+  const next = current === 'light' ? 'dark' : 'light';
+  applyTheme(next);
+});
+
 // Scroll Spy for Navbar Links
 const navObserverOptions = {
   threshold: 0.5
