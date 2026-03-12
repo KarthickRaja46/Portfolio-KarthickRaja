@@ -25,8 +25,8 @@
   --dark-bg: #09090b;
   --glass: rgba(30, 30, 40, 0.4);
   --glass-border: rgba(255, 255, 255, 0.06);
-  --theme-primary-glow: rgba(0, 115, 230, 0.4);
-  --theme-secondary-glow: rgba(108, 117, 125, 0.4);
+  --theme-primary-glow: color-mix(in srgb, var(--theme-primary) 40%, transparent);
+  --theme-secondary-glow: color-mix(in srgb, var(--theme-secondary) 40%, transparent);
 }
 
 /* light-theme override */
@@ -57,8 +57,8 @@
   --dark-bg: #f8f9fa;
   --glass: rgba(255, 255, 255, 0.6);
   --glass-border: rgba(0, 0, 0, 0.1);
-  --theme-primary-glow: rgba(0, 86, 179, 0.3);
-  --theme-secondary-glow: rgba(10, 85, 140, 0.3);
+  --theme-primary-glow: color-mix(in srgb, var(--theme-primary) 30%, transparent);
+  --theme-secondary-glow: color-mix(in srgb, var(--theme-secondary) 30%, transparent);
   color-scheme: light;
   /* lighter gradient endpoints for text */
   --gradient-start: #0056b3;
@@ -117,20 +117,9 @@ html {
   background: radial-gradient(circle at top right, #e9ecef 0%, #fff 40%, #f8fafb 100%);
 }
 
-.light-theme .skill-item:hover {
-  transform: translateY(-10px);
-  background: rgba(0, 115, 230, 0.1);
-  border-color: var(--theme-primary);
-  box-shadow: 0 20px 40px rgba(0, 115, 230, 0.2);
-}
-
 .light-theme .btn-secondary:hover {
   background: linear-gradient(45deg, var(--theme-primary), var(--theme-secondary));
   color: white;
-}
-
-.light-theme .btn-primary:hover {
-  box-shadow: 0 20px 40px rgba(0, 115, 230, 0.4);
 }
 
 .light-theme .stat-item {
@@ -154,7 +143,9 @@ html {
 }
 
 .light-theme .hero-badge {
-  color: var(--text-primary);
+  background: color-mix(in srgb, var(--theme-primary) 10%, transparent);
+  color: var(--theme-primary);
+  border: 1px solid color-mix(in srgb, var(--theme-primary) 20%, transparent);
 }
 
 .light-theme .gradient-text {
@@ -185,7 +176,7 @@ html {
 }
 
 .light-theme .project-card:hover {
-  box-shadow: 0 30px 60px rgba(0,115,230,0.2);
+  box-shadow: 0 30px 60px var(--theme-primary-glow);
 }
 
 /* ensure text inside cards is dark in light mode */
@@ -195,6 +186,36 @@ html {
 .light-theme .project-info p,
 .light-theme ul.project-features {
   color: var(--text-secondary);
+}
+
+.light-theme .project-tech span {
+  background: color-mix(in srgb, var(--theme-primary) 10%, transparent);
+  color: var(--theme-primary);
+  border: 1px solid color-mix(in srgb, var(--theme-primary) 20%, transparent);
+}
+
+.light-theme .link-github,
+.light-theme .link-demo {
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--text-primary);
+}
+
+.light-theme .link-github:hover {
+  background: var(--theme-primary);
+  color: white;
+}
+
+.light-theme .link-demo:hover {
+  background: var(--theme-secondary);
+  color: white;
+}
+
+.light-theme .timeline-dot {
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--theme-primary) 10%, transparent);
+}
+
+.light-theme .back-to-top {
+  color: white;
 }
 
 body {
@@ -473,7 +494,7 @@ body {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 3px solid rgba(0, 115, 230, 0.3);
+  border: 3px solid color-mix(in srgb, var(--theme-primary) 30%, transparent);
   animation: pulse-ring 3s ease-in-out infinite;
 }
 
@@ -481,8 +502,8 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 15%;
-  /* Shifts the image nicely downwards */
+  object-position: center 5%;
+  /* Shifts the image downwards to leave space above the head */
   border-radius: 50%;
   position: relative;
   z-index: 2;
@@ -542,11 +563,13 @@ body {
 .light-theme .section-title {
   background: none !important;
   color: var(--theme-primary) !important;
+  -webkit-text-fill-color: initial !important;
 }
 
 .light-theme .gradient-text {
   background: none !important;
   color: var(--theme-primary) !important;
+  -webkit-text-fill-color: initial !important;
 }
 
 .about-content p {
@@ -599,7 +622,7 @@ body {
 
 .skill-item:hover {
   transform: translateY(-10px);
-  background: rgba(0, 115, 230, 0.1);
+  background: color-mix(in srgb, var(--theme-primary) 10%, transparent);
   border-color: var(--theme-primary);
   box-shadow: 0 20px 40px var(--theme-primary-glow);
 }
@@ -870,7 +893,7 @@ ul.project-features li {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 115, 230, 0.1);
+  background: color-mix(in srgb, var(--theme-primary) 10%, transparent);
   border-radius: 16px;
   flex-shrink: 0;
 }
@@ -944,7 +967,7 @@ ul.project-features li {
     right: -100%;
     width: 80%;
     height: 100vh;
-    background: rgba(9, 9, 11, 0.98);
+    background: var(--card-bg); /* Use card-bg which naturally adapts to theme */
     backdrop-filter: blur(25px);
     flex-direction: column;
     justify-content: center;
@@ -993,7 +1016,6 @@ ul.project-features li {
   .profile-ring {
     width: 260px;
     height: 260px;
-    order: -1; /* Image on top for mobile */
   }
 
   .typing {
