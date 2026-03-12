@@ -162,6 +162,15 @@ html {
   box-shadow: 0 30px 60px rgba(0,115,230,0.2);
 }
 
+/* ensure text inside cards is dark in light mode */
+.light-theme .project-info h3 {
+  color: #212529;
+}
+.light-theme .project-info p,
+.light-theme ul.project-features {
+  color: #495057;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background: radial-gradient(circle at top right, #1e1b4b 0%, #09090b 40%, #0c0a09 100%);
