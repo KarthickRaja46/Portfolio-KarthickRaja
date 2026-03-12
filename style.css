@@ -3,24 +3,51 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* utility text classes */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
 :root {
-  /* make the browser honor dark/auto colour scheme for form controls, scrollbars etc */
+  /* base theme variables (dark mode defaults) */
   color-scheme: dark;
 
-  --theme-primary: #0073e6;
-  /* Professional blue */
-  --theme-secondary: #6c757d;
-  /* Muted grey */
+  /* core colour palette used in gradients, accents etc */
+  --theme-primary: #0073e6;          /* professional blue */
+  --theme-secondary: #6c757d;        /* muted grey */
+
+  /* semantic colours for text and backgrounds */
+  --bg-color: #0f172a;               /* dark page background */
+  --text-primary: #f1f5f9;           /* near‑white body text */
+  --text-secondary: #cbd5f5;         /* light grey secondary text */
+  --card-bg: #1e293b;                /* dark card/panel background */
+
+  /* legacy/glass variables retained for visual effects */
   --dark-bg: #09090b;
-  /* Much deeper premium background */
   --glass: rgba(30, 30, 40, 0.4);
-  /* Dark elegant glass */
   --glass-border: rgba(255, 255, 255, 0.06);
-  /* Subtler frosted borders */
   --theme-primary-glow: rgba(0, 115, 230, 0.4);
-  /* Theme primary glow */
   --theme-secondary-glow: rgba(108, 117, 125, 0.4);
-  /* Theme secondary glow */
+}
+
+/* light-theme override */
+.light-theme {
+  color-scheme: light;
+
+  --theme-primary: #0056b3;
+  --theme-secondary: #0a558c;
+
+  --bg-color: #ffffff;
+  --text-primary: #1f2937;           /* main text for light mode */
+  --text-secondary: #4b5563;         /* secondary/description text */
+  --card-bg: #f9fafb;                /* light card background */
+
+  --dark-bg: #f8f9fa;
+  --glass: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --theme-primary-glow: rgba(0, 86, 179, 0.3);
+  --theme-secondary-glow: rgba(10, 85, 140, 0.3);
+  --gradient-start: #0056b3;
+  --gradient-end: #0a558c;
 }
 
 /* alternate light theme overrides */
@@ -43,19 +70,16 @@ html {
 }
 
 /* light theme specific tweaks */
-.light-theme body {
-  background: #f8f9fa;
-  color: #212529;
-}
+/* earlier body declaration removed in favour of variable-based rule further down */
 
 .light-theme .navbar {
   background: rgba(255, 255, 255, 0.9);
-  color: #212529;
+  color: var(--text-primary);
   border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 .light-theme .nav-links a {
-  color: #212529;
+  color: var(--text-primary);
 }
 
 .light-theme .nav-links a::after {
@@ -85,12 +109,12 @@ html {
 
 /* improve light theme overall backgrounds and cards */
 .light-theme body {
-  background: radial-gradient(circle at top right, #f8f9fa 0%, #e9ecef 40%, #fff 100%);
-  color: #212529;
+  background: var(--bg-color);
+  color: var(--text-primary);
 }
 
 .light-theme .hero {
-  background: radial-gradient(circle at top right, #e9ecef 0%, #fff 40%, #f8f9fa 100%);
+  background: radial-gradient(circle at top right, #e9ecef 0%, #fff 40%, #f8fafb 100%);
 }
 
 .light-theme .skill-item:hover {
@@ -117,21 +141,20 @@ html {
 /* additional light theme fixes */
 .light-theme .hero-content h1,
 .light-theme .hero-content h2,
-.light-theme .typing,
 .light-theme .hero-content p {
-  color: #212529;
+  color: var(--text-primary);
 }
 
 .light-theme .typing {
-  color: #495057;
+  color: var(--text-secondary);
 }
 
 .light-theme .hero-content p {
-  color: #495057;
+  color: var(--text-secondary);
 }
 
 .light-theme .hero-badge {
-  color: white;
+  color: var(--text-primary);
 }
 
 .light-theme .gradient-text {
@@ -151,7 +174,7 @@ html {
 
 .light-theme .skill-item i,
 .light-theme .skill-item span {
-  color: #212529;
+  color: var(--text-primary);
 }
 
 /* projects cards in light theme */
@@ -167,18 +190,19 @@ html {
 
 /* ensure text inside cards is dark in light mode */
 .light-theme .project-info h3 {
-  color: #212529;
+  color: var(--text-primary);
 }
 .light-theme .project-info p,
 .light-theme ul.project-features {
-  color: #495057;
+  color: var(--text-secondary);
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at top right, #1e1b4b 0%, #09090b 40%, #0c0a09 100%);
+  background: var(--bg-color);
+  /* if you still want the gradient add a secondary layer using pseudo-element or separate rule */
   background-attachment: fixed;
-  color: white;
+  color: var(--text-primary);
   overflow-x: hidden;
   line-height: 1.6;
 }
@@ -368,7 +392,7 @@ body {
 
 .hero-content p {
   font-size: 1.2rem;
-  color: #b8bcc8;
+  color: var(--text-secondary);
   margin-bottom: 2.5rem;
   max-width: 500px;
 }
@@ -376,7 +400,7 @@ body {
 .hero-badge {
   display: inline-block;
   background: linear-gradient(45deg, var(--theme-primary), var(--theme-secondary));
-  color: white;
+  color: var(--text-primary);
   padding: 0.5rem 1.5rem;
   border-radius: 50px;
   font-size: 0.9rem;
@@ -527,7 +551,7 @@ body {
 
 .about-content p {
   font-size: 1.2rem;
-  color: #b8bcc8;
+  color: var(--text-secondary);
   margin-bottom: 3rem;
   line-height: 1.8;
 }
@@ -583,11 +607,12 @@ body {
 .skill-item i {
   font-size: 3.5rem;
   margin-bottom: 0.5rem;
+  color: var(--text-primary);
 }
 
 .skill-item span {
   font-weight: 600;
-  color: white;
+  color: var(--text-primary);
   text-align: center;
 }
 
@@ -651,18 +676,18 @@ body {
 .project-info h3 {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
-  color: white;
+  color: var(--text-primary);
 }
 
 .project-info p {
-  color: #b8bcc8;
+  color: var(--text-secondary);
   margin-bottom: 1rem;
   font-size: 0.95rem;
   line-height: 1.5;
 }
 
 ul.project-features {
-  color: #b8bcc8;
+  color: var(--text-secondary);
   margin-bottom: 1.5rem;
   padding-left: 1.2rem;
   font-size: 0.9rem;
@@ -713,7 +738,7 @@ ul.project-features li {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--text-primary);
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -791,20 +816,20 @@ ul.project-features li {
 }
 
 .timeline-content h3 {
-  color: var(--theme-primary);
+  color: var(--text-primary);
   margin-bottom: 0.2rem;
   font-size: 1.3rem;
 }
 
 .timeline-content h4 {
-  color: white;
+  color: var(--text-secondary);
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
   font-weight: 500;
 }
 
 .timeline-content span {
-  color: #b8bcc8;
+  color: var(--text-secondary);
   font-weight: 500;
   display: block;
   margin-bottom: 0.5rem;
@@ -824,7 +849,7 @@ ul.project-features li {
   align-items: flex-start;
   gap: 1.5rem;
   padding: 2rem;
-  background: var(--glass);
+  background: var(--card-bg);
   backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
   border-radius: 20px;
@@ -851,7 +876,7 @@ ul.project-features li {
 }
 
 .contact-item h3 {
-  color: var(--theme-primary);
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
 }
@@ -862,7 +887,7 @@ ul.project-features li {
 }
 
 .contact-item a {
-  color: white;
+  color: var(--text-primary);
   text-decoration: none;
   word-break: break-all;
 }
@@ -878,6 +903,7 @@ ul.project-features li {
   text-align: center;
   padding: 3rem 0;
   border-top: 1px solid var(--glass-border);
+  color: white; /* keep footer text readable regardless of theme */
 }
 
 /* RESPONSIVE */
@@ -1070,7 +1096,7 @@ ul.project-features li {
   width: 50px;
   height: 50px;
   background: linear-gradient(45deg, var(--theme-primary), var(--theme-secondary));
-  color: white;
+  color: var(--text-primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
