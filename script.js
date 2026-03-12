@@ -88,6 +88,24 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
+// Back to Top functionality
+const backToTop = document.querySelector('.back-to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 500) {
+    backToTop.classList.add('visible');
+  } else {
+    backToTop.classList.remove('visible');
+  }
+});
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
 // Observe all sections for smooth fade-in
 document.querySelectorAll('.section').forEach(section => {
   section.style.opacity = '0';
@@ -108,4 +126,27 @@ window.addEventListener('scroll', () => {
     navbar.style.transform = 'translateY(0)';
   }
   lastScroll = currentScroll;
+});
+
+// Scroll Spy for Navbar Links
+const navObserverOptions = {
+  threshold: 0.5
+};
+
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.classList.remove('active-link');
+        if (link.getAttribute('href') === `#${id}`) {
+          link.classList.add('active-link');
+        }
+      });
+    }
+  });
+}, navObserverOptions);
+
+document.querySelectorAll('section[id]').forEach(section => {
+  navObserver.observe(section);
 });
