@@ -11,21 +11,22 @@
   /* base theme variables (dark mode defaults) */
   color-scheme: dark;
 
-  /* core colour palette used in gradients, accents etc */
-  --theme-primary: #0073e6;          /* professional blue */
-  --theme-secondary: #6c757d;        /* muted grey */
+  /* Vibrant gradient palette for a modern, aesthetic look */
+  --theme-primary: #7f53ac;          /* purple */
+  --theme-secondary: #647dee;        /* blue */
+  --theme-accent: #f7971e;           /* orange accent */
 
   /* semantic colours for text and backgrounds */
-  --bg-color: #0f172a;               /* dark page background */
-  --text-primary: #f1f5f9;           /* near‑white body text */
-  --text-secondary: #cbd5f5;         /* light grey secondary text */
-  --card-bg: #1e293b;                /* dark card/panel background */
+  --bg-color: #18122b;               /* deep purple background */
+  --text-primary: #f8fafc;           /* near-white body text */
+  --text-secondary: #b8b8d1;         /* soft lavender secondary text */
+  --card-bg: #231942;                /* card/panel background */
 
-  /* legacy/glass variables retained for visual effects */
-  --dark-bg: #09090b;
-  --glass: rgba(30, 30, 40, 0.4);
-  --glass-border: rgba(255, 255, 255, 0.06);
-  --theme-primary-glow: color-mix(in srgb, var(--theme-primary) 40%, transparent);
+  /* glassmorphism and glow */
+  --dark-bg: #1a1333;
+  --glass: rgba(100, 125, 222, 0.10);
+  --glass-border: rgba(127, 83, 172, 0.12);
+  --theme-primary-glow: color-mix(in srgb, var(--theme-primary) 50%, transparent);
   --theme-secondary-glow: color-mix(in srgb, var(--theme-secondary) 40%, transparent);
 }
 
@@ -33,21 +34,22 @@
 .light-theme {
   color-scheme: light;
 
-  --theme-primary: #0056b3;
-  --theme-secondary: #0a558c;
+  --theme-primary: #7f53ac;
+  --theme-secondary: #647dee;
+  --theme-accent: #f7971e;
 
-  --bg-color: #ffffff;
-  --text-primary: #1f2937;           /* main text for light mode */
-  --text-secondary: #4b5563;         /* secondary/description text */
-  --card-bg: #f9fafb;                /* light card background */
+  --bg-color: #f8f9fb;
+  --text-primary: #22223b;           /* deep purple text */
+  --text-secondary: #6c63ac;         /* soft purple secondary text */
+  --card-bg: #fff;                   /* white card background */
 
-  --dark-bg: #f8f9fa;
-  --glass: rgba(255, 255, 255, 0.6);
-  --glass-border: rgba(0, 0, 0, 0.1);
-  --theme-primary-glow: rgba(0, 86, 179, 0.3);
-  --theme-secondary-glow: rgba(10, 85, 140, 0.3);
-  --gradient-start: #0056b3;
-  --gradient-end: #0a558c;
+  --dark-bg: #ede7f6;
+  --glass: rgba(127, 83, 172, 0.04);
+  --glass-border: #e0e0ef;
+  --theme-primary-glow: color-mix(in srgb, var(--theme-primary) 20%, transparent);
+  --theme-secondary-glow: color-mix(in srgb, var(--theme-secondary) 20%, transparent);
+  --gradient-start: #f8f9fb;
+  --gradient-end: #e9e4f0;
 }
 
 /* alternate light theme overrides */
@@ -109,8 +111,8 @@ html {
 
 /* improve light theme overall backgrounds and cards */
 .light-theme body {
-  background: var(--bg-color);
-  color: var(--text-primary);
+  background: linear-gradient(120deg, var(--gradient-start) 0%, var(--gradient-end) 100%) fixed !important;
+  color: var(--text-primary) !important;
 }
 
 .light-theme .hero {
@@ -219,11 +221,9 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: var(--bg-color);
-  /* if you still want the gradient add a secondary layer using pseudo-element or separate rule */
-  background-attachment: fixed;
-  color: var(--text-primary);
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif !important;
+  background: var(--bg-color) !important;
+  color: var(--text-primary) !important;
   overflow-x: hidden;
   line-height: 1.6;
 }
@@ -232,6 +232,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  box-sizing: border-box;
 }
 
 /* NAVBAR */
@@ -243,9 +244,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(10, 10, 26, 0.9);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--glass-border);
+  background: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+  border-bottom: 1.5px solid var(--glass-border) !important;
+  box-shadow: 0 2px 8px 0 var(--theme-secondary-glow);
   z-index: 1000;
 }
 
@@ -537,6 +539,18 @@ body {
 /* SECTIONS */
 .section {
   padding: 100px 0;
+  background: rgba(255,255,255,0.85) !important;
+  border-radius: 32px;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 2px 24px 0 rgba(127,83,172,0.08);
+}
+
+/* Remove seam between hero and about section */
+#about.section {
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding-top: 48px;
 }
 
 .section-title {
@@ -583,9 +597,17 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 2rem;
+  background: #f6f7fb !important;
+  border-radius: 18px;
+  padding: 1.5rem 0;
+  box-shadow: 0 2px 12px 0 rgba(127,83,172,0.06);
+  align-items: stretch;
 }
 
 .stat-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   padding: 2rem;
 }
@@ -604,11 +626,13 @@ body {
   gap: 2rem;
   max-width: 900px;
   margin: 0 auto;
+  align-items: stretch;
 }
 
 .skill-item {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
   padding: 2rem 1.5rem;
@@ -618,6 +642,7 @@ body {
   border-radius: 20px;
   transition: all 0.4s ease;
   cursor: pointer;
+  height: 100%;
 }
 
 .skill-item:hover {
@@ -647,9 +672,10 @@ body {
 }
 
 .project-card {
-  background: var(--glass);
+  background: #fff !important;
+  border: 1.5px solid #e0e0ef !important;
+  box-shadow: 0 4px 24px 0 rgba(100,125,222,0.08);
   backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
   border-radius: 24px;
   overflow: hidden;
   transition: all 0.4s ease;
@@ -921,12 +947,22 @@ ul.project-features li {
 
 /* FOOTER */
 .footer {
-  background: rgba(10, 10, 26, 0.8);
-  backdrop-filter: blur(20px);
-  text-align: center;
-  padding: 3rem 0;
+  background: transparent !important;
+  color: var(--text-primary) !important;
   border-top: 1px solid var(--glass-border);
-  color: white; /* keep footer text readable regardless of theme */
+  text-align: center !important;
+  padding: 1.5rem 0 2.5rem 0 !important;
+  font-size: 1rem !important;
+  width: 100%;
+  margin: 0 auto !important;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.2rem 0 2.2rem 0 !important;
+    font-size: 0.95rem !important;
+  }
 }
 
 /* RESPONSIVE */
@@ -989,8 +1025,15 @@ ul.project-features li {
 
   /* Hero Mobile */
   .hero {
-    padding: 100px 5% 60px;
+    padding: 100px 5% 20px;
     text-align: center;
+  }
+
+  #about.section {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding-top: 28px;
   }
 
   .hero-container {
