@@ -1,56 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- ===================== HEAD SECTION ===================== -->
-
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Karthick Raja | Data Science Portfolio</title>
-  <meta name="description"
-    content="Portfolio of Karthick Raja, a Computer Science Engineer and Data Scientist based in Chennai, India. Specializing in Python, Machine Learning, and AI.">
-  <meta name="keywords" content="Karthick Raja, Data Science, Portfolio, Machine Learning, Python, AI, Chennai">
+  <title>Karthick Raja — Data Scientist</title>
+  <meta name="description" content="Portfolio of Karthick Raja, a Computer Science Engineer and Data Scientist based in Chennai, India.">
   <meta name="author" content="Karthick Raja">
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://karthickraja46.github.io/">
-  <meta property="og:title" content="Karthick Raja | Data Science Portfolio">
-  <meta property="og:description" content="Turning complex data into actionable insights with Python, ML & AI.">
-  <meta property="og:image" content="assets/karthickraja.jpg">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://karthickraja46.github.io/">
-  <meta property="twitter:title" content="Karthick Raja | Data Science Portfolio">
-  <meta property="twitter:description" content="Turning complex data into actionable insights with Python, ML & AI.">
-  <meta property="twitter:image" content="assets/karthickraja.jpg">
-
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts: Inter (clean, readable) + JetBrains Mono (code labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Tabler Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
-
-
 <body>
 
-
-  <!-- ===================== NAVIGATION BAR ===================== -->
-  <nav class="navbar">
-
-    <!-- Logo -->
-    <div class="logo">
-      <span class="logo-gradient">KR</span> Karthick Raja
-    </div>
-
-    <!-- Navigation Links -->
-    <ul class="nav-links">
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#home" class="nav-logo">
+      <span class="nav-logo-mark">KR</span>
+      <span>Karthick Raja</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -58,410 +35,381 @@
       <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+        <i class="ti ti-sun" id="themeIcon"></i>
+      </button>
+      <a href="assets/Karthick_Raja.pdf" class="nav-cta" download>
+        <i class="ti ti-download"></i> Resume
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <i class="ti ti-menu-2"></i>
+      </button>
+    </div>
+  </div>
+</nav>
 
-    <!-- Theme toggle -->
-    <button id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
-      🌗
-    </button>
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose"><i class="ti ti-x"></i></button>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#education">Education</a>
+  <a href="#contact">Contact</a>
+</div>
 
-    <!-- Mobile Hamburger -->
-    <div class="hamburger">
-      <i class="ti ti-menu-2"></i>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+
+  <div class="container hero-inner">
+
+    <!-- Profile Photo -->
+    <div class="hero-photo-wrap fade-up">
+      <img src="assets/karthickraja.jpg" alt="Karthick Raja" class="hero-photo" onerror="this.style.display='none'">
     </div>
 
-  </nav>
+    <!-- Text -->
+    <div class="hero-text fade-up">
+      <h1 class="hero-title">
+        Hi, I'm <span class="text-accent">Karthick Raja</span>
+      </h1>
 
+      <div class="typed-wrap">
+        <span class="typed-text" id="typedText"></span><span class="typed-cursor">|</span>
+      </div>
 
+      <p class="hero-subtitle">
+        I'm a Computer Science student from Chennai who loves working with data.
+        I build ML models, dashboards, and AI tools using Python.
+      </p>
 
-  <!-- ===================== HERO SECTION (HOME) ===================== -->
-  <section id="home" class="hero">
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">
+          <i class="ti ti-arrow-right"></i> My Projects
+        </a>
+        <a href="#contact" class="btn-ghost">Contact Me</a>
+        <a href="assets/Karthick_Raja.pdf" class="btn-ghost" download>
+          <i class="ti ti-download"></i> Resume
+        </a>
+      </div>
 
-    <!-- Background Floating Shapes -->
-    <div class="floating-bgs">
-      <div class="bg-circle c1"></div>
-      <div class="bg-circle c2"></div>
-      <div class="bg-circle c3"></div>
+      <div class="hero-tags">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Machine Learning</span>
+        <span class="tech-tag">TensorFlow</span>
+        <span class="tech-tag">SQL</span>
+        <span class="tech-tag">Power BI</span>
+        <span class="tech-tag">Pandas</span>
+      </div>
     </div>
 
-    <div class="hero-container">
+  </div>
+</section>
 
-      <!-- Hero Text Content -->
-      <div class="hero-content">
 
-        <div class="hero-badge">Data Scientist</div>
-
-        <h1>Hi, I'm <span class="gradient-text">Karthick Raja</span></h1>
-
-        <h2 class="typing"></h2>
-
-        <p>
-          Turning complex data into actionable insights with Python,
-          ML & AI from Chennai, India.
+<!-- ABOUT -->
+<section id="about" class="section section-alt">
+  <div class="container">
+    <div class="sec-header fade-up">
+      <span class="t-label">About</span>
+      <h2 class="sec-title">About Me</h2>
+    </div>
+    <div class="about-layout">
+      <div class="about-left fade-up">
+        <p class="about-lead">I love working with data and building things that are actually useful.</p>
+        <p class="about-body">
+          I'm a final-year Computer Science student at Hindusthan Institute of Technology.
+          I enjoy turning raw data into clear results — whether it's a model, a chart, or an app.
         </p>
-
-        <!-- Hero Buttons -->
-        <div class="hero-buttons">
-
-          <a href="#projects" class="btn-primary">
-            <i class="ti ti-eye"></i> View Projects
-          </a>
-
-          <a href="assets/Karthick_Raja.pdf" class="btn-secondary" download>
-            <i class="ti ti-download"></i> Download Resume
-          </a>
-
-        </div>
-      </div>
-
-      <!-- Profile Image -->
-      <div class="hero-image">
-        <div class="profile-ring">
-          <img src="assets/karthickraja.jpg" alt="Karthick Raja">
-        </div>
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ===================== ABOUT SECTION ===================== -->
-  <section id="about" class="section">
-
-    <div class="container">
-
-      <h2 class="section-title">About Me</h2>
-
-      <div class="about-content">
-
-        <p>
-          Computer Science Engineer passionate about Data Science &
-          Machine Learning. I build intelligent systems that solve
-          real-world problems through data-driven insights.
+        <p class="about-body">
+          I've worked on projects like a bird sound classifier and a stock market dashboard.
+          I like learning new things and solving real problems with data.
         </p>
-
-        <!-- Statistics -->
-        <div class="stats-grid">
-
-          <div class="stat-item">
-            <span class="stat-number">2+</span>
-            <span>Projects</span>
-          </div>
-
-          <div class="stat-item">
-            <span class="stat-number gradient-text">Chennai</span>
-            <span>Location</span>
-          </div>
-
+        <div class="about-links">
+          <a href="https://github.com/KarthickRaja46" class="about-link" target="_blank">
+            <i class="ti ti-brand-github"></i> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/karthick-raja-l-7a5b3a26b/" class="about-link" target="_blank">
+            <i class="ti ti-brand-linkedin"></i> LinkedIn
+          </a>
+          <a href="mailto:karthiikarthii46@gmail.com" class="about-link">
+            <i class="ti ti-mail"></i> Email Me
+          </a>
         </div>
-
+      </div>
+      <div class="about-right fade-up">
+        <div class="about-card">
+          <div class="about-card-label">Currently Studying</div>
+          <div class="about-card-value">B.E. Computer Science Engineering</div>
+          <div class="about-card-sub">Hindusthan Institute of Technology · 2022–2026</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-label">Based In</div>
+          <div class="about-card-value text-accent">Chennai, Tamil Nadu, India</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-label">Primary Focus</div>
+          <div class="about-card-value">Machine Learning & Data Science</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-label">Looking For</div>
+          <div class="about-card-value">Internships · Entry-level Roles · Collaborations</div>
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-  </section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <div class="container">
+    <div class="sec-header fade-up">
+      <span class="t-label">Skills</span>
+      <h2 class="sec-title">My Skills</h2>
+      <p class="sec-subtitle">Tools and technologies I use regularly.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card fade-up"><div class="skill-icon"><i class="ti ti-brand-python"></i></div><span class="skill-name">Python</span></div>
+      <div class="skill-card fade-up"><div class="skill-icon"><i class="ti ti-table"></i></div><span class="skill-name">Pandas</span></div>
+      <div class="skill-card fade-up"><div class="skill-icon"><i class="ti ti-calculator"></i></div><span class="skill-name">NumPy</span></div>
+      <div class="skill-card fade-up"><div class="skill-icon"><i class="ti ti-brain"></i></div><span class="skill-name">Machine Learning</span></div>
+      <div class="skill-card fade-up"><div class="skill-icon"><i class="ti ti-database"></i></div><span class="skill-name">SQL</span></div>
+      <div class="skill-card fade-up"><div class="skill-icon"><i class="ti ti-file-spreadsheet"></i></div><span class="skill-name">Excel</span></div>
+      <div class="skill-card fade-up"><div class="skill-icon"><i class="ti ti-chart-bar"></i></div><span class="skill-name">Power BI</span></div>
+      <div class="skill-card fade-up"><div class="skill-icon"><i class="ti ti-brand-github"></i></div><span class="skill-name">Git / GitHub</span></div>
+      <div class="skill-card fade-up"><div class="skill-icon"><i class="ti ti-topology-star-3"></i></div><span class="skill-name">Deep Learning</span></div>
+      <div class="skill-card fade-up"><div class="skill-icon"><i class="ti ti-wavesaw-mono"></i></div><span class="skill-name">Audio ML</span></div>
+    </div>
+  </div>
+</section>
 
 
-
-  <!-- ===================== SKILLS SECTION ===================== -->
-  <section id="skills" class="section">
-
-    <div class="container">
-
-      <h2 class="section-title">Skills</h2>
-
-      <div class="skills-grid">
-
-        <div class="skill-item python">
-          <i class="ti ti-brand-python"></i>
-          <span>Python</span>
-        </div>
-
-        <div class="skill-item pandas">
-          <i class="ti ti-table"></i>
-          <span>Pandas</span>
-        </div>
-
-        <div class="skill-item numpy">
-          <i class="ti ti-calculator"></i>
-          <span>NumPy</span>
-        </div>
-
-        <div class="skill-item ml">
-          <i class="ti ti-brain"></i>
-          <span>Machine Learning</span>
-        </div>
-
-        <div class="skill-item sql">
-          <i class="ti ti-database"></i>
-          <span>SQL</span>
-        </div>
-
-        <div class="skill-item excel">
-          <i class="ti ti-file-spreadsheet"></i>
-          <span>Excel</span>
-        </div>
-
-        <div class="skill-item powerbi">
-          <i class="ti ti-chart-bar"></i>
-          <span>Power BI</span>
-        </div>
-
-        <div class="skill-item git">
-          <i class="ti ti-brand-github"></i>
-          <span>Git/GitHub</span>
-        </div>
-
-      </div>
-
+<!-- PROJECTS -->
+<section id="projects" class="section section-alt">
+  <div class="container">
+    <div class="sec-header fade-up">
+      <span class="t-label">Projects</span>
+      <h2 class="sec-title">My Projects</h2>
+      <p class="sec-subtitle">Click on a project to see more details.</p>
     </div>
 
-  </section>
+    <div class="projects-list">
 
-
-
-  <!-- ===================== PROJECTS SECTION ===================== -->
-  <section id="projects" class="section">
-
-    <div class="container">
-
-      <h2 class="section-title">Projects</h2>
-
-      <div class="projects-grid">
-
-        <!-- Project 1 -->
-        <div class="project-card">
-          <div class="project-image">
-
-            <a href="https://github.com/KarthickRaja46/Portfolio-Visualizer-Excel-Dashboard" target="_blank">
-              <img src="assets/stock_market_thumbnail.png" alt="Stock Market Analysis">
-            </a>
-
-          </div>
-
-          <div class="project-info">
-            <h3>Stock Market Analysis (Excel)</h3>
-
-            <p>
-              Data-driven stock market analysis dashboard built in Microsoft Excel to track portfolio performance and
-              analyze investment trends.
-            </p>
-
-            <ul class="project-features">
-              <li>Portfolio tracking and analysis</li>
-              <li>Automated calculations using Excel formulas</li>
-              <li>Interactive charts and financial dashboard</li>
-            </ul>
-
-            <div class="project-meta-bottom">
-              <div class="project-tech">
-                <span>Excel</span>
-                <span>Financial Analysis</span>
-                <span>Data Visualization</span>
-                <span>Portfolio Dashboard</span>
-              </div>
-
-              <div class="project-links">
-                <a href="https://github.com/KarthickRaja46/Portfolio-Visualizer-Excel-Dashboard" class="link-github"
-                  target="_blank" title="View Code">
-                  <i class="ti ti-brand-github"></i>
-                </a>
-              </div>
+      <div class="project-item fade-up">
+        <div class="project-header" onclick="toggleProject(this)">
+          <span class="project-num">01</span>
+          <div class="project-title-wrap">
+            <span class="project-title-main">Stock Market Analysis Dashboard</span>
+            <div class="project-tags">
+              <span class="project-tag">Excel</span>
+              <span class="project-tag">Financial Analysis</span>
+              <span class="project-tag">Data Visualization</span>
             </div>
-
           </div>
+          <div class="project-arrow"><i class="ti ti-chevron-down"></i></div>
         </div>
-
-
-
-        <!-- Project 2 -->
-        <div class="project-card">
-          <div class="project-image">
-
-            <a href="https://bird-species-identifier-ai-qi82svyxaieeiyo2jzr4wd.streamlit.app/" target="_blank">
-              <img src="assets/bird_species_thumbnail.png" alt="Bird Species Recognition">
-            </a>
-
-          </div>
-
-          <div class="project-info">
-            <h3>Bird Species Recognition</h3>
-
-            <p>
-              AI model that identifies bird species from audio recordings using deep learning.
-            </p>
-
-            <ul class="project-features">
-              <li>Bird sound processing</li>
-              <li>Spectrogram generation</li>
-              <li>CNN-based classification</li>
-            </ul>
-
-            <div class="project-meta-bottom">
-              <div class="project-tech">
-                <span>TensorFlow</span>
-                <span>CNN</span>
-                <span>Audio ML</span>
-                <span>Deep Learning</span>
+        <div class="project-body">
+          <div class="project-body-inner">
+            <div class="project-thumb">
+              <img src="assets/stock_market_thumbnail.png" alt="Stock Market Analysis" onerror="this.parentElement.style.background='var(--bg-elevated)'">
+            </div>
+            <div class="project-desc-area">
+              <p class="project-desc">
+                A comprehensive portfolio analysis dashboard built entirely in Microsoft Excel — designed to help investors
+                track performance, visualize trends, and make data-backed decisions without specialized software.
+              </p>
+              <div class="project-features-list">
+                <div class="project-feature">Portfolio tracking across multiple assets</div>
+                <div class="project-feature">Automated P&L calculations with Excel formulas</div>
+                <div class="project-feature">Dynamic charts and KPI dashboard</div>
+                <div class="project-feature">Investment trend analysis over time</div>
               </div>
-
-              <div class="project-links">
-                <a href="https://github.com/KarthickRaja46/Bird-species-audio-classifier" class="link-github"
-                  target="_blank" title="View Code">
-                  <i class="ti ti-brand-github"></i>
-                </a>
-
-                <a href="https://bird-species-identifier-ai-qi82svyxaieeiyo2jzr4wd.streamlit.app/" class="link-demo"
-                  target="_blank" title="Live Demo">
-                  <i class="ti ti-external-link"></i>
+              <div class="project-links-row">
+                <a href="https://github.com/KarthickRaja46/Portfolio-Visualizer-Excel-Dashboard" class="proj-btn proj-btn-primary" target="_blank">
+                  <i class="ti ti-brand-github"></i> Source Code
                 </a>
               </div>
             </div>
           </div>
         </div>
-
-
-
-
-
       </div>
-    </div>
 
-  </section>
-
-
-
-  <!-- ===================== EDUCATION SECTION ===================== -->
-  <section id="education" class="section">
-
-    <div class="container">
-
-      <h2 class="section-title">Education</h2>
-
-      <div class="timeline">
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-
-          <div class="timeline-content">
-            <h3>B.E Computer Science</h3>
-            <h4>Hindusthan Institute of Technology - Coimbatore</h4>
-            <span>2022 - 2026 | CGPA: Pursuing</span>
-            <p>Expected Graduation: 2026</p>
+      <div class="project-item fade-up">
+        <div class="project-header" onclick="toggleProject(this)">
+          <span class="project-num">02</span>
+          <div class="project-title-wrap">
+            <span class="project-title-main">Bird Species Recognition — AI Audio Classifier</span>
+            <div class="project-tags">
+              <span class="project-tag">TensorFlow</span>
+              <span class="project-tag">CNN</span>
+              <span class="project-tag">Deep Learning</span>
+              <span class="project-tag">Streamlit</span>
+            </div>
           </div>
-
+          <div class="project-arrow"><i class="ti ti-chevron-down"></i></div>
         </div>
-
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-
-          <div class="timeline-content">
-            <h3>HSC - 76.3%</h3>
-            <h4>Sri Ramakrishna Matric Hr Sec School - Perambalur</h4>
-            <span>Higher Secondary Certificate</span>
+        <div class="project-body">
+          <div class="project-body-inner">
+            <div class="project-thumb">
+              <img src="assets/bird_species_thumbnail.png" alt="Bird Species Recognition" onerror="this.parentElement.style.background='var(--bg-elevated)'">
+            </div>
+            <div class="project-desc-area">
+              <p class="project-desc">
+                An end-to-end AI system that identifies bird species from audio recordings.
+                Audio is converted into spectrograms and classified using a Convolutional Neural Network,
+                deployed as an interactive Streamlit app.
+              </p>
+              <div class="project-features-list">
+                <div class="project-feature">Audio → spectrogram pipeline for visual representation</div>
+                <div class="project-feature">CNN model trained on bird audio datasets</div>
+                <div class="project-feature">Live Streamlit web application for demos</div>
+                <div class="project-feature">Real-time prediction with confidence scores</div>
+              </div>
+              <div class="project-links-row">
+                <a href="https://bird-species-identifier-ai-qi82svyxaieeiyo2jzr4wd.streamlit.app/" class="proj-btn proj-btn-primary" target="_blank">
+                  <i class="ti ti-external-link"></i> Live Demo
+                </a>
+                <a href="https://github.com/KarthickRaja46/Bird-species-audio-classifier" class="proj-btn proj-btn-ghost" target="_blank">
+                  <i class="ti ti-brand-github"></i> Code
+                </a>
+              </div>
+            </div>
           </div>
-
         </div>
-
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-
-          <div class="timeline-content">
-            <h3>SSLC - 92%</h3>
-            <h3>St. Pauls's Matric Higher Secondary School</h3>
-            <span>Secondary School Leaving Certificate</span>
-          </div>
-
-        </div>
-
       </div>
 
     </div>
-
-  </section>
-
-
-
-  <!-- ===================== CONTACT SECTION ===================== -->
-  <section id="contact" class="section">
-
-    <div class="container">
-
-      <h2 class="section-title">Get In Touch</h2>
-
-      <div class="contact-grid">
-
-        <div class="contact-item">
-          <i class="ti ti-mail"></i>
-
-          <div>
-            <h3>Email</h3>
-            <a href="mailto:karthiikarthii46@gmail.com">karthiikarthii46@gmail.com</a>
-          </div>
+  </div>
+</section>
 
 
-
-
-
-          
+<!-- EDUCATION -->
+<section id="education" class="section">
+  <div class="container">
+    <div class="education-layout">
+      <div class="education-side fade-up">
+        <span class="t-label" style="display:block;margin-bottom:14px">Education</span>
+        <h2 class="sec-title" style="font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:16px">My Education</h2>
+        <p class="edu-side-desc">
+          From school to engineering college — my learning journey so far.
+        </p>
+      </div>
+      <div class="timeline fade-up">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-period">2022 – 2026</div>
+          <div class="tl-degree">B.E. Computer Science Engineering</div>
+          <div class="tl-school">Hindusthan Institute of Technology, Coimbatore</div>
+          <span class="tl-grade">CGPA: Pursuing · Expected 2026</span>
         </div>
-
-
-        <div class="contact-item">
-          <i class="ti ti-map-pin"></i>
-
-          <div>
-            <h3>Location</h3>
-            <span>Chennai, Tamil Nadu, India</span>
-          </div>
-
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-period">Higher Secondary</div>
+          <div class="tl-degree">HSC — 76.3%</div>
+          <div class="tl-school">Sri Ramakrishna Matric Hr Sec School, Perambalur</div>
+          <span class="tl-grade">Higher Secondary Certificate</span>
         </div>
-
-
-        <div class="contact-item">
-          <i class="ti ti-brand-github"></i>
-
-          <div>
-            <h3>GitHub</h3>
-            <a href="https://github.com/KarthickRaja46" target="_blank">github.com/KarthickRaja46</a>
-          </div>
-
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-period">Secondary</div>
+          <div class="tl-degree">SSLC — 92%</div>
+          <div class="tl-school">St. Paul's Matric Higher Secondary School</div>
+          <span class="tl-grade">Secondary School Leaving Certificate</span>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
-        <div class="contact-item">
-          <i class="ti ti-brand-linkedin"></i>
-
-          <div>
-            <h3>LinkedIn</h3>
-            <a href="https://www.linkedin.com/in/karthick-raja-l-7a5b3a26b/" target="_blank">Connect</a>
+<!-- CONTACT -->
+<section id="contact" class="section section-alt">
+  <div class="container">
+    <div class="contact-layout">
+      <div class="contact-left fade-up">
+        <span class="t-label">Contact</span>
+        <h2 class="contact-lead">Get in touch</h2>
+        <p class="contact-body">
+          Have a project or job opportunity? Feel free to reach out.
+          I'd love to hear from you.
+        </p>
+        <div class="contact-items">
+          <a href="mailto:karthiikarthii46@gmail.com" class="contact-row">
+            <div class="contact-icon"><i class="ti ti-mail"></i></div>
+            <div class="contact-info">
+              <span class="contact-lbl">Email</span>
+              <span class="contact-val">karthiikarthii46@gmail.com</span>
+            </div>
+          </a>
+          <a href="https://github.com/KarthickRaja46" class="contact-row" target="_blank">
+            <div class="contact-icon"><i class="ti ti-brand-github"></i></div>
+            <div class="contact-info">
+              <span class="contact-lbl">GitHub</span>
+              <span class="contact-val">github.com/KarthickRaja46</span>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/karthick-raja-l-7a5b3a26b/" class="contact-row" target="_blank">
+            <div class="contact-icon"><i class="ti ti-brand-linkedin"></i></div>
+            <div class="contact-info">
+              <span class="contact-lbl">LinkedIn</span>
+              <span class="contact-val">Connect on LinkedIn</span>
+            </div>
+          </a>
+          <div class="contact-row">
+            <div class="contact-icon"><i class="ti ti-map-pin"></i></div>
+            <div class="contact-info">
+              <span class="contact-lbl">Location</span>
+              <span class="contact-val">Chennai, Tamil Nadu, India</span>
+            </div>
           </div>
-
         </div>
-
       </div>
 
-    </div>
-
-    <!-- ===================== FOOTER ===================== -->
-    <footer class="footer">
-      <div class="container">
-        <p>&copy; 2026 Karthick Raja. All rights reserved.</p>
+      <div class="contact-right fade-up">
+        <div class="t-label" style="margin-bottom:16px">Available for opportunities</div>
+        <h3 class="contact-right-title">Looking for internships &amp; jobs</h3>
+        <p class="contact-right-sub">
+          I'm a final-year student looking for opportunities in
+          Data Science and Machine Learning. Let's talk!
+        </p>
+        <a href="mailto:karthiikarthii46@gmail.com" class="cta-link">
+          <i class="ti ti-send"></i> Send a Message
+        </a>
+        <div class="resume-row">
+          <div class="t-label" style="margin-bottom:14px">Also download my resume</div>
+          <a href="assets/Karthick_Raja.pdf" download class="btn-ghost">
+            <i class="ti ti-download"></i> Karthick_Raja.pdf
+          </a>
+        </div>
       </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <div class="back-to-top">
-      <i class="ti ti-arrow-narrow-up"></i>
     </div>
+  </div>
+</section>
 
 
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <span class="footer-left">© 2026 Karthick Raja · Chennai, India</span>
+    <div class="footer-links">
+      <a href="https://github.com/KarthickRaja46" class="footer-link" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/karthick-raja-l-7a5b3a26b/" class="footer-link" target="_blank">LinkedIn</a>
+      <a href="mailto:karthiikarthii46@gmail.com" class="footer-link">Email</a>
+    </div>
+  </div>
+</footer>
 
-    <!-- ===================== JAVASCRIPT FILE ===================== -->
-    <script src="script.js"></script>
+<button class="back-top" id="backTop" aria-label="Back to top">
+  <i class="ti ti-arrow-up"></i>
+</button>
 
+<script src="script.js"></script>
 </body>
-
 </html>
