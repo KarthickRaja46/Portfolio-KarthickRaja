@@ -3,9 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Karthick Raja — Data Scientist</title>
-  <meta name="description" content="Portfolio of Karthick Raja, a Computer Science Engineer and Data Scientist based in Chennai, India.">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Karthick Raja — Data Scientist & ML Engineer</title>
+  <meta name="description" content="Portfolio of Karthick Raja, a Computer Science Engineering student and Data Scientist based in Chennai, India. Specializing in Machine Learning, Data Analysis, and Python development.">
   <meta name="author" content="Karthick Raja">
+  <meta name="theme-color" content="#0e1011">
+  <meta name="color-scheme" content="light dark">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Karthick Raja — Data Scientist & ML Engineer">
+  <meta property="og:description" content="Portfolio showcasing ML projects, data analysis, and AI applications. Final-year CS student from Chennai.">
+  <meta property="og:image" content="assets/karthickraja.jpg">
+  <meta property="og:url" content="/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Karthick Raja — Data Scientist & ML Engineer">
+  <meta name="twitter:description" content="Portfolio of Data Science & ML projects">
 
   <!-- Fonts: Inter (clean, readable) + JetBrains Mono (code labels) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -132,10 +145,10 @@
           I like learning new things and solving real problems with data.
         </p>
         <div class="about-links">
-          <a href="https://github.com/KarthickRaja46" class="about-link" target="_blank">
+          <a href="https://github.com/KarthickRaja46" class="about-link" target="_blank" rel="noopener noreferrer">
             <i class="ti ti-brand-github"></i> GitHub
           </a>
-          <a href="https://www.linkedin.com/in/karthick-raja-l-7a5b3a26b/" class="about-link" target="_blank">
+          <a href="https://www.linkedin.com/in/karthick-raja-l-7a5b3a26b/" class="about-link" target="_blank" rel="noopener noreferrer">
             <i class="ti ti-brand-linkedin"></i> LinkedIn
           </a>
           <a href="mailto:karthiikarthii46@gmail.com" class="about-link">
@@ -200,50 +213,18 @@
       <p class="sec-subtitle">Click on a project to see more details.</p>
     </div>
 
+    <div class="projects-filter fade-up" role="group" aria-label="Filter projects by category">
+      <button class="projects-filter-btn active" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="projects-filter-btn" type="button" data-filter="ai" aria-pressed="false">AI</button>
+      <button class="projects-filter-btn" type="button" data-filter="sql" aria-pressed="false">SQL</button>
+      <button class="projects-filter-btn" type="button" data-filter="excel" aria-pressed="false">Excel</button>
+    </div>
+
     <div class="projects-list">
 
-      <div class="project-item fade-up">
-        <div class="project-header" onclick="toggleProject(this)">
+      <div class="project-item fade-up" data-project-tag="ai">
+        <div class="project-header" role="button" tabindex="0" aria-expanded="false">
           <span class="project-num">01</span>
-          <div class="project-title-wrap">
-            <span class="project-title-main">Stock Market Analysis Dashboard</span>
-            <div class="project-tags">
-              <span class="project-tag">Excel</span>
-              <span class="project-tag">Financial Analysis</span>
-              <span class="project-tag">Data Visualization</span>
-            </div>
-          </div>
-          <div class="project-arrow"><i class="ti ti-chevron-down"></i></div>
-        </div>
-        <div class="project-body">
-          <div class="project-body-inner">
-            <div class="project-thumb">
-              <img src="assets/stock_market_thumbnail.png" alt="Stock Market Analysis" onerror="this.parentElement.style.background='var(--bg-elevated)'">
-            </div>
-            <div class="project-desc-area">
-              <p class="project-desc">
-                A comprehensive portfolio analysis dashboard built entirely in Microsoft Excel — designed to help investors
-                track performance, visualize trends, and make data-backed decisions without specialized software.
-              </p>
-              <div class="project-features-list">
-                <div class="project-feature">Portfolio tracking across multiple assets</div>
-                <div class="project-feature">Automated P&L calculations with Excel formulas</div>
-                <div class="project-feature">Dynamic charts and KPI dashboard</div>
-                <div class="project-feature">Investment trend analysis over time</div>
-              </div>
-              <div class="project-links-row">
-                <a href="https://github.com/KarthickRaja46/Portfolio-Visualizer-Excel-Dashboard" class="proj-btn proj-btn-primary" target="_blank">
-                  <i class="ti ti-brand-github"></i> Source Code
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-item fade-up">
-        <div class="project-header" onclick="toggleProject(this)">
-          <span class="project-num">02</span>
           <div class="project-title-wrap">
             <span class="project-title-main">Bird Species Recognition — AI Audio Classifier</span>
             <div class="project-tags">
@@ -258,7 +239,7 @@
         <div class="project-body">
           <div class="project-body-inner">
             <div class="project-thumb">
-              <img src="assets/bird_species_thumbnail.png" alt="Bird Species Recognition" onerror="this.parentElement.style.background='var(--bg-elevated)'">
+              <img src="assets/bird_species_thumbnail.svg" alt="Bird Species Recognition" loading="lazy" decoding="async" onerror="this.parentElement.style.background='var(--bg-elevated)'">
             </div>
             <div class="project-desc-area">
               <p class="project-desc">
@@ -273,10 +254,10 @@
                 <div class="project-feature">Real-time prediction with confidence scores</div>
               </div>
               <div class="project-links-row">
-                <a href="https://bird-species-identifier-ai-qi82svyxaieeiyo2jzr4wd.streamlit.app/" class="proj-btn proj-btn-primary" target="_blank">
+                <a href="https://bird-species-identifier-ai-qi82svyxaieeiyo2jzr4wd.streamlit.app/" class="proj-btn proj-btn-primary" target="_blank" rel="noopener noreferrer">
                   <i class="ti ti-external-link"></i> Live Demo
                 </a>
-                <a href="https://github.com/KarthickRaja46/Bird-species-audio-classifier" class="proj-btn proj-btn-ghost" target="_blank">
+                <a href="https://github.com/KarthickRaja46/Bird-species-audio-classifier" class="proj-btn proj-btn-ghost" target="_blank" rel="noopener noreferrer">
                   <i class="ti ti-brand-github"></i> Code
                 </a>
               </div>
@@ -285,9 +266,9 @@
         </div>
       </div>
 
-      <div class="project-item fade-up">
-        <div class="project-header" onclick="toggleProject(this)">
-          <span class="project-num">03</span>
+      <div class="project-item fade-up" data-project-tag="sql">
+        <div class="project-header" role="button" tabindex="0" aria-expanded="false">
+          <span class="project-num">02</span>
           <div class="project-title-wrap">
             <span class="project-title-main">Database Performance Insights</span>
             <div class="project-tags">
@@ -302,7 +283,7 @@
         <div class="project-body">
           <div class="project-body-inner">
             <div class="project-thumb">
-              <img src="assets/sql_project_thumbnail.svg" alt="Database Performance Insights" onerror="this.parentElement.style.background='var(--bg-elevated)'">
+              <img src="assets/sql_project_thumbnail.svg" alt="Database Performance Insights" loading="lazy" decoding="async" onerror="this.parentElement.style.background='var(--bg-elevated)'">
             </div>
             <div class="project-desc-area">
               <p class="project-desc">
@@ -317,16 +298,16 @@
                 <div class="project-feature">Manual CSV ingestion workflow for controlled loading</div>
               </div>
               <div class="project-links-row">
-                <a href="https://github.com/KarthickRaja46/database-performance-insights" class="proj-btn proj-btn-primary" target="_blank">
+                <a href="https://github.com/KarthickRaja46/database-performance-insights" class="proj-btn proj-btn-primary" target="_blank" rel="noopener noreferrer">
                   <i class="ti ti-brand-github"></i> Source Code
                 </a>
-                <a href="assets/sql-project/schema.sql" class="proj-btn proj-btn-ghost" target="_blank">
+                <a href="assets/sql-project/schema.sql" class="proj-btn proj-btn-ghost" target="_blank" rel="noopener noreferrer">
                   <i class="ti ti-file-code"></i> schema.sql
                 </a>
-                <a href="assets/sql-project/analytics.sql" class="proj-btn proj-btn-ghost" target="_blank">
+                <a href="assets/sql-project/analytics.sql" class="proj-btn proj-btn-ghost" target="_blank" rel="noopener noreferrer">
                   <i class="ti ti-file-code"></i> analytics.sql
                 </a>
-                <a href="assets/sql-project/alerts.sql" class="proj-btn proj-btn-ghost" target="_blank">
+                <a href="assets/sql-project/alerts.sql" class="proj-btn proj-btn-ghost" target="_blank" rel="noopener noreferrer">
                   <i class="ti ti-file-code"></i> alerts.sql
                 </a>
               </div>
@@ -335,7 +316,50 @@
         </div>
       </div>
 
+      <div class="project-item fade-up" data-project-tag="excel">
+        <div class="project-header" role="button" tabindex="0" aria-expanded="false">
+          <span class="project-num">03</span>
+          <div class="project-title-wrap">
+            <span class="project-title-main">Stock Market Analysis Dashboard</span>
+            <div class="project-tags">
+              <span class="project-tag">Excel</span>
+              <span class="project-tag">Financial Analysis</span>
+              <span class="project-tag">Data Visualization</span>
+            </div>
+          </div>
+          <div class="project-arrow"><i class="ti ti-chevron-down"></i></div>
+        </div>
+        <div class="project-body">
+          <div class="project-body-inner">
+            <div class="project-thumb">
+              <img src="assets/stock_market_thumbnail.svg" alt="Stock Market Analysis" loading="lazy" decoding="async" onerror="this.parentElement.style.background='var(--bg-elevated)'">
+            </div>
+            <div class="project-desc-area">
+              <p class="project-desc">
+                A comprehensive portfolio analysis dashboard built entirely in Microsoft Excel — designed to help investors
+                track performance, visualize trends, and make data-backed decisions without specialized software.
+              </p>
+              <div class="project-features-list">
+                <div class="project-feature">Portfolio tracking across multiple assets</div>
+                <div class="project-feature">Automated P&L calculations with Excel formulas</div>
+                <div class="project-feature">Dynamic charts and KPI dashboard</div>
+                <div class="project-feature">Investment trend analysis over time</div>
+              </div>
+              <div class="project-links-row">
+                <a href="https://github.com/KarthickRaja46/Portfolio-Visualizer-Excel-Dashboard" class="proj-btn proj-btn-primary" target="_blank" rel="noopener noreferrer">
+                  <i class="ti ti-brand-github"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
+
+    <p class="projects-empty" id="projectsEmpty" role="status" aria-live="polite">
+      No projects available for this filter.
+    </p>
   </div>
 </section>
 
@@ -398,14 +422,17 @@
               <span class="contact-val">karthiikarthii46@gmail.com</span>
             </div>
           </a>
-          <a href="https://github.com/KarthickRaja46" class="contact-row" target="_blank">
+          <button class="contact-copy-btn" id="copyEmailBtn" type="button" aria-label="Copy email address">
+            <i class="ti ti-copy"></i> Copy Email Address
+          </button>
+          <a href="https://github.com/KarthickRaja46" class="contact-row" target="_blank" rel="noopener noreferrer">
             <div class="contact-icon"><i class="ti ti-brand-github"></i></div>
             <div class="contact-info">
               <span class="contact-lbl">GitHub</span>
               <span class="contact-val">github.com/KarthickRaja46</span>
             </div>
           </a>
-          <a href="https://www.linkedin.com/in/karthick-raja-l-7a5b3a26b/" class="contact-row" target="_blank">
+          <a href="https://www.linkedin.com/in/karthick-raja-l-7a5b3a26b/" class="contact-row" target="_blank" rel="noopener noreferrer">
             <div class="contact-icon"><i class="ti ti-brand-linkedin"></i></div>
             <div class="contact-info">
               <span class="contact-lbl">LinkedIn</span>
@@ -447,11 +474,20 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container footer-inner">
-    <span class="footer-left">© 2026 Karthick Raja · Chennai, India</span>
+    <div class="footer-left">
+      <div class="footer-brand">© 2026 Karthick Raja</div>
+      <div class="footer-location">Chennai, India</div>
+    </div>
     <div class="footer-links">
-      <a href="https://github.com/KarthickRaja46" class="footer-link" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/karthick-raja-l-7a5b3a26b/" class="footer-link" target="_blank">LinkedIn</a>
-      <a href="mailto:karthiikarthii46@gmail.com" class="footer-link">Email</a>
+      <a href="https://github.com/KarthickRaja46" class="footer-link" target="_blank" rel="noopener noreferrer" title="GitHub Profile">
+        <i class="ti ti-brand-github"></i> GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/karthick-raja-l-7a5b3a26b/" class="footer-link" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile">
+        <i class="ti ti-brand-linkedin"></i> LinkedIn
+      </a>
+      <a href="mailto:karthiikarthii46@gmail.com" class="footer-link" title="Send Email">
+        <i class="ti ti-mail"></i> Email
+      </a>
     </div>
   </div>
 </footer>
@@ -459,6 +495,8 @@
 <button class="back-top" id="backTop" aria-label="Back to top">
   <i class="ti ti-arrow-up"></i>
 </button>
+
+<div class="copy-toast" id="copyToast" role="status" aria-live="polite">Email copied</div>
 
 <script src="script.js"></script>
 </body>

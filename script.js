@@ -6,6 +6,8 @@ const themeBtn = document.getElementById('themeBtn');
 const themeIcon = document.getElementById('themeIcon');
 
 function setTheme(theme) {
+  if (!html || !themeIcon) return;
+  
   html.setAttribute('data-theme', theme);
   themeIcon.className = theme === 'dark' ? 'ti ti-sun' : 'ti ti-moon';
   localStorage.setItem('theme', theme);
@@ -17,10 +19,12 @@ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 setTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
 
 // Toggle on button click
-themeBtn.addEventListener('click', () => {
-  const current = html.getAttribute('data-theme');
-  setTheme(current === 'dark' ? 'light' : 'dark');
-});
+if (themeBtn) {
+  themeBtn.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme');
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  });
+}
 
 // Auto-follow system preference changes (if no saved preference)
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
@@ -40,6 +44,8 @@ let isDeleting = false;
 const typedEl  = document.getElementById('typedText');
 
 function type() {
+  if (!typedEl) return;
+  
   const current = words[wordIndex];
 
   if (!isDeleting) {
@@ -72,6 +78,8 @@ const nav = document.getElementById('nav');
 let lastScrollY = 0;
 
 window.addEventListener('scroll', () => {
+  if (!nav) return;
+  
   const y = window.scrollY;
 
   // Frosted glass background after 20px
@@ -87,7 +95,10 @@ window.addEventListener('scroll', () => {
   lastScrollY = y;
 
   // Back-to-top button visibility
-  document.getElementById('backTop').classList.toggle('show', y > 500);
+  const backTopBtn = document.getElementById('backTop');
+  if (backTopBtn) {
+    backTopBtn.classList.toggle('show', y > 500);
+  }
 
   // Scroll spy — highlight active nav link
   const sections = document.querySelectorAll('section[id]');
@@ -106,9 +117,12 @@ window.addEventListener('scroll', () => {
 /* ============================================================
    BACK TO TOP
 ============================================================ */
-document.getElementById('backTop').addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+const backTop = document.getElementById('backTop');
+if (backTop) {
+  backTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 
 
 /* ============================================================
@@ -118,21 +132,30 @@ const mobileMenu  = document.getElementById('mobileMenu');
 const hamburger   = document.getElementById('hamburger');
 const mobileClose = document.getElementById('mobileClose');
 
-hamburger.addEventListener('click', () => {
-  mobileMenu.classList.add('open');
-  document.body.style.overflow = 'hidden';
-});
+function closeMobileMenu() {
+  if (mobileMenu) {
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
 
-mobileClose.addEventListener('click', closeMobileMenu);
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    if (mobileMenu) {
+      mobileMenu.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+}
 
-mobileMenu.querySelectorAll('a').forEach(a => {
+if (mobileClose) {
+  mobileClose.addEventListener('click', closeMobileMenu);
+}
+
+const mobileLinks = document.querySelectorAll('.mobile-menu a');
+mobileLinks.forEach(a => {
   a.addEventListener('click', closeMobileMenu);
 });
-
-function closeMobileMenu() {
-  mobileMenu.classList.remove('open');
-  document.body.style.overflow = '';
-}
 
 
 /* ============================================================
@@ -144,6 +167,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (target) {
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      closeMobileMenu();
     }
   });
 });
@@ -154,21 +178,187 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 ============================================================ */
 function toggleProject(header) {
   const item   = header.closest('.project-item');
+  if (!item) return;
+  
   const body   = item.querySelector('.project-body');
   const icon   = header.querySelector('.project-arrow i');
+  
+  if (!body || !icon) return;
+  
   const isOpen = body.classList.contains('open');
 
   // Close all open panels first
   document.querySelectorAll('.project-body.open').forEach(b => {
     b.classList.remove('open');
-    b.closest('.project-item').querySelector('.project-arrow i').style.transform = '';
+    const headerEl = b.closest('.project-item')?.querySelector('.project-header');
+    if (headerEl) {
+      headerEl.setAttribute('aria-expanded', 'false');
+    }
+    const arrowIcon = b.closest('.project-item')?.querySelector('.project-arrow i');
+    if (arrowIcon) {
+      arrowIcon.style.transform = '';
+    }
   });
 
   // Open clicked panel (if it was closed)
   if (!isOpen) {
     body.classList.add('open');
+    header.setAttribute('aria-expanded', 'true');
     icon.style.transform = 'rotate(180deg)';
+  } else {
+    header.setAttribute('aria-expanded', 'false');
   }
+}
+
+// Keyboard support for project accordion headers
+document.querySelectorAll('.project-header').forEach(header => {
+  header.addEventListener('click', () => {
+    toggleProject(header);
+  });
+
+  header.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleProject(header);
+    }
+  });
+});
+
+/* ============================================================
+   PROJECT FILTER BAR
+============================================================ */
+const projectFilterButtons = document.querySelectorAll('.projects-filter-btn');
+const projectItems = document.querySelectorAll('.project-item');
+const projectsEmpty = document.getElementById('projectsEmpty');
+
+function closeProjectItem(item) {
+  const body = item.querySelector('.project-body');
+  const header = item.querySelector('.project-header');
+  const arrowIcon = item.querySelector('.project-arrow i');
+
+  if (body) body.classList.remove('open');
+  if (header) header.setAttribute('aria-expanded', 'false');
+  if (arrowIcon) arrowIcon.style.transform = '';
+}
+
+function setActiveFilterButton(activeBtn) {
+  projectFilterButtons.forEach(btn => {
+    const isActive = btn === activeBtn;
+    btn.classList.toggle('active', isActive);
+    btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+  });
+}
+
+function applyProjectFilter(filterKey) {
+  let visibleCount = 0;
+
+  projectItems.forEach(item => {
+    const tag = (item.getAttribute('data-project-tag') || '').toLowerCase();
+    const visible = filterKey === 'all' || tag === filterKey;
+
+    if (visible) {
+      item.classList.remove('is-filter-hidden');
+      visibleCount += 1;
+    } else {
+      closeProjectItem(item);
+      item.classList.add('is-filter-hidden');
+    }
+  });
+
+  if (projectsEmpty) {
+    projectsEmpty.classList.toggle('show', visibleCount === 0);
+  }
+}
+
+function getFilterKeyFromUrl() {
+  const allowed = new Set(['all', 'ai', 'sql', 'excel']);
+
+  // Supports URLs like #projects?tag=ai
+  const hash = window.location.hash || '';
+  if (hash.startsWith('#projects?')) {
+    const hashQuery = hash.slice('#projects?'.length);
+    const params = new URLSearchParams(hashQuery);
+    const hashTag = (params.get('tag') || '').toLowerCase();
+    if (allowed.has(hashTag)) return hashTag;
+  }
+
+  // Also supports URLs like ?tag=ai#projects
+  const searchParams = new URLSearchParams(window.location.search);
+  const searchTag = (searchParams.get('tag') || '').toLowerCase();
+  if (allowed.has(searchTag)) return searchTag;
+
+  return 'all';
+}
+
+function updateProjectsUrl(filterKey) {
+  const nextHash = filterKey === 'all' ? '#projects' : `#projects?tag=${filterKey}`;
+  if (window.location.hash !== nextHash) {
+    history.replaceState(null, '', nextHash);
+  }
+}
+
+function applyFilterAndOpenFirstVisible(filterKey) {
+  applyProjectFilter(filterKey);
+
+  const firstVisibleHeader = document.querySelector('.project-item:not(.is-filter-hidden) .project-header');
+  if (firstVisibleHeader) {
+    toggleProject(firstVisibleHeader);
+  }
+}
+
+projectFilterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const filterKey = btn.getAttribute('data-filter') || 'all';
+    setActiveFilterButton(btn);
+    applyFilterAndOpenFirstVisible(filterKey);
+    updateProjectsUrl(filterKey);
+  });
+});
+
+// Apply initial filter from URL and auto-open first visible project
+const initialFilterKey = getFilterKeyFromUrl();
+const initialActiveButton = document.querySelector(`.projects-filter-btn[data-filter="${initialFilterKey}"]`) || document.querySelector('.projects-filter-btn[data-filter="all"]');
+if (initialActiveButton) {
+  setActiveFilterButton(initialActiveButton);
+}
+applyFilterAndOpenFirstVisible(initialFilterKey);
+
+// Ensure shared #projects?tag=* links still land on Projects section
+if ((window.location.hash || '').startsWith('#projects')) {
+  const projectsSection = document.getElementById('projects');
+  if (projectsSection) {
+    window.setTimeout(() => {
+      projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 0);
+  }
+}
+
+/* ============================================================
+   COPY EMAIL QUICK ACTION
+============================================================ */
+const copyEmailBtn = document.getElementById('copyEmailBtn');
+const copyToast = document.getElementById('copyToast');
+
+function showCopyToast(message) {
+  if (!copyToast) return;
+  copyToast.textContent = message;
+  copyToast.classList.add('show');
+  window.setTimeout(() => {
+    copyToast.classList.remove('show');
+  }, 1700);
+}
+
+if (copyEmailBtn) {
+  copyEmailBtn.addEventListener('click', async () => {
+    const email = 'karthiikarthii46@gmail.com';
+
+    try {
+      await navigator.clipboard.writeText(email);
+      showCopyToast('Email copied');
+    } catch (err) {
+      showCopyToast('Copy failed, use email link');
+    }
+  });
 }
 
 
