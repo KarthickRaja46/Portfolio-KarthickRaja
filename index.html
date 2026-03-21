@@ -270,7 +270,7 @@
         <div class="project-header" role="button" tabindex="0" aria-expanded="false">
           <span class="project-num">02</span>
           <div class="project-title-wrap">
-            <span class="project-title-main">Database Performance Insights</span>
+            <span class="project-title-main">Database Performance Insights (SQL)</span>
             <div class="project-tags">
               <span class="project-tag">MySQL</span>
               <span class="project-tag">SQL Analytics</span>
@@ -287,28 +287,28 @@
             </div>
             <div class="project-desc-area">
               <p class="project-desc">
-                A production-style SQL monitoring project for system logs with schema design,
-                alerting rules, and a curated analytics query catalog. Built to track database health,
-                identify issues early, and support data-driven operations.
+                A MySQL monitoring and analytics project focused on system log performance,
+                ETL data quality, alert automation, and operational health tracking.
+                It includes a clean SQL setup order and reusable analytics queries for reporting.
               </p>
               <div class="project-features-list">
-                <div class="project-feature">MySQL schema with logs, alerts, ETL runs, and indexes</div>
-                <div class="project-feature">36 analytics queries grouped by business priority</div>
-                <div class="project-feature">Alert threshold logic and trigger configuration</div>
-                <div class="project-feature">Manual CSV ingestion workflow for controlled loading</div>
+                <div class="project-feature">Core schema with logs, ETL metrics, rejected rows, and archive tables</div>
+                <div class="project-feature">14 basic + 6 advanced KPI queries (20 total) in modular SQL files</div>
+                <div class="project-feature">Split analytics flow: basic, advanced, KPI, and merged master script</div>
+                <div class="project-feature">Archive procedure for retaining and purging logs older than 90 days</div>
               </div>
               <div class="project-links-row">
                 <a href="https://github.com/KarthickRaja46/database-performance-insights" class="proj-btn proj-btn-primary" target="_blank" rel="noopener noreferrer">
                   <i class="ti ti-brand-github"></i> Source Code
                 </a>
-                <a href="assets/sql-project/schema.sql" class="proj-btn proj-btn-ghost" target="_blank" rel="noopener noreferrer">
-                  <i class="ti ti-file-code"></i> schema.sql
+                <a href="assets/sql-project/00_schema.sql" class="proj-btn proj-btn-ghost" target="_blank" rel="noopener noreferrer">
+                  <i class="ti ti-file-code"></i> 00_schema.sql
                 </a>
-                <a href="assets/sql-project/analytics.sql" class="proj-btn proj-btn-ghost" target="_blank" rel="noopener noreferrer">
-                  <i class="ti ti-file-code"></i> analytics.sql
+                <a href="assets/sql-project/01_basic_analytics.sql" class="proj-btn proj-btn-ghost" target="_blank" rel="noopener noreferrer">
+                  <i class="ti ti-file-code"></i> 01_basic_analytics.sql
                 </a>
-                <a href="assets/sql-project/alerts.sql" class="proj-btn proj-btn-ghost" target="_blank" rel="noopener noreferrer">
-                  <i class="ti ti-file-code"></i> alerts.sql
+                <a href="assets/sql-project/04_master_analytics.sql" class="proj-btn proj-btn-ghost" target="_blank" rel="noopener noreferrer">
+                  <i class="ti ti-file-code"></i> 04_master_analytics.sql
                 </a>
               </div>
             </div>
