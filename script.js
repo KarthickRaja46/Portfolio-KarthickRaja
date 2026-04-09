@@ -37,38 +37,10 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e =
 /* ============================================================
    TYPING ANIMATION
 ============================================================ */
-const words = ['Python Developer', 'Data Scientist', 'Data Analyst', 'ML Enthusiast'];
-let wordIndex  = 0;
-let charIndex  = 0;
-let isDeleting = false;
 const typedEl  = document.getElementById('typedText');
-
-function type() {
-  if (!typedEl) return;
-  
-  const current = words[wordIndex];
-
-  if (!isDeleting) {
-    typedEl.textContent = current.slice(0, charIndex++);
-    if (charIndex > current.length) {
-      isDeleting = true;
-      setTimeout(type, 1800);
-      return;
-    }
-    setTimeout(type, 80);
-  } else {
-    typedEl.textContent = current.slice(0, charIndex--);
-    if (charIndex < 0) {
-      isDeleting   = false;
-      wordIndex = (wordIndex + 1) % words.length;
-      setTimeout(type, 400);
-      return;
-    }
-    setTimeout(type, 45);
-  }
+if (typedEl) {
+  typedEl.textContent = 'Data Analyst';
 }
-
-type();
 
 
 /* ============================================================
