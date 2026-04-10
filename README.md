@@ -1,6 +1,6 @@
 # Karthick Raja Portfolio
 
-A responsive personal portfolio website built with HTML, CSS, and JavaScript to showcase projects, skills, and contact details.
+A responsive personal portfolio website built with HTML, CSS, and JavaScript to showcase projects, skills, resume, and contact details.
 
 ## Overview
 
@@ -31,7 +31,7 @@ This portfolio is designed around a clean, modern single-page layout with:
 |-- README.md
 `-- assets/
 	|-- karthickraja.jpg
-	|-- Karthick_Raja.pdf
+	|-- Karthick_Raja_DataAnalyst_Resume.pdf
 	|-- bird_species_thumbnail.svg
 	|-- sql_project_thumbnail.svg
 	|-- stock_market_thumbnail.svg
@@ -55,7 +55,10 @@ This portfolio is designed around a clean, modern single-page layout with:
 This is a static site, so you can run it in any of these ways:
 
 1. Open `index.html` directly in a browser.
-2. Or serve with VS Code Live Server for cleaner local routing and reload.
+2. Run a local server:
+	- VS Code Live Server, or
+	- `python -m http.server 5500`
+3. Open `http://localhost:5500`.
 
 ## Customization
 
@@ -63,6 +66,7 @@ This is a static site, so you can run it in any of these ways:
 - Adjust colors, spacing, and responsive behavior in `style.css`.
 - Modify interactions (theme toggle, filters, menu, animations) in `script.js`.
 - Replace resume and project thumbnails in the `assets/` folder.
+- Keep resume links in `index.html` pointing to `assets/Karthick_Raja_DataAnalyst_Resume.pdf`.
 
 ## Contact
 
