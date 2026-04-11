@@ -4,6 +4,11 @@
 const html = document.documentElement;
 const themeBtn = document.getElementById('themeBtn');
 const themeIcon = document.getElementById('themeIcon');
+const RESUME_ASSET_PATH = 'assets/Karthick_Raja_DataAnalyst_Resume.pdf';
+
+document.querySelectorAll('[data-resume-link]').forEach(link => {
+  link.setAttribute('href', RESUME_ASSET_PATH);
+});
 
 function setTheme(theme) {
   if (!html || !themeIcon) return;

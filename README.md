@@ -66,7 +66,7 @@ This is a static site, so you can run it in any of these ways:
 - Adjust colors, spacing, and responsive behavior in `style.css`.
 - Modify interactions (theme toggle, filters, menu, animations) in `script.js`.
 - Replace resume and project thumbnails in the `assets/` folder.
-- Keep resume links in `index.html` pointing to `assets/Karthick_Raja_DataAnalyst_Resume.pdf`.
+- Keep resume file at `assets/Karthick_Raja_DataAnalyst_Resume.pdf` and update `RESUME_ASSET_PATH` in `script.js` if the filename changes.
 
 ## Contact
 
