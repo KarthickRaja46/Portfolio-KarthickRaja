@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Karthick Raja — Data Analyst</title>
-  <meta name="description" content="Portfolio of Karthick Raja, a Computer Science Engineering student and Data Analyst based in Chennai, India. Focused on data analysis, dashboards, SQL, and Python development.">
+  <meta name="description" content="Portfolio of Karthick Raja, a Data Analyst & CS student from Chennai. Specialized in ETL pipelines, analytics dashboards, and machine learning. API monitoring, stock analysis, and AI projects.">
   <meta name="author" content="Karthick Raja">
   <meta name="theme-color" content="#0e1011">
   <meta name="color-scheme" content="light dark">
@@ -13,12 +13,12 @@
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Karthick Raja — Data Analyst">
-  <meta property="og:description" content="Portfolio showcasing data analysis projects, SQL analytics, and dashboard applications. Final-year CS student from Chennai.">
+  <meta property="og:description" content="Portfolio showcasing API performance analytics, stock market dashboards, and AI bird species recognition. ETL, Python, SQL, Power BI expertise.">
   <meta property="og:image" content="assets/karthickraja.jpg">
   <meta property="og:url" content="/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Karthick Raja — Data Analyst">
-  <meta name="twitter:description" content="Portfolio of data analysis, SQL, and dashboard projects">
+  <meta name="twitter:description" content="Data Analyst | ETL & Analytics | API Monitoring | Stock Dashboards | Machine Learning">
 
   <!-- Fonts: Inter (clean, readable) + JetBrains Mono (code labels) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,8 +52,11 @@
       <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
         <i class="ti ti-sun" id="themeIcon"></i>
       </button>
+      <a href="assets/Karthick_Raja_DataAnalyst_Resume.pdf" class="nav-cta" data-resume-link target="_blank" rel="noopener noreferrer">
+        <i class="ti ti-eye"></i> View
+      </a>
       <a href="assets/Karthick_Raja_DataAnalyst_Resume.pdf" class="nav-cta" data-resume-link download>
-        <i class="ti ti-download"></i> Resume
+        <i class="ti ti-download"></i> Download
       </a>
       <button class="hamburger" id="hamburger" aria-label="Open menu">
         <i class="ti ti-menu-2"></i>
@@ -107,8 +110,11 @@
           <i class="ti ti-arrow-right"></i> My Projects
         </a>
         <a href="#contact" class="btn-ghost">Contact Me</a>
+        <a href="assets/Karthick_Raja_DataAnalyst_Resume.pdf" class="btn-ghost" data-resume-link target="_blank" rel="noopener noreferrer">
+          <i class="ti ti-eye"></i> View Resume
+        </a>
         <a href="assets/Karthick_Raja_DataAnalyst_Resume.pdf" class="btn-ghost" data-resume-link download>
-          <i class="ti ti-download"></i> Resume
+          <i class="ti ti-download"></i> Download
         </a>
       </div>
 
@@ -141,8 +147,8 @@
           I enjoy turning raw data into clear results — whether it's a model, a chart, or an app.
         </p>
         <p class="about-body">
-          I've worked on projects like a bird sound classifier and a stock market dashboard.
-          I like learning new things and solving real problems with data.
+          I've built end-to-end projects like an API monitoring system, stock market dashboards, and AI audio classifiers.
+          I love learning new things and solving real problems with data and analytics.
         </p>
         <div class="about-links">
           <a href="https://github.com/KarthickRaja46" class="about-link" target="_blank" rel="noopener noreferrer">
@@ -215,23 +221,104 @@
 
     <div class="projects-filter fade-up" role="group" aria-label="Filter projects by category">
       <button class="projects-filter-btn active" type="button" data-filter="all" aria-pressed="true">All</button>
-      <button class="projects-filter-btn" type="button" data-filter="ai" aria-pressed="false">AI</button>
-      <button class="projects-filter-btn" type="button" data-filter="sql" aria-pressed="false">SQL</button>
+      <button class="projects-filter-btn" type="button" data-filter="api" aria-pressed="false">API</button>
       <button class="projects-filter-btn" type="button" data-filter="excel" aria-pressed="false">Excel</button>
+      <button class="projects-filter-btn" type="button" data-filter="ai" aria-pressed="false">AI</button>
     </div>
 
     <div class="projects-list">
 
-      <div class="project-item fade-up" data-project-tag="ai">
+      <div class="project-item fade-up" data-project-tag="api">
         <div class="project-header" role="button" tabindex="0" aria-expanded="false">
           <span class="project-num">01</span>
           <div class="project-title-wrap">
-            <span class="project-title-main">Bird Species Recognition — AI Audio Classifier</span>
+            <span class="project-title-main">API Performance Monitoring & Analytics System</span>
             <div class="project-tags">
-              <span class="project-tag">TensorFlow</span>
-              <span class="project-tag">CNN</span>
-              <span class="project-tag">Deep Learning</span>
+              <span class="project-tag">Python</span>
+              <span class="project-tag">SQL</span>
+              <span class="project-tag">ETL</span>
+              <span class="project-tag">Power BI</span>
+            </div>
+          </div>
+          <div class="project-arrow"><i class="ti ti-chevron-down"></i></div>
+        </div>
+        <div class="project-body">
+          <div class="project-body-inner">
+            <div class="project-thumb">
+              <img src="assets/api_project_thumbnail.svg" alt="API Performance Monitoring" loading="lazy" decoding="async" onerror="this.parentElement.style.background='var(--bg-elevated)'">
+            </div>
+            <div class="project-desc-area">
+              <p class="project-desc">
+                An end-to-end ETL pipeline for 100K+ API log records with automated validation and data quality checks.
+                Achieved 99.5% data consistency and designed dashboards to analyze SLA, latency, and failure rates
+                with real-time monitoring and incident detection capabilities.
+              </p>
+              <div class="project-features-list">
+                <div class="project-feature">End-to-end ETL pipeline for 100K+ API log records</div>
+                <div class="project-feature">99.5% data consistency with automated validation</div>
+                <div class="project-feature">SLA, latency, and failure rate dashboards</div>
+                <div class="project-feature">Real-time monitoring and 30% faster incident detection</div>
+              </div>
+              <div class="project-links-row">
+                <a href="https://github.com/KarthickRaja46/api-performance-analytics" class="proj-btn proj-btn-primary" target="_blank" rel="noopener noreferrer">
+                  <i class="ti ti-brand-github"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-item fade-up" data-project-tag="excel">
+        <div class="project-header" role="button" tabindex="0" aria-expanded="false">
+          <span class="project-num">02</span>
+          <div class="project-title-wrap">
+            <span class="project-title-main">Stock Portfolio Analysis Dashboard</span>
+            <div class="project-tags">
+              <span class="project-tag">Excel</span>
+              <span class="project-tag">Advanced Formulas</span>
+              <span class="project-tag">Financial Analysis</span>
+            </div>
+          </div>
+          <div class="project-arrow"><i class="ti ti-chevron-down"></i></div>
+        </div>
+        <div class="project-body">
+          <div class="project-body-inner">
+            <div class="project-thumb">
+              <img src="assets/stock_market_thumbnail.svg" alt="Stock Portfolio Analysis" loading="lazy" decoding="async" onerror="this.parentElement.style.background='var(--bg-elevated)'">
+            </div>
+            <div class="project-desc-area">
+              <p class="project-desc">
+                A comprehensive portfolio analysis dashboard built entirely in Microsoft Excel — designed to help investors
+                track performance, visualize trends, and make data-backed decisions. Processes 10,000+ rows with advanced
+                formulas and interactive visualizations.
+              </p>
+              <div class="project-features-list">
+                <div class="project-feature">Processed and analyzed 10,000+ rows using pivot tables</div>
+                <div class="project-feature">VLOOKUP and INDEX-MATCH for smart data consolidation</div>
+                <div class="project-feature">Interactive dashboard with charts and slicers</div>
+                <div class="project-feature">40% reduction in reporting time with trend analysis</div>
+              </div>
+              <div class="project-links-row">
+                <a href="https://github.com/KarthickRaja46/Portfolio-Visualizer-Excel-Dashboard" class="proj-btn proj-btn-primary" target="_blank" rel="noopener noreferrer">
+                  <i class="ti ti-brand-github"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-item fade-up" data-project-tag="ai">
+        <div class="project-header" role="button" tabindex="0" aria-expanded="false">
+          <span class="project-num">03</span>
+          <div class="project-title-wrap">
+            <span class="project-title-main">AI Bird Species Recognition System</span>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Scikit-learn</span>
               <span class="project-tag">Streamlit</span>
+              <span class="project-tag">Deep Learning</span>
             </div>
           </div>
           <div class="project-arrow"><i class="ti ti-chevron-down"></i></div>
@@ -243,15 +330,15 @@
             </div>
             <div class="project-desc-area">
               <p class="project-desc">
-                An end-to-end AI system that identifies bird species from audio recordings.
-                Audio is converted into spectrograms and classified using a Convolutional Neural Network,
-                deployed as an interactive Streamlit app.
+                A machine learning model using MFCC-based audio feature extraction to identify and classify bird species
+                from audio recordings. Trained on multiple bird species and deployed as an interactive Streamlit web application
+                for real-time predictions.
               </p>
               <div class="project-features-list">
-                <div class="project-feature">Audio → spectrogram pipeline for visual representation</div>
-                <div class="project-feature">CNN model trained on bird audio datasets</div>
-                <div class="project-feature">Live Streamlit web application for demos</div>
-                <div class="project-feature">Real-time prediction with confidence scores</div>
+                <div class="project-feature">MFCC-based audio feature extraction pipeline</div>
+                <div class="project-feature">Machine learning model trained on multiple bird species</div>
+                <div class="project-feature">Live Streamlit application for real-time prediction</div>
+                <div class="project-feature">Improved classification accuracy across species</div>
               </div>
               <div class="project-links-row">
                 <a href="https://bird-species-identifier-ai-qi82svyxaieeiyo2jzr4wd.streamlit.app/" class="proj-btn proj-btn-primary" target="_blank" rel="noopener noreferrer">
@@ -259,104 +346,6 @@
                 </a>
                 <a href="https://github.com/KarthickRaja46/Bird-species-audio-classifier" class="proj-btn proj-btn-ghost" target="_blank" rel="noopener noreferrer">
                   <i class="ti ti-brand-github"></i> Code
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-item fade-up" data-project-tag="sql">
-        <div class="project-header" role="button" tabindex="0" aria-expanded="false">
-          <span class="project-num">02</span>
-          <div class="project-title-wrap">
-            <span class="project-title-main">Database Performance Insights (SQL)</span>
-            <div class="project-tags">
-              <span class="project-tag">MySQL</span>
-              <span class="project-tag">SQL Analytics</span>
-              <span class="project-tag">Monitoring</span>
-              <span class="project-tag">ETL</span>
-            </div>
-          </div>
-          <div class="project-arrow"><i class="ti ti-chevron-down"></i></div>
-        </div>
-        <div class="project-body">
-          <div class="project-body-inner">
-            <div class="project-thumb">
-              <img src="assets/sql_project_thumbnail.svg" alt="Database Performance Insights" loading="lazy" decoding="async" onerror="this.parentElement.style.background='var(--bg-elevated)'">
-            </div>
-            <div class="project-desc-area">
-              <p class="project-desc">
-                A MySQL monitoring and analytics project focused on system log performance,
-                ETL data quality, alert automation, and operational health tracking.
-                It includes a clean SQL setup order and reusable analytics queries for reporting.
-              </p>
-              <div class="project-features-list">
-                <div class="project-feature">Core schema with logs, ETL metrics, rejected rows, and archive tables</div>
-                <div class="project-feature">16 basic + 8 advanced + 4 KPI queries (28 total) in modular SQL files</div>
-                <div class="project-feature">Split analytics flow: basic, advanced, KPI, and merged master script</div>
-                <div class="project-feature">Reset script + archive procedure for clean reloads and 90-day log retention</div>
-              </div>
-              <div class="project-links-row">
-                <a href="https://github.com/KarthickRaja46/database-performance-insights" class="proj-btn proj-btn-primary" target="_blank" rel="noopener noreferrer">
-                  <i class="ti ti-brand-github"></i> Source Code
-                </a>
-                <a href="assets/sql-project/00_schema.sql" class="proj-btn proj-btn-ghost" target="_blank" rel="noopener noreferrer">
-                  <i class="ti ti-file-code"></i> 00_schema.sql
-                </a>
-                <a href="assets/sql-project/01_basic_analytics.sql" class="proj-btn proj-btn-ghost" target="_blank" rel="noopener noreferrer">
-                  <i class="ti ti-file-code"></i> 01_basic_analytics.sql
-                </a>
-                <a href="assets/sql-project/02_advanced_analytics.sql" class="proj-btn proj-btn-ghost" target="_blank" rel="noopener noreferrer">
-                  <i class="ti ti-file-code"></i> 02_advanced_analytics.sql
-                </a>
-                <a href="assets/sql-project/03_kpi_analytics.sql" class="proj-btn proj-btn-ghost" target="_blank" rel="noopener noreferrer">
-                  <i class="ti ti-file-code"></i> 03_kpi_analytics.sql
-                </a>
-                <a href="assets/sql-project/04_master_analytics.sql" class="proj-btn proj-btn-ghost" target="_blank" rel="noopener noreferrer">
-                  <i class="ti ti-file-code"></i> 04_master_analytics.sql
-                </a>
-                <a href="assets/sql-project/00_reset_data.sql" class="proj-btn proj-btn-ghost" target="_blank" rel="noopener noreferrer">
-                  <i class="ti ti-file-code"></i> 00_reset_data.sql
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-item fade-up" data-project-tag="excel">
-        <div class="project-header" role="button" tabindex="0" aria-expanded="false">
-          <span class="project-num">03</span>
-          <div class="project-title-wrap">
-            <span class="project-title-main">Stock Market Analysis Dashboard</span>
-            <div class="project-tags">
-              <span class="project-tag">Excel</span>
-              <span class="project-tag">Financial Analysis</span>
-              <span class="project-tag">Data Visualization</span>
-            </div>
-          </div>
-          <div class="project-arrow"><i class="ti ti-chevron-down"></i></div>
-        </div>
-        <div class="project-body">
-          <div class="project-body-inner">
-            <div class="project-thumb">
-              <img src="assets/stock_market_thumbnail.svg" alt="Stock Market Analysis" loading="lazy" decoding="async" onerror="this.parentElement.style.background='var(--bg-elevated)'">
-            </div>
-            <div class="project-desc-area">
-              <p class="project-desc">
-                A comprehensive portfolio analysis dashboard built entirely in Microsoft Excel — designed to help investors
-                track performance, visualize trends, and make data-backed decisions without specialized software.
-              </p>
-              <div class="project-features-list">
-                <div class="project-feature">Portfolio tracking across multiple assets</div>
-                <div class="project-feature">Automated P&L calculations with Excel formulas</div>
-                <div class="project-feature">Dynamic charts and KPI dashboard</div>
-                <div class="project-feature">Investment trend analysis over time</div>
-              </div>
-              <div class="project-links-row">
-                <a href="https://github.com/KarthickRaja46/Portfolio-Visualizer-Excel-Dashboard" class="proj-btn proj-btn-primary" target="_blank" rel="noopener noreferrer">
-                  <i class="ti ti-brand-github"></i> Source Code
                 </a>
               </div>
             </div>
@@ -470,8 +459,11 @@
         </a>
         <div class="resume-row">
           <div class="t-label" style="margin-bottom:14px">Also download my resume</div>
+          <a href="assets/Karthick_Raja_DataAnalyst_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-ghost" data-resume-link>
+            <i class="ti ti-eye"></i> View Resume
+          </a>
           <a href="assets/Karthick_Raja_DataAnalyst_Resume.pdf" download class="btn-ghost" data-resume-link>
-            <i class="ti ti-download"></i> Resume PDF
+            <i class="ti ti-download"></i> Download PDF
           </a>
         </div>
       </div>
