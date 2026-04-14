@@ -13,15 +13,20 @@ document.querySelectorAll('[data-resume-link]').forEach(link => {
 function setTheme(theme) {
   if (!html || !themeIcon) return;
   
-  html.setAttribute('data-theme', theme);
-  themeIcon.className = theme === 'dark' ? 'ti ti-sun' : 'ti ti-moon';
+  if (theme === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    themeIcon.className = 'ti ti-sun';
+  } else {
+    // Light is the default in :root
+    html.setAttribute('data-theme', 'light');
+    themeIcon.className = 'ti ti-moon';
+  }
   localStorage.setItem('theme', theme);
 }
 
-// Initialize theme: saved preference → system preference → default dark
+// Initialize theme: saved preference -> default light
 const savedTheme = localStorage.getItem('theme');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-setTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+setTheme(savedTheme || 'light');
 
 // Toggle on button click
 if (themeBtn) {
@@ -31,12 +36,7 @@ if (themeBtn) {
   });
 }
 
-// Auto-follow system preference changes (if no saved preference)
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-  if (!localStorage.getItem('theme')) {
-    setTheme(e.matches ? 'dark' : 'light');
-  }
-});
+
 
 
 /* ============================================================
