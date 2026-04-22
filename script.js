@@ -42,10 +42,36 @@ if (themeBtn) {
 /* ============================================================
    TYPING ANIMATION
 ============================================================ */
-const typedEl  = document.getElementById('typedText');
-if (typedEl) {
-  typedEl.textContent = 'Data Analyst';
+const typedEl = document.getElementById('typedText');
+const roles = ['Data Analyst', 'ETL Developer', 'Computer Science Student', 'ML Enthusiast'];
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typeSpeed = 100;
+
+function type() {
+  if (!typedEl) return;
+  const currentRole = roles[roleIndex];
+  if (isDeleting) {
+    typedEl.textContent = currentRole.substring(0, charIndex - 1);
+    charIndex--;
+    typeSpeed = 50;
+  } else {
+    typedEl.textContent = currentRole.substring(0, charIndex + 1);
+    charIndex++;
+    typeSpeed = 100;
+  }
+  if (!isDeleting && charIndex === currentRole.length) {
+    isDeleting = true;
+    typeSpeed = 2000;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    roleIndex = (roleIndex + 1) % roles.length;
+    typeSpeed = 500;
+  }
+  setTimeout(type, typeSpeed);
 }
+document.addEventListener('DOMContentLoaded', type);
 
 
 /* ============================================================
@@ -375,4 +401,49 @@ if (orb1 && orb2) {
       orb2.style.transform = `translateY(${y * -0.09}px)`;
     }
   }, { passive: true });
+}
+
+
+/* ============================================================
+   CUSTOM CURSOR LOGIC
+ ============================================================ */
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorOutline = document.querySelector('.cursor-outline');
+
+if (cursorDot && cursorOutline) {
+  window.addEventListener('mousemove', (e) => {
+    const posX = e.clientX;
+    const posY = e.clientY;
+
+    // Dot follows mouse exactly
+    cursorDot.style.transform = `translate(${posX}px, ${posY}px)`;
+    
+    // Outline follows with slight lag
+    cursorOutline.animate({
+      transform: `translate(${posX}px, ${posY}px)`
+    }, { duration: 500, fill: "forwards" });
+    
+    // Check if hovering over interactive elements
+    const target = e.target;
+    const isInteractive = target.closest('a, button, .project-header, .skill-card');
+    
+    if (isInteractive) {
+      cursorOutline.style.transform = `translate(${posX}px, ${posY}px) scale(1.5)`;
+      cursorOutline.style.background = 'var(--accent-glow)';
+      cursorOutline.style.borderColor = 'var(--accent)';
+      cursorDot.style.opacity = '0';
+    } else {
+      cursorOutline.style.background = 'transparent';
+      cursorOutline.style.borderColor = 'var(--accent)';
+      cursorDot.style.opacity = '1';
+    }
+  });
+
+  window.addEventListener('mousedown', () => {
+    cursorOutline.style.transform += ' scale(0.8)';
+  });
+
+  window.addEventListener('mouseup', () => {
+    cursorOutline.style.transform = cursorOutline.style.transform.replace(' scale(0.8)', '');
+  });
 }
