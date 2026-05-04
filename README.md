@@ -30,6 +30,10 @@ This portfolio is designed around a clean, modern single-page layout with:
 |-- index.html
 |-- style.css
 |-- script.js
+|-- .github/
+|   `-- workflows/
+|       `-- static-site-checks.yml
+|-- .gitignore
 |-- scripts/
 	`-- validate-site.mjs
 |-- README.md
@@ -94,6 +98,7 @@ This is a static site, so you can run it in any of these ways:
 - May 2026: Added SEO metadata improvements (canonical, absolute OG/Twitter image, JSON-LD).
 - May 2026: Improved accessibility semantics for accordion and mobile navigation.
 - May 2026: Added skip link, reduced-motion handling, aria-current updates, and static validation.
+- May 2026: Added HTML/CSS/JS validation workflow and lighter API thumbnail asset.
 - May 2026: Updated README and SQL documentation.
 
 ## Contact
