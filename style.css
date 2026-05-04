@@ -119,26 +119,6 @@ button {
   cursor: pointer;
 }
 
-.skip-link {
-  position: fixed;
-  top: 12px;
-  left: 12px;
-  z-index: 10001;
-  padding: 12px 16px;
-  border-radius: 999px;
-  background: var(--bg-card);
-  color: var(--text-primary);
-  border: 1px solid var(--border);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-  transform: translateY(-160%);
-  transition: transform var(--transition), background var(--transition), color var(--transition);
-}
-
-.skip-link:focus,
-.skip-link:focus-visible {
-  transform: translateY(0);
-}
-
 /* Custom Cursor */
 .cursor-dot {
   width: 8px;

@@ -204,22 +204,7 @@ document.addEventListener('keydown', e => {
 /* ============================================================
    SMOOTH SCROLL FOR ALL ANCHOR LINKS
 ============================================================ */
-const skipLink = document.querySelector('.skip-link');
-if (skipLink) {
-  skipLink.addEventListener('click', e => {
-    e.preventDefault();
-
-    const target = document.getElementById('mainContent');
-    if (target) {
-      target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
-      target.focus({ preventScroll: true });
-    }
-
-    closeMobileMenu();
-  });
-}
-
-document.querySelectorAll('a[href^="#"]:not(.skip-link)').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
