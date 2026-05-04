@@ -5,6 +5,7 @@ const html = document.documentElement;
 const themeBtn = document.getElementById('themeBtn');
 const themeIcon = document.getElementById('themeIcon');
 const RESUME_ASSET_PATH = 'assets/Karthick_Raja_DataAnalyst_Resume.pdf';
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 document.querySelectorAll('[data-resume-link]').forEach(link => {
   link.setAttribute('href', RESUME_ASSET_PATH);
@@ -51,6 +52,10 @@ let typeSpeed = 100;
 
 function type() {
   if (!typedEl) return;
+  if (prefersReducedMotion) {
+    typedEl.textContent = roles[0];
+    return;
+  }
   const currentRole = roles[roleIndex];
   if (isDeleting) {
     typedEl.textContent = currentRole.substring(0, charIndex - 1);
@@ -78,7 +83,37 @@ document.addEventListener('DOMContentLoaded', type);
    NAV — SCROLL HIDE/SHOW + SCROLLED STATE
 ============================================================ */
 const nav = document.getElementById('nav');
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a, .mobile-menu a');
 let lastScrollY = 0;
+
+function syncActiveNavLinks(sectionId) {
+  navLinks.forEach(link => {
+    const isActive = link.getAttribute('href') === `#${sectionId}`;
+    link.classList.toggle('active', isActive);
+
+    if (isActive) {
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.removeAttribute('aria-current');
+    }
+  });
+}
+
+function updateActiveSectionFromScroll(scrollY) {
+  let activeSectionId = sections[0]?.id || 'home';
+
+  sections.forEach(sec => {
+    const top = sec.offsetTop - 130;
+    const bottom = top + sec.offsetHeight;
+
+    if (scrollY >= top && scrollY < bottom) {
+      activeSectionId = sec.id;
+    }
+  });
+
+  syncActiveNavLinks(activeSectionId);
+}
 
 window.addEventListener('scroll', () => {
   if (!nav) return;
@@ -104,17 +139,10 @@ window.addEventListener('scroll', () => {
   }
 
   // Scroll spy — highlight active nav link
-  const sections = document.querySelectorAll('section[id]');
-  sections.forEach(sec => {
-    const top    = sec.offsetTop - 130;
-    const bottom = top + sec.offsetHeight;
-    if (y >= top && y < bottom) {
-      document.querySelectorAll('.nav-links a').forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href') === `#${sec.id}`);
-      });
-    }
-  });
+  updateActiveSectionFromScroll(y);
 }, { passive: true });
+
+updateActiveSectionFromScroll(window.scrollY);
 
 
 /* ============================================================
@@ -123,7 +151,7 @@ window.addEventListener('scroll', () => {
 const backTop = document.getElementById('backTop');
 if (backTop) {
   backTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
   });
 }
 
@@ -135,19 +163,25 @@ const mobileMenu  = document.getElementById('mobileMenu');
 const hamburger   = document.getElementById('hamburger');
 const mobileClose = document.getElementById('mobileClose');
 
+function openMobileMenu() {
+  if (!mobileMenu || !hamburger) return;
+  mobileMenu.classList.add('open');
+  mobileMenu.setAttribute('aria-hidden', 'false');
+  hamburger.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+
 function closeMobileMenu() {
-  if (mobileMenu) {
-    mobileMenu.classList.remove('open');
-    document.body.style.overflow = '';
-  }
+  if (!mobileMenu || !hamburger) return;
+  mobileMenu.classList.remove('open');
+  mobileMenu.setAttribute('aria-hidden', 'true');
+  hamburger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
 }
 
 if (hamburger) {
   hamburger.addEventListener('click', () => {
-    if (mobileMenu) {
-      mobileMenu.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
+    openMobileMenu();
   });
 }
 
@@ -160,16 +194,37 @@ mobileLinks.forEach(a => {
   a.addEventListener('click', closeMobileMenu);
 });
 
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && mobileMenu?.classList.contains('open')) {
+    closeMobileMenu();
+  }
+});
+
 
 /* ============================================================
    SMOOTH SCROLL FOR ALL ANCHOR LINKS
 ============================================================ */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+const skipLink = document.querySelector('.skip-link');
+if (skipLink) {
+  skipLink.addEventListener('click', e => {
+    e.preventDefault();
+
+    const target = document.getElementById('mainContent');
+    if (target) {
+      target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
+      target.focus({ preventScroll: true });
+    }
+
+    closeMobileMenu();
+  });
+}
+
+document.querySelectorAll('a[href^="#"]:not(.skip-link)').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
       e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
       closeMobileMenu();
     }
   });
@@ -217,13 +272,6 @@ function toggleProject(header) {
 document.querySelectorAll('.project-header').forEach(header => {
   header.addEventListener('click', () => {
     toggleProject(header);
-  });
-
-  header.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      toggleProject(header);
-    }
   });
 });
 
@@ -274,7 +322,7 @@ function applyProjectFilter(filterKey) {
 }
 
 function getFilterKeyFromUrl() {
-  const allowed = new Set(['all', 'ai', 'sql', 'excel']);
+  const allowed = new Set(['all', 'ai', 'api', 'excel', 'sql']);
 
   // Supports URLs like #projects?tag=ai
   const hash = window.location.hash || '';
@@ -282,13 +330,13 @@ function getFilterKeyFromUrl() {
     const hashQuery = hash.slice('#projects?'.length);
     const params = new URLSearchParams(hashQuery);
     const hashTag = (params.get('tag') || '').toLowerCase();
-    if (allowed.has(hashTag)) return hashTag;
+    if (allowed.has(hashTag)) return hashTag === 'sql' ? 'api' : hashTag;
   }
 
   // Also supports URLs like ?tag=ai#projects
   const searchParams = new URLSearchParams(window.location.search);
   const searchTag = (searchParams.get('tag') || '').toLowerCase();
-  if (allowed.has(searchTag)) return searchTag;
+  if (allowed.has(searchTag)) return searchTag === 'sql' ? 'api' : searchTag;
 
   return 'all';
 }
@@ -331,7 +379,7 @@ if ((window.location.hash || '').startsWith('#projects')) {
   const projectsSection = document.getElementById('projects');
   if (projectsSection) {
     window.setTimeout(() => {
-      projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      projectsSection.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
     }, 0);
   }
 }
@@ -368,23 +416,27 @@ if (copyEmailBtn) {
 /* ============================================================
    FADE-UP SCROLL ANIMATIONS (IntersectionObserver)
 ============================================================ */
-const fadeObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      fadeObserver.unobserve(entry.target);
-    }
+if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+  document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+} else {
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -40px 0px'
   });
-}, {
-  threshold: 0.08,
-  rootMargin: '0px 0px -40px 0px'
-});
 
-document.querySelectorAll('.fade-up').forEach((el, i) => {
-  // Stagger children in the same parent
-  el.style.transitionDelay = `${(i % 5) * 0.07}s`;
-  fadeObserver.observe(el);
-});
+  document.querySelectorAll('.fade-up').forEach((el, i) => {
+    // Stagger children in the same parent
+    el.style.transitionDelay = `${(i % 5) * 0.07}s`;
+    fadeObserver.observe(el);
+  });
+}
 
 
 /* ============================================================
@@ -393,7 +445,7 @@ document.querySelectorAll('.fade-up').forEach((el, i) => {
 const orb1 = document.querySelector('.hero-orb-1');
 const orb2 = document.querySelector('.hero-orb-2');
 
-if (orb1 && orb2) {
+if (orb1 && orb2 && !prefersReducedMotion) {
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
     if (y < window.innerHeight) {
@@ -410,7 +462,7 @@ if (orb1 && orb2) {
 const cursorDot = document.querySelector('.cursor-dot');
 const cursorOutline = document.querySelector('.cursor-outline');
 
-if (cursorDot && cursorOutline) {
+if (cursorDot && cursorOutline && !prefersReducedMotion) {
   window.addEventListener('mousemove', (e) => {
     const posX = e.clientX;
     const posY = e.clientY;
@@ -447,3 +499,23 @@ if (cursorDot && cursorOutline) {
     cursorOutline.style.transform = cursorOutline.style.transform.replace(' scale(0.8)', '');
   });
 }
+
+if (prefersReducedMotion) {
+  cursorDot?.remove();
+  cursorOutline?.remove();
+}
+
+document.querySelectorAll('img[data-hide-on-error]').forEach(img => {
+  img.addEventListener('error', () => {
+    img.style.display = 'none';
+  });
+});
+
+document.querySelectorAll('img[data-fallback-parent-bg]').forEach(img => {
+  img.addEventListener('error', () => {
+    const parent = img.parentElement;
+    if (parent) {
+      parent.style.background = 'var(--bg-elevated)';
+    }
+  });
+});

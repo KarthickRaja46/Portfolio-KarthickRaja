@@ -365,24 +365,24 @@ FROM etl_metrics;
 SELECT
     1 AS category_order,
     'BASIC ANALYTICS' AS query_category,
-    'sql/01_basic_analytics.sql' AS representative_file,
+    'assets/sql-project/01_basic_analytics.sql' AS representative_file,
     16 AS query_count
 UNION ALL
 SELECT
     2 AS category_order,
     'ADVANCED ANALYTICS' AS query_category,
-    'sql/03_advanced_analytics.sql' AS representative_file,
+    'assets/sql-project/02_advanced_analytics.sql' AS representative_file,
     8 AS query_count
 UNION ALL
 SELECT
     3 AS category_order,
     'KPI & HEALTH METRICS' AS query_category,
-    'sql/02_kpi_analytics.sql' AS representative_file,
+    'assets/sql-project/03_kpi_analytics.sql' AS representative_file,
     4 AS query_count
 UNION ALL
 SELECT
     4 AS category_order,
     'MASTER ANALYTICS' AS query_category,
-    'sql/04_master_analytics.sql' AS representative_file,
+    'assets/sql-project/04_master_analytics.sql' AS representative_file,
     28 AS query_count
 ORDER BY category_order;

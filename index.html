@@ -9,16 +9,39 @@
   <meta name="author" content="Karthick Raja">
   <meta name="theme-color" content="#faf9f7">
   <meta name="color-scheme" content="light dark">
+  <link rel="canonical" href="https://karthickraja.page/">
   
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Karthick Raja — Data Analyst">
   <meta property="og:description" content="Portfolio showcasing API performance analytics, stock market dashboards, and AI bird species recognition. ETL, Python, SQL, Power BI expertise.">
-  <meta property="og:image" content="assets/karthickraja.jpg">
-  <meta property="og:url" content="/">
+  <meta property="og:image" content="https://karthickraja.page/assets/karthickraja.jpg">
+  <meta property="og:url" content="https://karthickraja.page/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Karthick Raja — Data Analyst">
   <meta name="twitter:description" content="Data Analyst | ETL & Analytics | API Monitoring | Stock Dashboards | Machine Learning">
+  <meta name="twitter:image" content="https://karthickraja.page/assets/karthickraja.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Karthick Raja",
+    "url": "https://karthickraja.page/",
+    "image": "https://karthickraja.page/assets/karthickraja.jpg",
+    "jobTitle": "Data Analyst",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Chennai",
+      "addressRegion": "Tamil Nadu",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://github.com/KarthickRaja46",
+      "https://www.linkedin.com/in/karthick-raja-l-7a5b3a26b/"
+    ]
+  }
+  </script>
 
   <!-- Fonts: Inter (clean, readable) + JetBrains Mono (code labels) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,7 +84,7 @@
       <a href="assets/Karthick_Raja_DataAnalyst_Resume.pdf" class="nav-cta" data-resume-link download>
         <i class="ti ti-download"></i> Download
       </a>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
         <i class="ti ti-menu-2"></i>
       </button>
     </div>
@@ -69,7 +92,7 @@
 </nav>
 
 <!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true" aria-label="Mobile navigation">
   <button class="mobile-close" id="mobileClose" aria-label="Close menu"><i class="ti ti-x"></i></button>
   <a href="#home">Home</a>
   <a href="#about">About</a>
@@ -78,6 +101,8 @@
   <a href="#education">Education</a>
   <a href="#contact">Contact</a>
 </div>
+
+<main id="mainContent" tabindex="-1">
 
 
 <!-- HERO -->
@@ -90,7 +115,7 @@
 
     <!-- Profile Photo -->
     <div class="hero-photo-wrap fade-up">
-      <img src="assets/karthickraja.jpg" alt="Karthick Raja" class="hero-photo" onerror="this.style.display='none'">
+      <img src="assets/karthickraja.jpg" alt="Karthick Raja" class="hero-photo" data-hide-on-error fetchpriority="high">
     </div>
 
     <!-- Text -->
@@ -232,7 +257,7 @@
     <div class="projects-list">
 
       <div class="project-item fade-up" data-project-tag="api">
-        <div class="project-header" role="button" tabindex="0" aria-expanded="false">
+        <button class="project-header" type="button" aria-expanded="false" aria-controls="project-body-1">
           <span class="project-num">01</span>
           <div class="project-title-wrap">
             <span class="project-title-main">API Performance Monitoring & Analytics System</span>
@@ -244,11 +269,11 @@
             </div>
           </div>
           <div class="project-arrow"><i class="ti ti-chevron-down"></i></div>
-        </div>
-        <div class="project-body">
+        </button>
+        <div class="project-body" id="project-body-1">
           <div class="project-body-inner">
             <div class="project-thumb">
-              <img src="assets/api_dashboard_traffic.png" alt="API Performance Monitoring" loading="lazy" decoding="async" onerror="this.parentElement.style.background='var(--bg-elevated)'">
+              <img src="assets/api_project_thumbnail.svg" alt="API Performance Monitoring" loading="lazy" decoding="async" data-fallback-parent-bg>
             </div>
             <div class="project-desc-area">
               <p class="project-desc">
@@ -273,7 +298,7 @@
       </div>
 
       <div class="project-item fade-up" data-project-tag="excel">
-        <div class="project-header" role="button" tabindex="0" aria-expanded="false">
+        <button class="project-header" type="button" aria-expanded="false" aria-controls="project-body-2">
           <span class="project-num">02</span>
           <div class="project-title-wrap">
             <span class="project-title-main">Stock Portfolio Analysis Dashboard</span>
@@ -284,11 +309,11 @@
             </div>
           </div>
           <div class="project-arrow"><i class="ti ti-chevron-down"></i></div>
-        </div>
-        <div class="project-body">
+        </button>
+        <div class="project-body" id="project-body-2">
           <div class="project-body-inner">
             <div class="project-thumb">
-              <img src="assets/stock_market_thumbnail.svg" alt="Stock Portfolio Analysis" loading="lazy" decoding="async" onerror="this.parentElement.style.background='var(--bg-elevated)'">
+              <img src="assets/stock_market_thumbnail.svg" alt="Stock Portfolio Analysis" loading="lazy" decoding="async" data-fallback-parent-bg>
             </div>
             <div class="project-desc-area">
               <p class="project-desc">
@@ -313,7 +338,7 @@
       </div>
 
       <div class="project-item fade-up" data-project-tag="ai">
-        <div class="project-header" role="button" tabindex="0" aria-expanded="false">
+        <button class="project-header" type="button" aria-expanded="false" aria-controls="project-body-3">
           <span class="project-num">03</span>
           <div class="project-title-wrap">
             <span class="project-title-main">AI Bird Species Recognition System</span>
@@ -325,11 +350,11 @@
             </div>
           </div>
           <div class="project-arrow"><i class="ti ti-chevron-down"></i></div>
-        </div>
-        <div class="project-body">
+        </button>
+        <div class="project-body" id="project-body-3">
           <div class="project-body-inner">
             <div class="project-thumb">
-              <img src="assets/bird_species_thumbnail.svg" alt="Bird Species Recognition" loading="lazy" decoding="async" onerror="this.parentElement.style.background='var(--bg-elevated)'">
+              <img src="assets/bird_species_thumbnail.svg" alt="Bird Species Recognition" loading="lazy" decoding="async" data-fallback-parent-bg>
             </div>
             <div class="project-desc-area">
               <p class="project-desc">
@@ -357,7 +382,7 @@
       </div>
 
       <div class="project-item fade-up" data-project-tag="ai">
-        <div class="project-header" role="button" tabindex="0" aria-expanded="false">
+        <button class="project-header" type="button" aria-expanded="false" aria-controls="project-body-4">
           <span class="project-num">04</span>
           <div class="project-title-wrap">
             <span class="project-title-main">ATS Resume Analyzer</span>
@@ -369,11 +394,11 @@
             </div>
           </div>
           <div class="project-arrow"><i class="ti ti-chevron-down"></i></div>
-        </div>
-        <div class="project-body">
+        </button>
+        <div class="project-body" id="project-body-4">
           <div class="project-body-inner">
             <div class="project-thumb">
-              <img src="assets/ats_resume_thumbnail.png" alt="ATS Resume Analyzer" loading="lazy" decoding="async" onerror="this.parentElement.style.background='var(--bg-elevated)'">
+              <img src="assets/ats_resume_thumbnail.jpg" alt="ATS Resume Analyzer" loading="lazy" decoding="async" data-fallback-parent-bg>
             </div>
             <div class="project-desc-area">
               <p class="project-desc">
@@ -515,6 +540,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 
 <!-- FOOTER -->

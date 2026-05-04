@@ -12,6 +12,8 @@ This portfolio is designed around a clean, modern single-page layout with:
 - Smooth scrolling, reveal animations, and back-to-top behavior
 - Light/Dark theme toggle with saved preference
 - Mobile-friendly navigation menu
+- SEO metadata (Open Graph, Twitter Cards, canonical, JSON-LD)
+- Accessibility-focused interactions (semantic accordion buttons, ARIA states)
 
 ## Tech Stack
 
@@ -28,14 +30,22 @@ This portfolio is designed around a clean, modern single-page layout with:
 |-- index.html
 |-- style.css
 |-- script.js
+|-- scripts/
+	`-- validate-site.mjs
 |-- README.md
+|-- robots.txt
+|-- sitemap.xml
 `-- assets/
 	|-- karthickraja.jpg
+	|-- ats_resume_thumbnail.jpg
 	|-- Karthick_Raja_DataAnalyst_Resume.pdf
 	|-- bird_species_thumbnail.svg
+	|-- api_project_thumbnail.svg
+	|-- api_dashboard_traffic.png
 	|-- sql_project_thumbnail.svg
 	|-- stock_market_thumbnail.svg
 	`-- sql-project/
+		|-- README.md
 		|-- 00_schema.sql
 		|-- 00_reset_data.sql
 		|-- 01_basic_analytics.sql
@@ -46,9 +56,14 @@ This portfolio is designed around a clean, modern single-page layout with:
 
 ## Featured Projects
 
-- Bird Species Recognition - AI Audio Classifier
-- Database Performance Insights (SQL)
-- Stock Market Analysis Dashboard (Excel)
+- API Performance Monitoring & Analytics System
+- Stock Portfolio Analysis Dashboard (Excel)
+- AI Bird Species Recognition System
+- ATS Resume Analyzer
+
+## Live Site
+
+- Portfolio: https://karthickraja.page
 
 ## Run Locally
 
@@ -67,6 +82,19 @@ This is a static site, so you can run it in any of these ways:
 - Modify interactions (theme toggle, filters, menu, animations) in `script.js`.
 - Replace resume and project thumbnails in the `assets/` folder.
 - Keep resume file at `assets/Karthick_Raja_DataAnalyst_Resume.pdf` and update `RESUME_ASSET_PATH` in `script.js` if the filename changes.
+
+## SQL Analytics Package
+
+- SQL scripts are in `assets/sql-project/`.
+- Follow execution order and assumptions documented in `assets/sql-project/README.md`.
+
+## Change Log
+
+- May 2026: Bug fixes for CSS variables and project filter deep links.
+- May 2026: Added SEO metadata improvements (canonical, absolute OG/Twitter image, JSON-LD).
+- May 2026: Improved accessibility semantics for accordion and mobile navigation.
+- May 2026: Added skip link, reduced-motion handling, aria-current updates, and static validation.
+- May 2026: Updated README and SQL documentation.
 
 ## Contact
 
