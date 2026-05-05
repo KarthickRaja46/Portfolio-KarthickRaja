@@ -35,10 +35,12 @@ This portfolio is designed around a clean, modern single-page layout with:
 |       `-- static-site-checks.yml
 |-- .gitignore
 |-- scripts/
+	|-- update-sitemap-lastmod.mjs
 	`-- validate-site.mjs
 |-- README.md
 |-- robots.txt
 |-- sitemap.xml
+|-- _headers
 `-- assets/
 	|-- karthickraja.jpg
 	|-- ats_resume_thumbnail.jpg
@@ -92,6 +94,23 @@ This is a static site, so you can run it in any of these ways:
 - SQL scripts are in `assets/sql-project/`.
 - Follow execution order and assumptions documented in `assets/sql-project/README.md`.
 
+## Maintenance
+
+- Keep sitemap date fresh with `node scripts/update-sitemap-lastmod.mjs`.
+- CI enforces fresh sitemap metadata with `node scripts/update-sitemap-lastmod.mjs --check`.
+
+## Production Security Headers
+
+For production hosting, configure security headers at your CDN/hosting layer.
+This repo includes an optional `_headers` file for platforms that support it (for example, Netlify or Cloudflare Pages).
+
+- `Content-Security-Policy: default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests`
+- `X-Content-Type-Options: nosniff`
+- `Referrer-Policy: strict-origin-when-cross-origin`
+- `Permissions-Policy: geolocation=(), microphone=(), camera=()`
+
+If you use GitHub Pages, apply these via a reverse proxy/CDN like Cloudflare.
+
 ## Change Log
 
 - May 2026: Bug fixes for CSS variables and project filter deep links.
@@ -100,6 +119,7 @@ This is a static site, so you can run it in any of these ways:
 - May 2026: Added skip link, reduced-motion handling, aria-current updates, and static validation.
 - May 2026: Added HTML/CSS/JS validation workflow and lighter API thumbnail asset.
 - May 2026: Updated README and SQL documentation.
+- May 2026: Implemented visible skip link, optimized custom cursor rendering, dynamic theme-color updates, and sitemap freshness checks.
 
 ## Contact
 

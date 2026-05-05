@@ -4,7 +4,12 @@
 const html = document.documentElement;
 const themeBtn = document.getElementById('themeBtn');
 const themeIcon = document.getElementById('themeIcon');
+const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 const RESUME_ASSET_PATH = 'assets/Karthick_Raja_DataAnalyst_Resume.pdf';
+const THEME_COLORS = {
+  light: '#faf9f7',
+  dark: '#0a0a0b'
+};
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 document.querySelectorAll('[data-resume-link]').forEach(link => {
@@ -22,6 +27,11 @@ function setTheme(theme) {
     html.setAttribute('data-theme', 'light');
     themeIcon.className = 'ti ti-moon';
   }
+
+  if (themeColorMeta) {
+    themeColorMeta.setAttribute('content', THEME_COLORS[theme] || THEME_COLORS.light);
+  }
+
   localStorage.setItem('theme', theme);
 }
 
@@ -448,40 +458,55 @@ const cursorDot = document.querySelector('.cursor-dot');
 const cursorOutline = document.querySelector('.cursor-outline');
 
 if (cursorDot && cursorOutline && !prefersReducedMotion) {
-  window.addEventListener('mousemove', (e) => {
-    const posX = e.clientX;
-    const posY = e.clientY;
+  let cursorX = window.innerWidth / 2;
+  let cursorY = window.innerHeight / 2;
+  let outlineX = cursorX;
+  let outlineY = cursorY;
+  let isInteractive = false;
+  let isPointerDown = false;
+  let rafId = null;
 
-    // Dot follows mouse exactly
-    cursorDot.style.transform = `translate(${posX}px, ${posY}px)`;
-    
-    // Outline follows with slight lag
-    cursorOutline.animate({
-      transform: `translate(${posX}px, ${posY}px)`
-    }, { duration: 500, fill: "forwards" });
-    
-    // Check if hovering over interactive elements
-    const target = e.target;
-    const isInteractive = target.closest('a, button, .project-header, .skill-card');
-    
-    if (isInteractive) {
-      cursorOutline.style.transform = `translate(${posX}px, ${posY}px) scale(1.5)`;
-      cursorOutline.style.background = 'var(--accent-glow)';
-      cursorOutline.style.borderColor = 'var(--accent)';
-      cursorDot.style.opacity = '0';
-    } else {
-      cursorOutline.style.background = 'transparent';
-      cursorOutline.style.borderColor = 'var(--accent)';
-      cursorDot.style.opacity = '1';
+  const INTERACTIVE_SCALE = 1.5;
+  const DEFAULT_SCALE = 1;
+  const POINTER_DOWN_FACTOR = 0.8;
+  const OUTLINE_LERP = 0.18;
+
+  function renderCursor() {
+    outlineX += (cursorX - outlineX) * OUTLINE_LERP;
+    outlineY += (cursorY - outlineY) * OUTLINE_LERP;
+
+    const baseScale = isInteractive ? INTERACTIVE_SCALE : DEFAULT_SCALE;
+    const scale = isPointerDown ? baseScale * POINTER_DOWN_FACTOR : baseScale;
+
+    cursorDot.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+    cursorOutline.style.transform = `translate(${outlineX}px, ${outlineY}px) scale(${scale})`;
+
+    cursorOutline.style.background = isInteractive ? 'var(--accent-glow)' : 'transparent';
+    cursorOutline.style.borderColor = 'var(--accent)';
+    cursorDot.style.opacity = isInteractive ? '0' : '1';
+
+    rafId = window.requestAnimationFrame(renderCursor);
+  }
+
+  function ensureCursorRenderLoop() {
+    if (rafId === null) {
+      rafId = window.requestAnimationFrame(renderCursor);
     }
+  }
+
+  window.addEventListener('mousemove', (e) => {
+    cursorX = e.clientX;
+    cursorY = e.clientY;
+    isInteractive = Boolean(e.target.closest('a, button, .project-header, .skill-card'));
+    ensureCursorRenderLoop();
   });
 
   window.addEventListener('mousedown', () => {
-    cursorOutline.style.transform += ' scale(0.8)';
+    isPointerDown = true;
   });
 
   window.addEventListener('mouseup', () => {
-    cursorOutline.style.transform = cursorOutline.style.transform.replace(' scale(0.8)', '');
+    isPointerDown = false;
   });
 }
 

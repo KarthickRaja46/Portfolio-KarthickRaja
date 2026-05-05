@@ -20,6 +20,9 @@ jobs:
       - name: JavaScript syntax check
         run: node --check script.js
 
+      - name: Sitemap lastmod freshness
+        run: node scripts/update-sitemap-lastmod.mjs --check
+
       - name: Static site validation
         run: node scripts/validate-site.mjs
 
