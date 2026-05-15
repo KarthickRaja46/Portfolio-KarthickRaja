@@ -4,21 +4,22 @@
 const html = document.documentElement;
 const themeBtn = document.getElementById('themeBtn');
 const themeIcon = document.getElementById('themeIcon');
-const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+const themeColorMetas = document.querySelectorAll('meta[name="theme-color"]');
 const RESUME_ASSET_PATH = 'assets/Karthick_Raja_DataAnalyst_Resume.pdf';
 const THEME_COLORS = {
-  light: '#faf9f7',
+  light: '#fdfdfc',
   dark: '#0a0a0b'
 };
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
 document.querySelectorAll('[data-resume-link]').forEach(link => {
   link.setAttribute('href', RESUME_ASSET_PATH);
 });
 
-function setTheme(theme) {
+function setTheme(theme, persist = true) {
   if (!html || !themeIcon) return;
-  
+
   if (theme === 'dark') {
     html.setAttribute('data-theme', 'dark');
     themeIcon.className = 'ti ti-sun';
@@ -28,22 +29,41 @@ function setTheme(theme) {
     themeIcon.className = 'ti ti-moon';
   }
 
-  if (themeColorMeta) {
-    themeColorMeta.setAttribute('content', THEME_COLORS[theme] || THEME_COLORS.light);
+  if (themeBtn) {
+    themeBtn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+    themeBtn.setAttribute('title', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
   }
 
-  localStorage.setItem('theme', theme);
+  // Keep both light/dark theme-color metas in sync (for browsers that ignore media)
+  const color = THEME_COLORS[theme] || THEME_COLORS.light;
+  themeColorMetas.forEach(meta => {
+    if (!meta.hasAttribute('media')) meta.setAttribute('content', color);
+  });
+
+  if (persist) {
+    try { localStorage.setItem('theme', theme); } catch (_) { /* storage may be blocked */ }
+  }
 }
 
-// Initialize theme: saved preference -> default light
-const savedTheme = localStorage.getItem('theme');
-setTheme(savedTheme || 'light');
+// Initialize theme: saved preference -> system preference -> light
+let savedTheme = null;
+try { savedTheme = localStorage.getItem('theme'); } catch (_) { /* ignore */ }
+setTheme(savedTheme || (prefersDarkScheme.matches ? 'dark' : 'light'), false);
 
 // Toggle on button click
 if (themeBtn) {
   themeBtn.addEventListener('click', () => {
     const current = html.getAttribute('data-theme');
     setTheme(current === 'dark' ? 'light' : 'dark');
+  });
+}
+
+// Follow system theme changes when the user hasn't explicitly chosen one
+if (prefersDarkScheme.addEventListener) {
+  prefersDarkScheme.addEventListener('change', e => {
+    let stored = null;
+    try { stored = localStorage.getItem('theme'); } catch (_) { /* ignore */ }
+    if (!stored) setTheme(e.matches ? 'dark' : 'light', false);
   });
 }
 
@@ -126,8 +146,17 @@ function updateActiveSectionFromScroll(scrollY) {
 }
 
 window.addEventListener('scroll', () => {
+  if (scrollFrameRequested) return;
+  scrollFrameRequested = true;
+  window.requestAnimationFrame(() => {
+    scrollFrameRequested = false;
+    handleScroll();
+  });
+}, { passive: true });
+
+function handleScroll() {
   if (!nav) return;
-  
+
   const y = window.scrollY;
 
   // Frosted glass background after 20px
@@ -150,7 +179,9 @@ window.addEventListener('scroll', () => {
 
   // Scroll spy — highlight active nav link
   updateActiveSectionFromScroll(y);
-}, { passive: true });
+}
+
+let scrollFrameRequested = false;
 
 updateActiveSectionFromScroll(window.scrollY);
 
@@ -529,3 +560,11 @@ document.querySelectorAll('img[data-fallback-parent-bg]').forEach(img => {
     }
   });
 });
+
+/* ============================================================
+   FOOTER YEAR
+============================================================ */
+const footerYear = document.getElementById('footerYear');
+if (footerYear) {
+  footerYear.textContent = String(new Date().getFullYear());
+}
