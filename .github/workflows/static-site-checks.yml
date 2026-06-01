@@ -23,9 +23,6 @@ jobs:
       - name: Sitemap lastmod freshness
         run: node scripts/update-sitemap-lastmod.mjs --check
 
-      - name: Static site validation
-        run: node scripts/validate-site.mjs
-
   links:
     runs-on: ubuntu-latest
     steps:

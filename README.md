@@ -35,8 +35,7 @@ This portfolio is designed around a clean, modern single-page layout with:
 |       `-- static-site-checks.yml
 |-- .gitignore
 |-- scripts/
-	|-- update-sitemap-lastmod.mjs
-	`-- validate-site.mjs
+	`-- update-sitemap-lastmod.mjs
 |-- README.md
 |-- robots.txt
 |-- sitemap.xml
