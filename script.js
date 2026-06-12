@@ -5,7 +5,7 @@ const html = document.documentElement;
 const themeBtn = document.getElementById('themeBtn');
 const themeIcon = document.getElementById('themeIcon');
 const themeColorMetas = document.querySelectorAll('meta[name="theme-color"]');
-const RESUME_ASSET_PATH = 'assets/Karthick_Raja_DataAnalyst_Resume.pdf';
+const RESUME_ASSET_PATH = 'assets/Karthick_Raja_BI_Resume.pdf';
 const THEME_COLORS = {
   light: '#fdfdfc',
   dark: '#0a0a0b'
@@ -482,69 +482,6 @@ if (orb1 && orb2 && !prefersReducedMotion) {
 }
 
 
-/* ============================================================
-   CUSTOM CURSOR LOGIC
- ============================================================ */
-const cursorDot = document.querySelector('.cursor-dot');
-const cursorOutline = document.querySelector('.cursor-outline');
-
-if (cursorDot && cursorOutline && !prefersReducedMotion) {
-  let cursorX = window.innerWidth / 2;
-  let cursorY = window.innerHeight / 2;
-  let outlineX = cursorX;
-  let outlineY = cursorY;
-  let isInteractive = false;
-  let isPointerDown = false;
-  let rafId = null;
-
-  const INTERACTIVE_SCALE = 1.5;
-  const DEFAULT_SCALE = 1;
-  const POINTER_DOWN_FACTOR = 0.8;
-  const OUTLINE_LERP = 0.18;
-
-  function renderCursor() {
-    outlineX += (cursorX - outlineX) * OUTLINE_LERP;
-    outlineY += (cursorY - outlineY) * OUTLINE_LERP;
-
-    const baseScale = isInteractive ? INTERACTIVE_SCALE : DEFAULT_SCALE;
-    const scale = isPointerDown ? baseScale * POINTER_DOWN_FACTOR : baseScale;
-
-    cursorDot.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
-    cursorOutline.style.transform = `translate(${outlineX}px, ${outlineY}px) scale(${scale})`;
-
-    cursorOutline.style.background = isInteractive ? 'var(--accent-glow)' : 'transparent';
-    cursorOutline.style.borderColor = 'var(--accent)';
-    cursorDot.style.opacity = isInteractive ? '0' : '1';
-
-    rafId = window.requestAnimationFrame(renderCursor);
-  }
-
-  function ensureCursorRenderLoop() {
-    if (rafId === null) {
-      rafId = window.requestAnimationFrame(renderCursor);
-    }
-  }
-
-  window.addEventListener('mousemove', (e) => {
-    cursorX = e.clientX;
-    cursorY = e.clientY;
-    isInteractive = Boolean(e.target.closest('a, button, .project-header, .skill-card'));
-    ensureCursorRenderLoop();
-  });
-
-  window.addEventListener('mousedown', () => {
-    isPointerDown = true;
-  });
-
-  window.addEventListener('mouseup', () => {
-    isPointerDown = false;
-  });
-}
-
-if (prefersReducedMotion) {
-  cursorDot?.remove();
-  cursorOutline?.remove();
-}
 
 document.querySelectorAll('img[data-hide-on-error]').forEach(img => {
   img.addEventListener('error', () => {
