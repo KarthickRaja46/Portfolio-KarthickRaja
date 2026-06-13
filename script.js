@@ -74,7 +74,7 @@ if (prefersDarkScheme.addEventListener) {
    TYPING ANIMATION
 ============================================================ */
 const typedEl = document.getElementById('typedText');
-const roles = ['Data Analyst', 'ETL Developer', 'Computer Science Student', 'ML Enthusiast'];
+const roles = ['Data Analyst', 'Power BI Developer', 'Business Intelligence Analyst', 'SQL & ETL Developer'];
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -348,7 +348,7 @@ function applyProjectFilter(filterKey) {
 }
 
 function getFilterKeyFromUrl() {
-  const allowed = new Set(['all', 'ai', 'api', 'excel', 'sql']);
+  const allowed = new Set(['all', 'ai', 'api', 'excel', 'sql', 'powerbi', 'github']);
 
   // Supports URLs like #projects?tag=ai
   const hash = window.location.hash || '';
