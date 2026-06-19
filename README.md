@@ -6,7 +6,7 @@ A responsive personal portfolio website showcasing my Data Analytics and Busines
 **[https://karthickraja.page](https://karthickraja.page)**
 
 ## 📊 Featured Projects
-- **Business Performance & Customer Analytics Dashboard** (Power BI)
+- **Business Performance & Customer Intelligence Dashboard** (Power BI)
 - **Retail Analytics & Profit Insights Dashboard** (Power BI)
 - **Banking Analytics Dashboard** (Power BI)
 - **VOLT IQ – IoT Machine Intelligence Dashboard** (Power BI)
