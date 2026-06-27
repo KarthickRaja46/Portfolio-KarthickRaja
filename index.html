@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,10 +54,10 @@
   }
   </script>
 
-  <!-- Fonts: Outfit (premium headings) + JetBrains Mono (code labels) -->
+  <!-- Fonts: Inter (clean, readable) + JetBrains Mono (code labels) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Tabler Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
@@ -122,26 +122,21 @@
 
 <!-- HERO -->
 <section id="home" class="hero">
-  <!-- Animated background -->
-  <div class="hero-mesh"></div>
+  <div class="hero-grid-bg"></div>
   <div class="hero-orb hero-orb-1"></div>
   <div class="hero-orb hero-orb-2"></div>
-  <div class="hero-orb hero-orb-3"></div>
 
   <div class="container hero-inner">
 
-    <!-- Left: Text Content -->
+    <!-- Profile Photo -->
+    <div class="hero-photo-wrap fade-up">
+      <img src="assets/kr_1.png" alt="Karthick Raja" class="hero-photo" data-hide-on-error fetchpriority="high">
+    </div>
+
+    <!-- Text -->
     <div class="hero-text fade-up">
-
-      <!-- Availability badge -->
-      <div class="hero-badge">
-        <span class="hero-badge-dot"></span>
-        Open to Full-Time Opportunities
-      </div>
-
       <h1 class="hero-title">
-        Hi, I'm<br>
-        <span class="name-line">Karthick Raja</span>
+        Hi, I'm <span class="text-accent">Karthick Raja</span>
       </h1>
 
       <div class="typed-wrap">
@@ -155,14 +150,14 @@
 
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">
-          <i class="ti ti-layout-dashboard"></i> View Projects
+          <i class="ti ti-arrow-right"></i> My Projects
         </a>
-        <a href="#contact" class="btn-ghost"><i class="ti ti-send"></i> Contact Me</a>
+        <a href="#contact" class="btn-ghost">Contact Me</a>
         <a href="assets/Karthick_Raja_BI_Resume.pdf" class="btn-ghost" data-resume-link target="_blank" rel="noopener noreferrer">
-          <i class="ti ti-eye"></i> Resume
+          <i class="ti ti-eye"></i> View Resume
         </a>
         <a href="assets/Karthick_Raja_BI_Resume.pdf" class="btn-ghost" data-resume-link download>
-          <i class="ti ti-download"></i>
+          <i class="ti ti-download"></i> Download
         </a>
       </div>
 
@@ -177,15 +172,6 @@
       </div>
     </div>
 
-    <!-- Right: Profile Photo with animated ring -->
-    <div class="hero-photo-wrap fade-up">
-      <div class="hero-photo-ring">
-        <div class="hero-photo-inner">
-          <img src="assets/kr_1.png" alt="Karthick Raja" class="hero-photo" data-hide-on-error fetchpriority="high">
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -195,8 +181,7 @@
   <div class="container">
     <div class="sec-header fade-up">
       <span class="t-label">About</span>
-      <h2 class="sec-title">About <span>Me</span></h2>
-      <span class="sec-divider"></span>
+      <h2 class="sec-title">About Me</h2>
     </div>
     <div class="about-layout">
       <div class="about-left fade-up">
@@ -220,26 +205,22 @@
         </div>
       </div>
       <div class="about-right fade-up">
-        <div class="about-card">
-          <i class="ti ti-school about-card-icon"></i>
+        <div class="about-card glass">
           <div class="about-card-label">Education</div>
           <div class="about-card-value">B.E. Computer Science Engineering</div>
           <div class="about-card-sub">Hindusthan Institute of Technology · 2022–2026</div>
         </div>
-        <div class="about-card">
-          <i class="ti ti-map-pin about-card-icon"></i>
+        <div class="about-card glass">
           <div class="about-card-label">Based In</div>
-          <div class="about-card-value accent">Chennai, Tamil Nadu</div>
+          <div class="about-card-value text-accent">Chennai, Tamil Nadu, India</div>
         </div>
-        <div class="about-card">
-          <i class="ti ti-chart-bar about-card-icon"></i>
+        <div class="about-card glass">
           <div class="about-card-label">Specialization</div>
           <div class="about-card-value">Data Analytics &amp; Business Intelligence</div>
         </div>
-        <div class="about-card">
-          <i class="ti ti-briefcase about-card-icon"></i>
+        <div class="about-card glass">
           <div class="about-card-label">Open To</div>
-          <div class="about-card-value">Full-Time · Data Analyst · Power BI Dev</div>
+          <div class="about-card-value">Full-Time Roles · Data Analyst · Power BI Developer</div>
         </div>
       </div>
     </div>
@@ -252,8 +233,7 @@
   <div class="container">
     <div class="sec-header fade-up">
       <span class="t-label">Professional Highlights</span>
-      <h2 class="sec-title">By the <span>Numbers</span></h2>
-      <span class="sec-divider"></span>
+      <h2 class="sec-title">By the Numbers</h2>
       <p class="sec-subtitle">Key metrics that define my professional journey so far.</p>
     </div>
     <div class="highlights-grid">
@@ -292,8 +272,7 @@
   <div class="container">
     <div class="sec-header fade-up">
       <span class="t-label">Experience</span>
-      <h2 class="sec-title">Work <span>Experience</span></h2>
-      <span class="sec-divider"></span>
+      <h2 class="sec-title">Work Experience</h2>
       <p class="sec-subtitle">Hands-on professional experience in data analytics and business intelligence.</p>
     </div>
     <div class="fade-up">
@@ -334,8 +313,7 @@
   <div class="container">
     <div class="sec-header fade-up">
       <span class="t-label">Skills</span>
-      <h2 class="sec-title">Technical <span>Skills</span></h2>
-      <span class="sec-divider"></span>
+      <h2 class="sec-title">My Technical Skills</h2>
       <p class="sec-subtitle">Technologies and tools I use to build analytics, BI dashboards, and data-driven solutions.</p>
     </div>
 
@@ -418,9 +396,8 @@
   <div class="container">
     <div class="sec-header fade-up">
       <span class="t-label">Projects</span>
-      <h2 class="sec-title">Featured <span>Projects</span></h2>
-      <span class="sec-divider"></span>
-      <p class="sec-subtitle">Click on any project to expand and explore details, live demos, and source code.</p>
+      <h2 class="sec-title">My Projects</h2>
+      <p class="sec-subtitle">Click on a project to see more details.</p>
     </div>
 
     <div class="projects-filter fade-up" role="group" aria-label="Filter projects by category">
@@ -963,8 +940,7 @@
   <div class="container">
     <div class="sec-header fade-up">
       <span class="t-label">Certifications</span>
-      <h2 class="sec-title">Professional <span>Certifications</span></h2>
-      <span class="sec-divider"></span>
+      <h2 class="sec-title">Professional Certifications</h2>
       <p class="sec-subtitle">Verified credentials in data analytics, Business Intelligence, and programming.</p>
     </div>
     <div class="certs-grid">
@@ -1107,7 +1083,6 @@
       </div>
 
       <div class="contact-right fade-up">
-        <div class="contact-right-glow"></div>
         <div class="t-label" style="margin-bottom:16px">Open to Full-Time Opportunities</div>
         <h3 class="contact-right-title">Ready for Data Analyst &amp; Power BI Roles</h3>
         <p class="contact-right-sub">

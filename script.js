@@ -162,11 +162,8 @@ function handleScroll() {
   // Frosted glass background after 20px
   nav.classList.toggle('scrolled', y > 20);
 
-  // Pill mode after 80px
-  nav.classList.toggle('pill', y > 80);
-
   // Hide nav on scroll down, reveal on scroll up
-  if (y > lastScrollY + 8 && y > 160) {
+  if (y > lastScrollY + 8 && y > 80) {
     nav.classList.add('hidden');
   } else if (y < lastScrollY || y < 80) {
     nav.classList.remove('hidden');
@@ -277,22 +274,22 @@ function toggleProject(header) {
   // Close all open panels first
   document.querySelectorAll('.project-body.open').forEach(b => {
     b.classList.remove('open');
-    const parentItem = b.closest('.project-item');
-    if (parentItem) parentItem.classList.remove('is-open');
-    const headerEl = parentItem?.querySelector('.project-header');
-    if (headerEl) headerEl.setAttribute('aria-expanded', 'false');
-    const arrowIcon = parentItem?.querySelector('.project-arrow i');
-    if (arrowIcon) arrowIcon.style.transform = '';
+    const headerEl = b.closest('.project-item')?.querySelector('.project-header');
+    if (headerEl) {
+      headerEl.setAttribute('aria-expanded', 'false');
+    }
+    const arrowIcon = b.closest('.project-item')?.querySelector('.project-arrow i');
+    if (arrowIcon) {
+      arrowIcon.style.transform = '';
+    }
   });
 
   // Open clicked panel (if it was closed)
   if (!isOpen) {
     body.classList.add('open');
-    item.classList.add('is-open');
     header.setAttribute('aria-expanded', 'true');
     icon.style.transform = 'rotate(180deg)';
   } else {
-    item.classList.remove('is-open');
     header.setAttribute('aria-expanded', 'false');
   }
 }
@@ -473,57 +470,15 @@ if (prefersReducedMotion || !('IntersectionObserver' in window)) {
 ============================================================ */
 const orb1 = document.querySelector('.hero-orb-1');
 const orb2 = document.querySelector('.hero-orb-2');
-const orb3 = document.querySelector('.hero-orb-3');
 
 if (orb1 && orb2 && !prefersReducedMotion) {
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
     if (y < window.innerHeight) {
-      orb1.style.transform = `translateY(${y * 0.12}px)`;
-      orb2.style.transform = `translateY(${y * -0.08}px)`;
-      if (orb3) orb3.style.transform = `translateY(${y * 0.06}px)`;
+      orb1.style.transform = `translateY(${y * 0.14}px)`;
+      orb2.style.transform = `translateY(${y * -0.09}px)`;
     }
   }, { passive: true });
-}
-
-/* ============================================================
-   STAT COUNTER ANIMATION
-============================================================ */
-function animateCounter(el, target, suffix) {
-  const duration = 1600;
-  const start = performance.now();
-  const startVal = 0;
-
-  function update(now) {
-    const elapsed = now - start;
-    const progress = Math.min(elapsed / duration, 1);
-    // Ease out cubic
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const current = Math.floor(startVal + (target - startVal) * eased);
-    el.textContent = current + suffix;
-    if (progress < 1) requestAnimationFrame(update);
-  }
-  requestAnimationFrame(update);
-}
-
-const statEls = document.querySelectorAll('.highlight-value');
-if (!prefersReducedMotion && 'IntersectionObserver' in window) {
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const raw = el.textContent.trim();
-        const numMatch = raw.match(/\d+/);
-        if (numMatch) {
-          const num = parseInt(numMatch[0], 10);
-          const suffix = raw.replace(/\d+/, '');
-          animateCounter(el, num, suffix);
-        }
-        counterObserver.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-  statEls.forEach(el => counterObserver.observe(el));
 }
 
 
