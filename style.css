@@ -2950,3 +2950,171 @@ body::after {
   border-radius: 50%;
   animation: pulse 2s infinite;
 }
+
+/* ============================================================
+   LIVE LINKS SECTION
+============================================================ */
+.live-links-section {
+  background: var(--bg-primary);
+}
+
+.live-links-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 16px;
+}
+
+.live-links-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.live-links-group-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding: 0 4px 6px;
+  border-bottom: 2px solid var(--accent-soft);
+  margin-bottom: 4px;
+}
+
+.live-links-group-label i {
+  font-size: 1rem;
+}
+
+/* Individual link card */
+.live-link-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.22s, background 0.22s, box-shadow 0.22s, transform 0.18s;
+  position: relative;
+  overflow: hidden;
+}
+
+.live-link-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--grad-warm);
+  opacity: 0;
+  transition: opacity 0.22s;
+  z-index: 0;
+}
+
+.live-link-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 20px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.live-link-card:hover::before {
+  opacity: 0.04;
+}
+
+.live-link-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Icon bubble */
+.llc-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-soft);
+  border-radius: 10px;
+  font-size: 1.15rem;
+  color: var(--accent);
+  transition: background 0.22s, color 0.22s;
+}
+
+.live-link-card:hover .llc-icon {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Body text */
+.llc-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.llc-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.2s;
+}
+
+.live-link-card:hover .llc-title {
+  color: var(--accent);
+}
+
+.llc-sub {
+  font-size: 0.73rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Arrow icon */
+.llc-arrow {
+  flex-shrink: 0;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  transition: color 0.2s, transform 0.2s;
+}
+
+.live-link-card:hover .llc-arrow {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .live-links-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .live-link-card {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+  .llc-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  .llc-title {
+    font-size: 0.82rem;
+  }
+  .llc-sub {
+    font-size: 0.68rem;
+  }
+}
