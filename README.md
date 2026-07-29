@@ -1,8 +1,5 @@
 <div align="center">
 
-  <!-- Profile Image -->
-  <img src="assets/kr_1.png" alt="Karthick Raja" width="160" style="border-radius: 50%; border: 3px solid #3b82f6;" />
-
   # 📊 Karthick Raja
   ### **Data Analyst & Power BI Developer**
 
@@ -31,25 +28,6 @@
 
 </div>
 
-<br/>
-
-## 📌 Table of Contents
-- [About Me](#-about-me)
-- [Key Highlights & Stats](#-key-highlights--stats)
-- [Featured Projects](#-featured-projects)
-  - [1. ClaimVision – Healthcare Claims Intelligence](#1-claimvision--healthcare-claims-intelligence-dashboard)
-  - [2. Business Performance & Customer Intelligence](#2-business-performance--customer-intelligence-dashboard)
-  - [3. Banking Analytics Dashboard](#3-banking-analytics-dashboard)
-  - [4. VOLT IQ – Industrial IoT Machine Intelligence](#4-volt-iq--industrial-iot-machine-intelligence-dashboard)
-  - [5. Retail Analytics & Profit Insights](#5-retail-analytics--profit-insights-dashboard)
-  - [6. API Performance Monitoring & Analytics System](#6-api-performance-monitoring--analytics-system)
-  - [7. AI Bird Species Recognition System](#7-ai-bird-species-recognition-system)
-  - [8. ATS Resume Analyzer](#8-ats-resume-analyzer)
-- [Skills Matrix](#-skills-matrix)
-- [Professional Certifications](#-professional-certifications)
-- [Experience & Education](#-experience--education)
-- [Local Setup](#-local-setup)
-- [Contact & Connect](#-contact--connect)
 
 ---
 
