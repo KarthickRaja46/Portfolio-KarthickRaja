@@ -5,7 +5,7 @@ const html = document.documentElement;
 const themeBtn = document.getElementById('themeBtn');
 const themeIcon = document.getElementById('themeIcon');
 const themeColorMetas = document.querySelectorAll('meta[name="theme-color"]');
-const RESUME_ASSET_PATH = 'assets/Karthick_Raja_BI_Resume.pdf';
+const RESUME_ASSET_PATH = 'assets/KARTHICK_RAJA_Data_Analyst.pdf';
 const THEME_COLORS = {
   light: '#fdfdfc',
   dark: '#0a0a0b'
@@ -45,10 +45,11 @@ function setTheme(theme, persist = true) {
   }
 }
 
-// Initialize theme: saved preference -> system preference -> light
+// Initialize theme: saved preference -> device type (mobile=dark, laptop=light)
 let savedTheme = null;
 try { savedTheme = localStorage.getItem('theme'); } catch (_) { /* ignore */ }
-setTheme(savedTheme || (prefersDarkScheme.matches ? 'dark' : 'light'), false);
+const defaultTheme = window.innerWidth <= 768 ? 'dark' : 'light';
+setTheme(savedTheme || defaultTheme, false);
 
 // Toggle on button click
 if (themeBtn) {
@@ -58,14 +59,15 @@ if (themeBtn) {
   });
 }
 
-// Follow system theme changes when the user hasn't explicitly chosen one
-if (prefersDarkScheme.addEventListener) {
-  prefersDarkScheme.addEventListener('change', e => {
-    let stored = null;
-    try { stored = localStorage.getItem('theme'); } catch (_) { /* ignore */ }
-    if (!stored) setTheme(e.matches ? 'dark' : 'light', false);
-  });
-}
+// Update theme on resize if no theme is explicitly saved
+window.addEventListener('resize', () => {
+  let stored = null;
+  try { stored = localStorage.getItem('theme'); } catch (_) { /* ignore */ }
+  if (!stored) {
+    const newDefault = window.innerWidth <= 768 ? 'dark' : 'light';
+    setTheme(newDefault, false);
+  }
+});
 
 
 
@@ -427,7 +429,7 @@ function showCopyToast(message) {
 
 if (copyEmailBtn) {
   copyEmailBtn.addEventListener('click', async () => {
-    const email = 'karthiikarthii46@gmail.com';
+    const email = 'karthickraja232205@gmail.com';
 
     try {
       await navigator.clipboard.writeText(email);
