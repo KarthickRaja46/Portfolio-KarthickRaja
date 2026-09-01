@@ -33,9 +33,9 @@
 
 ## 👨‍💻 About Me
 
-I am a **Computer Science Engineering (CSE)** graduate with 6 months of hands-on internship experience in **Data Analytics, SQL Querying, Power BI Dashboard Development, Data Cleaning, and ETL Workflows**.
+I am a **Data Analyst & Power BI Developer** with hands-on experience in **SQL, Power BI, DAX, Power Query, Excel, and Data Modeling**. Experienced in building executive KPI dashboards, optimizing reporting workflows, and delivering BI solutions across sales, retail, banking, and supply chain domains.
 
-During my internship and project work, I have solved complex business problems across domains including **Banking, Retail Sales, Healthcare, Customer Intelligence, and Industrial IoT**. I specialize in creating star-schema data models, writing complex DAX measures, building automated data pipelines, and structuring interactive executive dashboards.
+Proven track record of tracking **AED 15M+** in commercial opportunities, saving **12+ hours/week** in reporting overhead, and reducing turnaround by **70%+**. Based in Dubai, UAE, available immediately.
 
 - 💼 **Current Status:** Open to Full-Time Data Analyst & Power BI Developer roles
 - 🎯 **Core Strengths:** Power BI, DAX, Power Query, SQL (MySQL, PostgreSQL, SQL Server), Microsoft Azure, Python (Pandas, NumPy, EDA), Advanced Excel, ETL Workflows
@@ -47,7 +47,7 @@ During my internship and project work, I have solved complex business problems a
 
 | Metric | Detail |
 | :--- | :--- |
-| 💼 **Experience** | **6 Months** Full-Time Data Analyst & Power BI Developer Internship |
+| 💼 **Experience** | **1+ Years** Hands-on Data Analyst & Power BI Developer Experience |
 | 📊 **Dashboards Built** | **9+** Interactive Multi-Page BI Dashboards |
 | 🔍 **Data Analyzed** | **150,000+** Data Records Cleaned & Processed |
 | 🚀 **Projects Completed** | **8+** End-to-End Analytics, ETL & Machine Learning Projects |
@@ -212,12 +212,21 @@ A full-stack application using LLMs to evaluate resume alignment with Data Analy
 ## 💼 Experience & Education
 
 ### **Experience**
-**Power BI Developer & Data Analyst Intern**  
-*Data Analytics Firm — Chennai, India* | **Jan 2026 – Jun 2026 (6 Months)**
-- Built interactive Power BI dashboards enabling real-time KPI monitoring and data-driven decisions.
-- Designed ETL workflows using Power Query & SQL to clean and aggregate multi-source data.
-- Optimized star-schema data models and engineered complex DAX calculated measures.
-- Automated reporting processes with scheduled refreshes, saving 40% manual overhead.
+
+**Data Analyst Intern**  
+*Besant Technologies — Chennai, India* | **Jan 2026 – Jul 2026**
+- Built end-to-end BI reporting solutions across Retail, Banking, and Supply Chain datasets, covering data extraction, cleansing, validation, analysis, and Power BI reporting.
+- Used SQL with CTEs, joins, window functions, and aggregations to clean, validate, and standardize 500K+ transactional records, improving data accuracy and consistency across reports.
+- Reviewed reporting and data refresh workflows and configured scheduled automation through Power BI Gateway, reducing reporting delays by 35% and improving reporting turnaround.
+- Conducted Exploratory Data Analysis (EDA) using SQL and Python (Pandas) to identify sales trends, customer churn indicators, and fulfillment bottlenecks, supporting data-driven decision-making.
+
+**Power BI Developer (Freelance)**  
+*Enjay Engineering Services — Dubai, UAE (Remote)* | **May 2025 – Nov 2025 (7 Months)**
+- Designed and maintained Power BI dashboards delivering executive and project-level KPI reporting for engineering quotation and commercial pipeline performance, giving regional leadership visibility into AED 15M+ in active opportunities across UAE emirates.
+- Built Star Schema data models and 30+ DAX measures covering time intelligence, YoY growth, conversion rates, and quotation aging to support engineering project performance reporting and management reviews.
+- Automated the weekly quotation reporting workflow using Power Query, eliminating 12+ hours of manual reporting effort per week and improving reporting efficiency.
+- Analyzed regional product demand, steel grades, volumes, pricing, and margins to identify trends and margin leakage, providing actionable insights for prioritizing high-value commercial opportunities.
+- Implemented Row-Level Security (RLS) to provide role-specific branch-level access for regional sales managers, strengthening data security and reporting governance.
 
 ### **Education**
 **Bachelor of Engineering (B.E.) — Computer Science Engineering (CSE)**  
