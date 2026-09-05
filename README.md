@@ -5,12 +5,12 @@
 
   *Transforming Complex Datasets into Interactive Dashboards & Actionable Business Insights*
 
-  📍 **Chennai, Tamil Nadu, India** | 🎓 **B.E. Computer Science Engineering**
+  📍 **Dubai, UAE** | 🎓 **B.E. Computer Science Engineering**
 
   [![Portfolio](https://img.shields.io/badge/Live_Portfolio-Website-blue?style=for-the-badge&logo=googlechrome&logoColor=white)](https://karthickraja.page/)
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-Karthick_Raja-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/karthick-raja-l-7a5b3a26b/)
   [![GitHub](https://img.shields.io/badge/GitHub-KarthickRaja46-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/KarthickRaja46)
-  [![Email](https://img.shields.io/badge/Email-karthiikarthii46%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:karthiikarthii46@gmail.com)
+  [![Email](https://img.shields.io/badge/Email-karthickraja232205%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:karthickraja232205@gmail.com)
 
   ---
 
