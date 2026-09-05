@@ -55,67 +55,67 @@
 
 ## 🚀 Featured Projects
 
-### 1. ClaimVision – Healthcare Claims Intelligence Dashboard
-> **Technologies:** Power BI, DAX, Power Query, Healthcare Analytics, Data Modeling
+### 1. Steel Quotation & Sales Analytics Dashboard
+> **Technologies:** Power BI, DAX, SQL, Power Query, Star Schema
 
-An executive-ready Power BI dashboard providing healthcare organizations with a 360° view of claims data — analyzing **20,000+ claims** and **₹25Bn+ claim amount** with a **24.9% fraud detection rate**.
+Designed an executive-level 5-page Power BI dashboard providing commercial leadership visibility into **AED 15M+ in active opportunities** across UAE emirates, saving **12+ hours/week** in reporting overhead.
 
-![ClaimVision Thumbnail](assets/biz_performance_thumbnail.png)
+![Steel Quotation Thumbnail](assets/steel_quotation_thumbnail.png)
 
 #### 🌟 Key Features & Business Value:
-- **6-Page Architecture:** Patient Demographics, Provider Risk Scoring, Claims Trends, Fraud Pattern Analysis, and Executive Summary.
-- **Provider Risk Scoring:** Automated risk profiling to flag anomalous claims and reduce financial loss.
-- **Data Modeling:** Built on a star-schema model with advanced DAX measures and Power Query ETL transformations.
+- **5-Page Commercial Architecture:** Executive KPI Summary, Quotation Funnel, Regional Demand, Win/Loss Analysis, and Margin Diagnostics.
+- **Workflow Automation:** Replaced manual Excel compilations with automated Power Query ETL pipelines, cutting turnaround time by 70%.
+- **Advanced DAX Metrics:** 30+ dynamic measures for quotation aging, YoY growth, conversion rates, and regional volume distributions.
 
-🔗 **[Live Power BI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiMWQxMzFjYTAtZjkxMi00YzViLTg2NTktMGI5Y2YzNWRkNDBkIiwidCI6IjNjYjM3ODQ0LTAxZGEtNGJlYS04MDEwLTBmYjFmNWExZWM0ZSJ9)** | 💻 **[GitHub Repository](https://github.com/KarthickRaja46)**
+🔗 **[Live Power BI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiMWQxMzFjYTAtZjkxMi00YzViLTg2NTktMGI5Y2YzNWRkNDBkIiwidCI6IjNjYjM3ODQ0LTAxZGEtNGJlYS04MDEwLTBmYjFmNWExZWM0ZSJ9)** | 💻 **[GitHub Profile](https://github.com/KarthickRaja46)**
 
 ---
 
-### 2. Business Performance & Customer Intelligence Dashboard
-> **Technologies:** Power BI, DAX, KPI Analytics, Customer Intelligence
+### 2. Business Performance & Customer Analytics Dashboard
+> **Technologies:** Power BI, DAX, KPI Analytics, Star Schema
 
-An interactive Power BI dashboard tracking corporate performance, revenue growth, customer acquisition costs, churn rates, and profitability KPIs.
+Analyzed **$2.3M in revenue** and **$286K in profit** across **9,994 orders**, identifying customer retention patterns, cohort metrics, and YTD performance trends.
 
 ![Business Performance Thumbnail](assets/biz_performance_thumbnail.png)
 
 #### 🌟 Key Features & Business Value:
-- **Customer Segmentation:** Analyzes customer lifetime value (LTV), cohort retention, and churn indicators.
-- **Advanced DAX Measures:** Implemented dynamic measures for YoY growth, profit margins, and KPI tracking.
-- **Interactive UI:** Dynamic slicers, drill-through pages, and visual tooltips for executive reporting.
+- **Customer Segmentation & Cohorts:** Evaluates customer lifetime value (LTV), cohort retention patterns, and churn risk factors.
+- **Advanced DAX Measures:** Dynamic measures for YoY growth, profit margins, and executive KPI benchmarking.
+- **Interactive Drill-Through:** Multi-level slicers and tooltip cards enabling root-cause analysis for executive reporting.
 
-🔗 **[Live Power BI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiNjRlMTgyYmYtYjBjOC00ZGUzLTlmMjMtYzY3NTBiMDcyMGZiIiwidCI6IjNjYjM3ODQ0LTAxZGEtNGJlYS04MDEwLTBmYjFmNWExZWM0ZSJ9)** | 💻 **[GitHub Repository](https://github.com/KarthickRaja46/Business-Performance-Customer-Intelligence-Dashboard.git)**
+🔗 **[Live Power BI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiNjRlMTgyYmYtYjBjOC00ZGUzLTlmMjMtYzY3NTBiMDcyMGZiIiwidCI6IjNjYjM3ODQ0LTAxZGEtNGJlYS04MDEwLTBmYjFmNWExZWM0ZSJ9)** | 💻 **[GitHub Profile](https://github.com/KarthickRaja46)**
 
 ---
 
-### 3. Banking Analytics Dashboard
-> **Technologies:** Power BI, Power Query, DAX, Financial Analytics
+### 3. Banking Performance Dashboard
+> **Technologies:** Power BI, SQL, Financial Analytics, Power Query
 
-Designed for financial analysts, this dashboard evaluates loan portfolio health, customer deposit distributions, and transaction trends across banking segments.
+Analyzed **₹4.87B in transaction value** across **150,000+ records**, identifying high-failure transaction segments and risk factors with SQL validation and Power Query ETL.
 
 ![Banking Analytics Thumbnail](assets/banking_analytics_thumbnail.png)
 
 #### 🌟 Key Features & Business Value:
-- **Financial KPIs:** Real-time tracking of deposits, loan defaults, non-performing assets (NPAs), and interest margins.
-- **Power Query ETL:** Multi-source data cleaning, transformation, and star-schema optimization.
-- **Interactive Drill-Down:** Dynamic views enabling deep dives into high-risk borrower accounts.
+- **Financial KPIs:** Real-time monitoring of transaction volumes, failure rates, loan defaults, and liquidity metrics.
+- **Data Transformation & QA:** Used SQL CTEs, window functions, and Power Query to clean and validate 150K+ transactional records.
+- **Risk Segmentation:** Dynamic views enabling deep dives into high-failure transaction segments and abnormal patterns.
 
-🔗 **[Live Power BI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiMjg1MTcwZjktZTViMy00OTU3LTgyMTctNGIzNTRhNWYwYWM1IiwidCI6IjNjYjM3ODQ0LTAxZGEtNGJlYS04MDEwLTBmYjFmNWExZWM0ZSJ9)** | 📄 **[PDF Report](assets/Banking%20Performance.pdf)** | 💻 **[GitHub Repository](https://github.com/KarthickRaja46/Banking-Performance.git)**
+🔗 **[Live Power BI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiMjg1MTcwZjktZTViMy00OTU3LTgyMTctNGIzNTRhNWYwYWM1IiwidCI6IjNjYjM3ODQ0LTAxZGEtNGJlYS04MDEwLTBmYjFmNWExZWM0ZSJ9)** | 💻 **[GitHub Profile](https://github.com/KarthickRaja46)**
 
 ---
 
-### 4. VOLT IQ – Industrial IoT Machine Intelligence Dashboard
+### 4. VOLT IQ – Industrial IoT Machine Intelligence Platform
 > **Technologies:** Power BI, IoT Analytics, Predictive Maintenance, Anomaly Detection
 
-Analyzed **50,000+ IoT sensor telemetry records** across industrial machines to monitor machine health, track downtime, and detect anomalies.
+Analyzed **50,000+ IoT telemetry records** across industrial machines to monitor machine health, identify downtime risk, and detect vibration anomalies.
 
 ![VOLT IQ Thumbnail](assets/voltiq_iot_thumbnail.png)
 
 #### 🌟 Key Features & Business Value:
-- **Predictive Maintenance:** Early warning indicators to minimize unplanned equipment downtime.
-- **Telemetry Anomaly Detection:** Flags unexpected temperature, vibration, and pressure spikes.
-- **Operational KPIs:** Machine efficiency scores, mean time between failures (MTBF), and uptime tracking.
+- **Equipment Health Monitoring:** Real-time tracking of vibration, temperature, and operating pressure telemetry.
+- **Downtime Risk Identification:** Early indicator alerts to identify machine downtime risk before failure occurs.
+- **Operational Efficiency:** Machine utilization benchmarks, MTBF indicators, and maintenance scheduling views.
 
-🔗 **[Live Power BI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiZTNjNzZiNGItYjM3Zi00NDNjLWFhODMtNjNiZjlkMWI4NjQ4IiwidCI6IjNjYjM3ODQ0LTAxZGEtNGJlYS04MDEwLTBmYjFmNWExZWM0ZSJ9&pageName=fd208009e45a735db3b9)** | 📄 **[PDF Report](assets/VOLT%20IQ%20-%20IoT%20Machine%20Intelligence%20Platform.pdf)** | 💻 **[GitHub Repository](https://github.com/KarthickRaja46/VOLT-IQ-IoT-Machine-Intelligence-Platform.git)**
+🔗 **[Live Power BI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiZTNjNzZiNGItYjM3Zi00NDNjLWFhODMtNjNiZjlkMWI4NjQ4IiwidCI6IjNjYjM3ODQ0LTAxZGEtNGJlYS04MDEwLTBmYjFmNWExZWM0ZSJ9&pageName=fd208009e45a735db3b9)** | 💻 **[GitHub Profile](https://github.com/KarthickRaja46)**
 
 ---
 
@@ -253,13 +253,13 @@ cd Portfolio-KarthickRaja
 [![Portfolio](https://img.shields.io/badge/Live_Portfolio-Website-blue?style=for-the-badge&logo=googlechrome&logoColor=white)](https://karthickraja.page/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Karthick_Raja-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/karthick-raja-l-7a5b3a26b/)
 [![GitHub](https://img.shields.io/badge/GitHub-KarthickRaja46-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/KarthickRaja46)
-[![Email](https://img.shields.io/badge/Email-karthiikarthii46%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:karthiikarthii46@gmail.com)
+[![Email](https://img.shields.io/badge/Email-karthickraja232205%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:karthickraja232205@gmail.com)
 
 - 🌐 **Portfolio Website:** [https://karthickraja.page](https://karthickraja.page)
 - 💼 **LinkedIn:** [Karthick Raja](https://www.linkedin.com/in/karthick-raja-l-7a5b3a26b/)
 - 🐙 **GitHub:** [KarthickRaja46](https://github.com/KarthickRaja46)
-- ✉️ **Email:** [karthiikarthii46@gmail.com](mailto:karthiikarthii46@gmail.com)
-- 📍 **Location:** Chennai, Tamil Nadu, India
+- ✉️ **Email:** [karthickraja232205@gmail.com](mailto:karthickraja232205@gmail.com)
+- 📍 **Location:** Dubai, United Arab Emirates
 
 <div align="center">
   <br/>
