@@ -391,24 +391,31 @@
         }
 
         .hero-role {
-            font-size: clamp(1.1rem, 2vw, 1.4rem);
-            font-weight: 500;
-            color: var(--text-primary);
+            font-size: clamp(1.05rem, 2vw, 1.3rem);
+            font-weight: 600;
+            color: var(--accent-dark);
             margin-bottom: 1.5rem;
             min-height: 2rem;
+            display: flex;
+            align-items: center;
         }
 
-        .hero-role::after {
-            content: '|';
-            margin-left: 4px;
-            color: var(--accent);
-            animation: blink 1s steps(2, start) infinite;
+        .rotating-phrase {
+            display: inline-block;
+            color: var(--text-primary);
+            transition: opacity 0.35s cubic-bezier(.4, 0, .2, 1), transform 0.35s cubic-bezier(.4, 0, .2, 1);
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        @keyframes blink {
-            to {
-                opacity: 0;
-            }
+        .rotating-phrase.fade-out {
+            opacity: 0;
+            transform: translateY(-6px);
+        }
+
+        .rotating-phrase.fade-in {
+            opacity: 0;
+            transform: translateY(6px);
         }
 
         .hero-tagline {
@@ -1623,7 +1630,7 @@
                         <span class="hero-name">Karthick Raja</span>
                         <span class="accent">Data Analyst | Power BI Developer</span>
                     </h1>
-                    <p class="hero-role" id="typing"></p>
+                    <p class="hero-role"><span class="rotating-phrase" id="rotating-phrase">SQL &middot; Power BI &middot; DAX &middot; Python &middot; Azure</span></p>
                     <p class="hero-tagline">
                         Data Analyst &amp; Power BI Developer with hands-on experience building Power BI dashboards, SQL data solutions, and automated reporting workflows for UAE-based businesses. Bridging complex data into sharp, actionable insights.
                     </p>
@@ -1737,7 +1744,7 @@
             <div class="section-header reveal">
                 <span class="eyebrow">Experience</span>
                 <h2 class="section-title">Work history</h2>
-                <p class="section-subtitle">From internships to enterprise analytics — a timeline of the roles that have shaped my craft.</p>
+                <p class="section-subtitle">From hands-on analytics to UAE business reporting — a timeline of the roles that have shaped my craft.</p>
             </div>
 
             <div class="timeline">
@@ -2296,9 +2303,9 @@
                 });
             }
 
-            /* ---------- Typing animation ---------- */
-            var typeEl = document.getElementById('typing');
-            if (typeEl) {
+            /* ---------- Rotating phrase transition (complete terms) ---------- */
+            var phraseEl = document.getElementById('rotating-phrase');
+            if (phraseEl) {
                 var phrases = [
                     'SQL \u00B7 Power BI \u00B7 DAX \u00B7 Python \u00B7 Azure',
                     'Data Analyst | Power BI Developer',
@@ -2306,31 +2313,20 @@
                     'Executive KPI & Financial Dashboards',
                     'ETL Automation & Business Analytics'
                 ];
-                var p = 0,
-                    c = 0,
-                    deleting = false;
+                var pIdx = 0;
 
-                function tick() {
-                    var cur = phrases[p];
-                    if (!deleting) {
-                        typeEl.textContent = cur.substring(0, c + 1);
-                        c++;
-                        if (c === cur.length) {
-                            deleting = true;
-                            return setTimeout(tick, 1600);
-                        }
-                        return setTimeout(tick, 90);
-                    }
-                    typeEl.textContent = cur.substring(0, c - 1);
-                    c--;
-                    if (c === 0) {
-                        deleting = false;
-                        p = (p + 1) % phrases.length;
-                        return setTimeout(tick, 350);
-                    }
-                    setTimeout(tick, 45);
-                }
-                tick();
+                setInterval(function () {
+                    phraseEl.classList.add('fade-out');
+                    setTimeout(function () {
+                        pIdx = (pIdx + 1) % phrases.length;
+                        phraseEl.textContent = phrases[pIdx];
+                        phraseEl.classList.remove('fade-out');
+                        phraseEl.classList.add('fade-in');
+                        setTimeout(function () {
+                            phraseEl.classList.remove('fade-in');
+                        }, 50);
+                    }, 350);
+                }, 3000);
             }
 
             /* ---------- Footer year ---------- */
