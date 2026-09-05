@@ -33,7 +33,7 @@
 
 ## 👨‍💻 About Me
 
-**Data Analyst & Power BI Developer** with 1.5+ years of experience in **SQL, Power BI, DAX, Power Query, Excel, and data modeling**. Experienced in building KPI dashboards, executive reports, and BI solutions across **sales, banking, and supply chain**. Tracked **AED 15M+ in commercial opportunities** and **reduced reporting turnaround time by 70%**. Based in **Dubai, UAE**, available immediately.
+**Data Analyst & Power BI Developer** with 1.5+ years of experience in **SQL, Power BI, DAX, Power Query, Azure, Excel, and data modeling**. Experienced in building KPI dashboards, executive reports, and BI solutions across **sales, banking, and supply chain**. Tracked **AED 15M+ in commercial opportunities** and **reduced reporting turnaround time by 70%**. Based in **Dubai, UAE**, available immediately.
 
 - 💼 **Current Status:** Open to Full-Time Data Analyst & Power BI Developer roles
 - 🎯 **Core Strengths:** Power BI, DAX, Power Query, SQL (MySQL, PostgreSQL, SQL Server), Microsoft Azure, Python (Pandas, NumPy, EDA), Advanced Excel, ETL Workflows
