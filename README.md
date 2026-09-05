@@ -119,67 +119,11 @@ Analyzed **50,000+ IoT telemetry records** across industrial machines to monitor
 
 ---
 
-### 5. Retail Analytics & Profit Insights Dashboard
-> **Technologies:** Power BI, DAX, Time Intelligence, Sales Analytics
+### Additional projects
 
-A commercial reporting dashboard evaluating store revenue streams, profit margins, regional growth, and product category performance.
+The portfolio website highlights the three strongest Power BI projects. Other work includes VOLT IQ industrial IoT analytics, retail analytics, API performance monitoring, an audio classification app, and an ATS resume analyzer.
 
-![Retail Analytics Thumbnail](assets/retail_analytics_thumbnail.png)
-
-#### 🌟 Key Features & Business Value:
-- **Time Intelligence:** Implemented DAX logic for `YoY`, `MoM`, `YTD`, `MTD`, and rolling averages.
-- **Geographic Mapping:** Visualized sales density and profit distribution across store regions.
-- **Product Category Matrix:** High-margin item identification to guide inventory allocation.
-
-🔗 **[Live Power BI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiMjRmN2U0OTUtZTJmZi00ZjhhLTkxZmEtOGI3MzRmN2QxZTE3IiwidCI6IjNjYjM3ODQ0LTAxZGEtNGJlYS04MDEwLTBmYjFmNWExZWM0ZSJ9)** | 📄 **[PDF Report](assets/Retail%20Analytics%20%26%20Profit%20Insights.pdf)** | 💻 **[GitHub Repository](https://github.com/KarthickRaja46/Retail-Analytics-Profit-Insights.git)**
-
----
-
-### 6. API Performance Monitoring & Analytics System
-> **Technologies:** Python, SQL, ETL, Power BI, SLA Analytics
-
-Built an automated end-to-end ETL pipeline processing **100,000+ API log records** with automated data validation and SLA latency monitoring.
-
-![API Monitoring Thumbnail](assets/api_project_thumbnail.svg)
-
-#### 🌟 Key Features & Business Value:
-- **99.5% Data Consistency:** Automated validation pipeline filtering corrupted logs.
-- **SLA & Latency Tracking:** Real-time dashboards monitoring endpoint response times and status codes.
-- **Incident Detection:** 30% faster incident detection with threshold-based alert views.
-
-💻 **[GitHub Repository](https://github.com/KarthickRaja46/API-Performance-Monitoring-Analytics)**
-
----
-
-### 7. AI Bird Species Recognition System
-> **Technologies:** Python, TensorFlow, Audio Processing (MFCC), Streamlit
-
-A deep learning audio classification model extracting MFCC features from bird sound recordings to predict bird species in real time.
-
-![Bird Species Thumbnail](assets/bird_species_thumbnail.svg)
-
-#### 🌟 Key Features & Business Value:
-- **MFCC Feature Extraction:** Converts raw audio signals into mel-frequency cepstral coefficients.
-- **Streamlit Web App:** Deployed interactive UI allowing audio file uploads and instant prediction output.
-
-🔗 **[Live Streamlit App](https://bird-species-identifier-ai-qi82svyxaieeiyo2jzr4wd.streamlit.app/)** | 💻 **[GitHub Repository](https://github.com/KarthickRaja46/Bird-species-audio-classifier)**
-
----
-
-### 8. ATS Resume Analyzer
-> **Technologies:** React, TypeScript, Node.js, Generative AI, Express
-
-A full-stack application using LLMs to evaluate resume alignment with Data Analyst job descriptions, extract PDF text, and provide AI feedback.
-
-![ATS Analyzer Thumbnail](assets/ats_resume_thumbnail.jpg)
-
-#### 🌟 Key Features & Business Value:
-- **ATS Keyword Matching:** Calculates compatibility scores and missing key skills.
-- **AI Rewriting Engine:** Suggests bullet-point improvements tailored for BI & Data roles.
-
-🔗 **[Live App Demo](https://ats-resume-analyzer-i3kr.onrender.com)** | 💻 **[GitHub Repository](https://github.com/KarthickRaja46/ATS-Resume-Analyzer.git)**
-
----
+See the [GitHub profile](https://github.com/KarthickRaja46) and [LinkedIn projects](https://www.linkedin.com/in/karthick-raja-l-7a5b3a26b/) for the broader project history.
 
 ## 🛠️ Skills Matrix
 

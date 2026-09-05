@@ -15,13 +15,17 @@
     <meta property="og:title" content="Karthick Raja | Data Analyst &amp; Power BI Developer">
     <meta property="og:description"
         content="Data Analyst &amp; Power BI Developer with 1.5+ years experience in Power BI, SQL, DAX, Power Query, and BI solutions. Based in Dubai, UAE.">
+    <meta property="og:url" content="https://karthickraja.page/">
     <meta property="og:image" content="https://karthickraja.page/assets/Karthick%20raja%201_1-1.jpeg">
     <meta property="og:locale" content="en_GB">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Karthick Raja | Data Analyst &amp; Power BI Developer">
     <meta name="twitter:description" content="Data Analyst | Power BI Developer | Business Intelligence | SQL | ETL">
+    <meta name="twitter:url" content="https://karthickraja.page/">
     <meta name="twitter:image" content="https://karthickraja.page/assets/Karthick%20raja%201_1-1.jpeg">
+
+    <link rel="canonical" href="https://karthickraja.page/">
 
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="alternate icon" type="image/jpeg" href="assets/Karthick raja 1_1-1.jpeg">
@@ -752,35 +756,68 @@
         }
 
         .skills {
-            margin-top: 1.5rem;
+            margin-top: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
         }
 
         .skill {
-            margin-bottom: 1.1rem;
+            background: var(--bg-soft);
+            padding: 0.65rem 0.9rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-soft);
+            transition: border-color var(--transition), transform var(--transition), background-color var(--transition);
+        }
+
+        .skill:hover {
+            border-color: var(--accent-light);
+            background: #ffffff;
+            transform: translateX(3px);
         }
 
         .skill-head {
             display: flex;
             justify-content: space-between;
-            font-size: 0.9rem;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.88rem;
             font-weight: 600;
             color: var(--text-primary);
-            margin-bottom: 0.4rem;
+            margin: 0;
         }
 
-        .skill-bar {
-            height: 8px;
-            background: var(--bg-soft);
-            border-radius: 999px;
-            overflow: hidden;
+        .skill-title {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--text-primary);
+            min-width: 0;
         }
 
-        .skill-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--accent-light), var(--accent));
+        .skill-title i {
+            color: var(--accent-dark);
+            font-size: 0.95rem;
+            width: 18px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .level-badge {
+            color: var(--accent-dark);
+            font-weight: 700;
+            font-size: 0.75rem;
+            background: var(--accent-soft);
+            border: 1px solid rgba(212, 160, 23, 0.3);
+            padding: 0.22rem 0.65rem;
             border-radius: 999px;
-            width: 0;
-            transition: width 1.4s cubic-bezier(.4, 0, .2, 1);
+            white-space: nowrap;
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.2;
+            letter-spacing: 0.01em;
         }
 
         /* =========================================================
@@ -1020,6 +1057,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
+            align-items: stretch;
         }
 
         .skill-group-card {
@@ -1032,6 +1070,7 @@
             display: flex;
             flex-direction: column;
             position: relative;
+            height: 100%;
         }
 
         .skill-group-card:hover {
@@ -1078,7 +1117,8 @@
             display: flex;
             flex-wrap: wrap;
             gap: 0.45rem;
-            margin-top: auto;
+            margin-top: 0;
+            align-content: flex-start;
         }
 
         .skill-pill {
@@ -1193,6 +1233,13 @@
             transition: transform 0.4s ease;
         }
 
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
         .project-card:hover .project-img {
             transform: scale(1.02);
         }
@@ -1272,6 +1319,97 @@
 
         .project-link:hover .arrow {
             transform: translateX(4px);
+        }
+
+        /* =========================================================
+         Case study
+         ========================================================= */
+
+        .case-study {
+            margin-top: 3rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-left: 4px solid var(--accent);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .case-study-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-study-header h3 {
+            margin-bottom: 0.35rem;
+        }
+
+        .case-study-header p {
+            margin-bottom: 0;
+            color: var(--text-muted);
+        }
+
+        .case-study-metrics {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+        }
+
+        .case-study-metric strong {
+            display: block;
+            color: var(--text-primary);
+            font-size: 1.35rem;
+        }
+
+        .case-study-metric span {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+        }
+
+        .case-study-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .case-study-steps li {
+            margin: 0;
+            padding-top: 0.75rem;
+            border-top: 2px solid var(--border);
+            font-size: 0.9rem;
+        }
+
+        .case-study-steps strong {
+            display: block;
+            margin-bottom: 0.25rem;
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 720px) {
+            .case-study-header {
+                flex-direction: column;
+            }
+
+            .case-study-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .case-study {
+                padding: 1.5rem;
+            }
+
+            .case-study-steps {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* =========================================================
@@ -1666,7 +1804,7 @@
                     <div class="hero-photo-frame">
                         <img src="assets/Karthick raja 1_1-1.jpeg" alt="Portrait of Karthick Raja" loading="eager">
                     </div>
-                    <div class="hero-badge b2">📊 Power BI &middot; SQL Specialist</div>
+                    <div class="hero-badge b2"><i class="fa-solid fa-chart-column" style="color: var(--accent-dark);"></i> Power BI &middot; SQL Specialist</div>
                 </div>
             </div>
         </div>
@@ -1699,42 +1837,42 @@
 
                 <div class="about-card reveal">
                     <h3>Core Competencies</h3>
-                    <p>Proficiency levels across analytics, BI engineering &amp; data modeling.</p>
+                    <p>Focus areas demonstrated through projects, experience, and certifications.</p>
                     <div class="skills">
                         <div class="skill">
-                            <div class="skill-head"><span>Power BI &amp; Microsoft Fabric</span><span style="color: var(--accent-dark); font-weight: 700; font-size: 0.8rem; background: var(--accent-soft); padding: 0.15rem 0.55rem; border-radius: 999px;">Advanced</span></div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" data-fill="95"></div>
+                            <div class="skill-head">
+                                <span class="skill-title"><i class="fa-solid fa-chart-column"></i> <span>Power BI &amp; Microsoft Fabric</span></span>
+                                <span class="level-badge">Advanced</span>
                             </div>
                         </div>
                         <div class="skill">
-                            <div class="skill-head"><span>SQL, CTEs &amp; Query Optimization</span><span style="color: var(--accent-dark); font-weight: 700; font-size: 0.8rem; background: var(--accent-soft); padding: 0.15rem 0.55rem; border-radius: 999px;">Strong</span></div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" data-fill="90"></div>
+                            <div class="skill-head">
+                                <span class="skill-title"><i class="fa-solid fa-database"></i> <span>SQL, CTEs &amp; Query Optimization</span></span>
+                                <span class="level-badge">Strong</span>
                             </div>
                         </div>
                         <div class="skill">
-                            <div class="skill-head"><span>DAX &amp; Star Schema Modeling</span><span style="color: var(--accent-dark); font-weight: 700; font-size: 0.8rem; background: var(--accent-soft); padding: 0.15rem 0.55rem; border-radius: 999px;">Advanced</span></div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" data-fill="92"></div>
+                            <div class="skill-head">
+                                <span class="skill-title"><i class="fa-solid fa-cubes"></i> <span>DAX &amp; Star Schema Modeling</span></span>
+                                <span class="level-badge">Advanced</span>
                             </div>
                         </div>
                         <div class="skill">
-                            <div class="skill-head"><span>Data Visualization &amp; KPI Design</span><span style="color: var(--accent-dark); font-weight: 700; font-size: 0.8rem; background: var(--accent-soft); padding: 0.15rem 0.55rem; border-radius: 999px;">Advanced</span></div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" data-fill="95"></div>
+                            <div class="skill-head">
+                                <span class="skill-title"><i class="fa-solid fa-chart-line"></i> <span>Data Visualization &amp; KPI Design</span></span>
+                                <span class="level-badge">Advanced</span>
                             </div>
                         </div>
                         <div class="skill">
-                            <div class="skill-head"><span>Power Automate &amp; Power BI Gateway</span><span style="color: var(--accent-dark); font-weight: 700; font-size: 0.8rem; background: var(--accent-soft); padding: 0.15rem 0.55rem; border-radius: 999px;">Strong</span></div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" data-fill="85"></div>
+                            <div class="skill-head">
+                                <span class="skill-title"><i class="fa-solid fa-bolt"></i> <span>Power Automate &amp; Power BI Gateway</span></span>
+                                <span class="level-badge">Strong</span>
                             </div>
                         </div>
                         <div class="skill">
-                            <div class="skill-head"><span>Python (Pandas, NumPy) &amp; Azure</span><span style="color: var(--accent-dark); font-weight: 700; font-size: 0.8rem; background: var(--accent-soft); padding: 0.15rem 0.55rem; border-radius: 999px;">Working Knowledge</span></div>
-                            <div class="skill-bar">
-                                <div class="skill-fill" data-fill="80"></div>
+                            <div class="skill-head">
+                                <span class="skill-title"><i class="fa-brands fa-python"></i> <span>Python (Pandas, NumPy) &amp; Azure</span></span>
+                                <span class="level-badge">Working Knowledge</span>
                             </div>
                         </div>
                     </div>
@@ -1913,40 +2051,40 @@
             </div>
 
             <div class="skills-section-grid">
-                <!-- Group 1: Power BI & Microsoft Fabric -->
+                <!-- Group 1: Power BI, Fabric & Azure -->
                 <div class="skill-group-card reveal">
                     <div class="skill-group-header">
                         <div class="skill-group-icon">
                             <i class="fa-solid fa-chart-pie" aria-hidden="true"></i>
                         </div>
                         <div>
-                            <h3 class="skill-group-title">Power BI &amp; Fabric (BI)</h3>
-                            <span style="font-size: 0.78rem; color: var(--accent-dark); font-weight: 600;">Semantic Models &middot; DAX &middot; Pipelines</span>
+                            <h3 class="skill-group-title">Power BI, Fabric &amp; Azure</h3>
+                            <span style="font-size: 0.78rem; color: var(--accent-dark); font-weight: 600;">Power BI &middot; Fabric &middot; Cloud Pipelines</span>
                         </div>
                     </div>
-                    <p class="skill-group-desc">End-to-end interactive dashboard design, semantic data modeling, complex DAX formulas, incremental refreshes, and enterprise Fabric deployment pipelines.</p>
+                    <p class="skill-group-desc">End-to-end dashboard design, semantic modeling, DAX, Microsoft Fabric, Azure data services, and automated ETL pipelines.</p>
                     <div class="skill-pills-wrap">
                         <span class="skill-pill"><i class="fa-solid fa-chart-column"></i> Power BI Desktop &amp; Service</span>
                         <span class="skill-pill"><i class="fa-solid fa-calculator"></i> Advanced DAX Measures</span>
                         <span class="skill-pill"><i class="fa-solid fa-sitemap"></i> Semantic Model Design</span>
-                        <span class="skill-pill"><i class="fa-solid fa-filter"></i> Power Query &amp; M-Code</span>
+                        <span class="skill-pill"><i class="fa-solid fa-filter"></i> Power Query &amp; M</span>
                         <span class="skill-pill"><i class="fa-solid fa-layer-group"></i> Microsoft Fabric</span>
                         <span class="skill-pill"><i class="fa-solid fa-rotate"></i> Incremental Refresh</span>
                         <span class="skill-pill"><i class="fa-solid fa-code-branch"></i> Deployment Pipelines</span>
-                        <span class="skill-pill"><i class="fa-solid fa-shield-halved"></i> Row-Level Security (RLS)</span>
+                        <span class="skill-pill"><i class="fa-solid fa-shield-halved"></i> Row-Level Security</span>
                         <span class="skill-pill"><i class="fa-solid fa-gauge-high"></i> Performance Optimization</span>
-                        <span class="skill-pill"><i class="fa-solid fa-table-columns"></i> Workspace &amp; App Management</span>
+                        <span class="skill-pill"><i class="fa-brands fa-microsoft"></i> Azure Data Factory</span>
                     </div>
                 </div>
 
-                <!-- Group 2: SQL & Relational Databases -->
+                <!-- Group 2: SQL & Data Analytics -->
                 <div class="skill-group-card reveal">
                     <div class="skill-group-header">
                         <div class="skill-group-icon">
                             <i class="fa-solid fa-database" aria-hidden="true"></i>
                         </div>
                         <div>
-                            <h3 class="skill-group-title">SQL &amp; Data Analytics (DA)</h3>
+                            <h3 class="skill-group-title">SQL &amp; Data Analytics</h3>
                             <span style="font-size: 0.78rem; color: var(--accent-dark); font-weight: 600;">Query Optimization &middot; Modeling &middot; QA</span>
                         </div>
                     </div>
@@ -1963,31 +2101,7 @@
                     </div>
                 </div>
 
-                <!-- Group 3: Azure & ETL Data Pipelines -->
-                <div class="skill-group-card reveal">
-                    <div class="skill-group-header">
-                        <div class="skill-group-icon">
-                            <i class="fa-solid fa-network-wired" aria-hidden="true"></i>
-                        </div>
-                        <div>
-                            <h3 class="skill-group-title">Azure &amp; Data Pipelines</h3>
-                            <span style="font-size: 0.78rem; color: var(--accent-dark); font-weight: 600;">ADF &middot; Azure SQL &middot; Gateways</span>
-                        </div>
-                    </div>
-                    <p class="skill-group-desc">Scalable Azure cloud data solutions, automated ETL ingestion pipelines, on-premises gateways, and cloud data architecture.</p>
-                    <div class="skill-pills-wrap">
-                        <span class="skill-pill"><i class="fa-brands fa-microsoft"></i> Azure Data Factory (ADF)</span>
-                        <span class="skill-pill"><i class="fa-solid fa-server"></i> Azure SQL Database</span>
-                        <span class="skill-pill"><i class="fa-solid fa-hard-drive"></i> Azure Blob / Data Lake</span>
-                        <span class="skill-pill"><i class="fa-solid fa-arrows-spin"></i> ETL Pipeline Architecture</span>
-                        <span class="skill-pill"><i class="fa-solid fa-network-wired"></i> Power BI Gateway</span>
-                        <span class="skill-pill"><i class="fa-solid fa-bolt"></i> Power Automate</span>
-                        <span class="skill-pill"><i class="fa-brands fa-git-alt"></i> Git &amp; Version Control</span>
-                        <span class="skill-pill"><i class="fa-solid fa-calendar-check"></i> Scheduled Refresh Workflows</span>
-                    </div>
-                </div>
-
-                <!-- Group 4: Python, Excel & Business Analysis -->
+                <!-- Group 3: Python, Excel & Business Analysis -->
                 <div class="skill-group-card reveal">
                     <div class="skill-group-header">
                         <div class="skill-group-icon">
@@ -2008,6 +2122,8 @@
                         <span class="skill-pill"><i class="fa-solid fa-bullseye"></i> KPI Definition &amp; Ad-hoc Analysis</span>
                         <span class="skill-pill"><i class="fa-solid fa-magnifying-glass"></i> Root Cause Analysis</span>
                         <span class="skill-pill"><i class="fa-solid fa-comments"></i> Stakeholder Data Storytelling</span>
+                        <span class="skill-pill"><i class="fa-solid fa-chart-line"></i> Data Visualization</span>
+                        <span class="skill-pill"><i class="fa-solid fa-square-root-variable"></i> Statistical Analysis</span>
                     </div>
                 </div>
             </div>
@@ -2053,8 +2169,9 @@
                 <article class="project-card reveal">
                     <a class="project-img"
                         href="https://app.powerbi.com/view?r=eyJrIjoiMWQxMzFjYTAtZjkxMi00YzViLTg2NTktMGI5Y2YzNWRkNDBkIiwidCI6IjNjYjM3ODQ0LTAxZGEtNGJlYS04MDEwLTBmYjFmNWExZWM0ZSJ9"
-                        target="_blank" rel="noopener noreferrer"
-                        style="background-image: url('assets/steel_quotation_thumbnail.png');"></a>
+                        target="_blank" rel="noopener noreferrer" aria-label="Open Steel Quotation and Sales Analytics dashboard">
+                        <img src="assets/steel_quotation_thumbnail.png" alt="Steel Quotation and Sales Analytics dashboard preview" loading="lazy">
+                    </a>
                     <div class="project-body">
                         <h3><a href="https://app.powerbi.com/view?r=eyJrIjoiMWQxMzFjYTAtZjkxMi00YzViLTg2NTktMGI5Y2YzNWRkNDBkIiwidCI6IjNjYjM3ODQ0LTAxZGEtNGJlYS04MDEwLTBmYjFmNWExZWM0ZSJ9"
                                  target="_blank" rel="noopener noreferrer">Steel Quotation &amp; Sales Analytics</a></h3>
@@ -2075,8 +2192,9 @@
                 <article class="project-card reveal">
                     <a class="project-img"
                         href="https://app.powerbi.com/view?r=eyJrIjoiNjRlMTgyYmYtYjBjOC00ZGUzLTlmMjMtYzY3NTBiMDcyMGZiIiwidCI6IjNjYjM3ODQ0LTAxZGEtNGJlYS04MDEwLTBmYjFmNWExZWM0ZSJ9"
-                        target="_blank" rel="noopener noreferrer"
-                        style="background-image: url('assets/biz_performance_thumbnail.png');"></a>
+                        target="_blank" rel="noopener noreferrer" aria-label="Open Business Performance and Customer Analytics dashboard">
+                        <img src="assets/biz_performance_thumbnail.png" alt="Business Performance and Customer Analytics dashboard preview" loading="lazy">
+                    </a>
                     <div class="project-body">
                         <h3><a href="https://app.powerbi.com/view?r=eyJrIjoiNjRlMTgyYmYtYjBjOC00ZGUzLTlmMjMtYzY3NTBiMDcyMGZiIiwidCI6IjNjYjM3ODQ0LTAxZGEtNGJlYS04MDEwLTBmYjFmNWExZWM0ZSJ9"
                                 target="_blank" rel="noopener noreferrer">Business Performance &amp; Customer Analytics</a></h3>
@@ -2096,8 +2214,9 @@
                 <article class="project-card reveal">
                     <a class="project-img"
                         href="https://app.powerbi.com/view?r=eyJrIjoiMjg1MTcwZjktZTViMy00OTU3LTgyMTctNGIzNTRhNWYwYWM1IiwidCI6IjNjYjM3ODQ0LTAxZGEtNGJlYS04MDEwLTBmYjFmNWExZWM0ZSJ9"
-                        target="_blank" rel="noopener noreferrer"
-                        style="background-image: url('assets/banking_analytics_thumbnail.png');"></a>
+                        target="_blank" rel="noopener noreferrer" aria-label="Open Banking Performance dashboard">
+                        <img src="assets/banking_analytics_thumbnail.png" alt="Banking Performance dashboard preview" loading="lazy">
+                    </a>
                     <div class="project-body">
                         <h3><a href="https://app.powerbi.com/view?r=eyJrIjoiMjg1MTcwZjktZTViMy00OTU3LTgyMTctNGIzNTRhNWYwYWM1IiwidCI6IjNjYjM3ODQ0LTAxZGEtNGJlYS04MDEwLTBmYjFmNWExZWM0ZSJ9"
                                 target="_blank" rel="noopener noreferrer">Banking Performance Dashboard</a></h3>
@@ -2113,27 +2232,6 @@
                     </div>
                 </article>
 
-                <!-- Project 4: VOLT IQ IoT -->
-                <article class="project-card reveal">
-                    <a class="project-img"
-                        href="https://app.powerbi.com/view?r=eyJrIjoiZTNjNzZiNGItYjM3Zi00NDNjLWFhODMtNjNiZjlkMWI4NjQ4IiwidCI6IjNjYjM3ODQ0LTAxZGEtNGJlYS04MDEwLTBmYjFmNWExZWM0ZSJ9&pageName=fd208009e45a735db3b9"
-                        target="_blank" rel="noopener noreferrer"
-                        style="background-image: url('assets/voltiq_iot_thumbnail.png');"></a>
-                    <div class="project-body">
-                        <h3><a href="https://app.powerbi.com/view?r=eyJrIjoiZTNjNzZiNGItYjM3Zi00NDNjLWFhODMtNjNiZjlkMWI4NjQ4IiwidCI6IjNjYjM3ODQ0LTAxZGEtNGJlYS04MDEwLTBmYjFmNWExZWM0ZSJ9&pageName=fd208009e45a735db3b9"
-                                target="_blank" rel="noopener noreferrer">VOLT IQ &ndash; Industrial IoT Platform</a></h3>
-                        <p>Analyzed 50,000+ IoT telemetry records across industrial machines to monitor machine health, identify downtime risk, and detect vibration anomalies.</p>
-                        <div class="project-tags-row">
-                            <span class="p-tag">Power BI</span>
-                            <span class="p-tag">IoT Analytics</span>
-                            <span class="p-tag">Predictive Maintenance</span>
-                        </div>
-                        <a class="project-link"
-                            href="https://app.powerbi.com/view?r=eyJrIjoiZTNjNzZiNGItYjM3Zi00NDNjLWFhODMtNjNiZjlkMWI4NjQ4IiwidCI6IjNjYjM3ODQ0LTAxZGEtNGJlYS04MDEwLTBmYjFmNWExZWM0ZSJ9&pageName=fd208009e45a735db3b9"
-                            target="_blank" rel="noopener noreferrer">Live Dashboard <span class="arrow">&rarr;</span></a>
-                    </div>
-                </article>
-
             </div>
 
             <div style="text-align: center; margin-top: 2.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
@@ -2142,6 +2240,66 @@
                 <a href="https://github.com/KarthickRaja46" class="btn btn-outline" target="_blank"
                     rel="noopener noreferrer">View GitHub &rarr;</a>
             </div>
+
+            <article class="case-study reveal" aria-labelledby="case-study-title">
+                <div class="case-study-header">
+                    <div>
+                        <span class="eyebrow">Case study</span>
+                        <h3 id="case-study-title">Steel Quotation &amp; Sales Analytics</h3>
+                        <p>Turning manual commercial reporting into a decision-ready Power BI workflow.</p>
+                    </div>
+                    <div class="case-study-metrics" aria-label="Case study results">
+                        <div class="case-study-metric"><strong>AED 15M+</strong><span>pipeline tracked</span></div>
+                        <div class="case-study-metric"><strong>70%</strong><span>faster reporting</span></div>
+                    </div>
+                </div>
+                <ol class="case-study-steps">
+                    <li><strong>Problem</strong>Commercial teams relied on manual Excel compilation and delayed status updates.</li>
+                    <li><strong>Approach</strong>Built Power Query transformations, a star schema, and reusable DAX measures.</li>
+                    <li><strong>Solution</strong>Delivered a five-page dashboard covering funnel, region, win/loss, and margin views.</li>
+                    <li><strong>Outcome</strong>Saved 12+ hours each week and gave leadership a consistent view of active opportunities.</li>
+                </ol>
+            </article>
+
+            <article class="case-study reveal" aria-labelledby="business-case-study-title">
+                <div class="case-study-header">
+                    <div>
+                        <span class="eyebrow">Case study</span>
+                        <h3 id="business-case-study-title">Business Performance &amp; Customer Analytics</h3>
+                        <p>Making revenue, profitability, and customer retention patterns easier to act on.</p>
+                    </div>
+                    <div class="case-study-metrics" aria-label="Business performance case study results">
+                        <div class="case-study-metric"><strong>$2.3M</strong><span>revenue analyzed</span></div>
+                        <div class="case-study-metric"><strong>9,994</strong><span>orders analyzed</span></div>
+                    </div>
+                </div>
+                <ol class="case-study-steps">
+                    <li><strong>Problem</strong>Leadership needed one view of revenue, profit, customer retention, and year-to-date performance.</li>
+                    <li><strong>Approach</strong>Created a star schema with reusable DAX measures for growth, margins, cohorts, and customer value.</li>
+                    <li><strong>Solution</strong>Built interactive KPI pages with slicers, drill-through, cohort analysis, and tooltip cards.</li>
+                    <li><strong>Outcome</strong>Enabled faster comparison of customer segments, retention patterns, and business performance trends.</li>
+                </ol>
+            </article>
+
+            <article class="case-study reveal" aria-labelledby="banking-case-study-title">
+                <div class="case-study-header">
+                    <div>
+                        <span class="eyebrow">Case study</span>
+                        <h3 id="banking-case-study-title">Banking Performance Dashboard</h3>
+                        <p>Turning high-volume transaction data into clearer financial risk and performance signals.</p>
+                    </div>
+                    <div class="case-study-metrics" aria-label="Banking case study results">
+                        <div class="case-study-metric"><strong>₹4.87B</strong><span>transaction value</span></div>
+                        <div class="case-study-metric"><strong>150K+</strong><span>records analyzed</span></div>
+                    </div>
+                </div>
+                <ol class="case-study-steps">
+                    <li><strong>Problem</strong>Large transaction volumes made it difficult to identify failure patterns, defaults, and liquidity signals.</li>
+                    <li><strong>Approach</strong>Used SQL CTEs, joins, window functions, and Power Query transformations for validation and analysis.</li>
+                    <li><strong>Solution</strong>Designed financial KPI views covering transaction volume, failure rates, loan defaults, and liquidity.</li>
+                    <li><strong>Outcome</strong>Gave users dynamic risk-segment views for investigating high-failure and abnormal transaction patterns.</li>
+                </ol>
+            </article>
         </div>
     </section>
 
@@ -2397,26 +2555,6 @@
                 });
             } else {
                 document.querySelectorAll('[data-counter]').forEach(animateCounter);
-            }
-
-            /* ---------- Skill bar fill ---------- */
-            if ('IntersectionObserver' in window) {
-                var sIo = new IntersectionObserver(function (entries) {
-                    entries.forEach(function (entry) {
-                        if (entry.isIntersecting) {
-                            var fill = entry.target;
-                            fill.style.width = fill.getAttribute('data-fill') + '%';
-                            sIo.unobserve(fill);
-                        }
-                    });
-                }, { threshold: 0.4 });
-                document.querySelectorAll('.skill-fill').forEach(function (el) {
-                    sIo.observe(el);
-                });
-            } else {
-                document.querySelectorAll('.skill-fill').forEach(function (el) {
-                    el.style.width = el.getAttribute('data-fill') + '%';
-                });
             }
 
             /* ---------- Contact Modal ---------- */
