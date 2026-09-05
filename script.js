@@ -7,11 +7,10 @@ const themeIcon = document.getElementById('themeIcon');
 const themeColorMetas = document.querySelectorAll('meta[name="theme-color"]');
 const RESUME_ASSET_PATH = 'assets/KARTHICK_RAJA_Data_Analyst.pdf';
 const THEME_COLORS = {
-  light: '#fdfdfc',
-  dark: '#0a0a0b'
+  light: '#fcfbf9',
+  dark: '#0c0a08'
 };
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
 document.querySelectorAll('[data-resume-link]').forEach(link => {
   link.setAttribute('href', RESUME_ASSET_PATH);
@@ -24,7 +23,6 @@ function setTheme(theme, persist = true) {
     html.setAttribute('data-theme', 'dark');
     themeIcon.className = 'ti ti-sun';
   } else {
-    // Light is the default in :root
     html.setAttribute('data-theme', 'light');
     themeIcon.className = 'ti ti-moon';
   }
@@ -34,24 +32,22 @@ function setTheme(theme, persist = true) {
     themeBtn.setAttribute('title', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
   }
 
-  // Keep both light/dark theme-color metas in sync (for browsers that ignore media)
   const color = THEME_COLORS[theme] || THEME_COLORS.light;
   themeColorMetas.forEach(meta => {
     if (!meta.hasAttribute('media')) meta.setAttribute('content', color);
   });
 
   if (persist) {
-    try { localStorage.setItem('theme', theme); } catch (_) { /* storage may be blocked */ }
+    try { localStorage.setItem('theme', theme); } catch (_) { /* storage blocked */ }
   }
 }
 
-// Initialize theme: saved preference -> device type (mobile=dark, laptop=light)
+// Initialize theme preference
 let savedTheme = null;
 try { savedTheme = localStorage.getItem('theme'); } catch (_) { /* ignore */ }
-const defaultTheme = window.innerWidth <= 768 ? 'dark' : 'light';
+const defaultTheme = window.innerWidth <= 768 ? 'light' : 'light';
 setTheme(savedTheme || defaultTheme, false);
 
-// Toggle on button click
 if (themeBtn) {
   themeBtn.addEventListener('click', () => {
     const current = html.getAttribute('data-theme');
@@ -59,24 +55,18 @@ if (themeBtn) {
   });
 }
 
-// Update theme on resize if no theme is explicitly saved
-window.addEventListener('resize', () => {
-  let stored = null;
-  try { stored = localStorage.getItem('theme'); } catch (_) { /* ignore */ }
-  if (!stored) {
-    const newDefault = window.innerWidth <= 768 ? 'dark' : 'light';
-    setTheme(newDefault, false);
-  }
-});
-
-
-
 
 /* ============================================================
    TYPING ANIMATION
 ============================================================ */
 const typedEl = document.getElementById('typedText');
-const roles = ['Data Analyst', 'Power BI Developer', 'Business Intelligence Analyst', 'SQL & ETL Developer'];
+const roles = [
+  'Power BI Developer',
+  'Business Intelligence Analyst',
+  'SQL & ETL Developer',
+  'Microsoft Fabric Specialist',
+  'DAX & Data Modeling'
+];
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -92,19 +82,20 @@ function type() {
   if (isDeleting) {
     typedEl.textContent = currentRole.substring(0, charIndex - 1);
     charIndex--;
-    typeSpeed = 50;
+    typeSpeed = 40;
   } else {
     typedEl.textContent = currentRole.substring(0, charIndex + 1);
     charIndex++;
-    typeSpeed = 100;
+    typeSpeed = 90;
   }
+
   if (!isDeleting && charIndex === currentRole.length) {
     isDeleting = true;
-    typeSpeed = 2000;
+    typeSpeed = 2200;
   } else if (isDeleting && charIndex === 0) {
     isDeleting = false;
     roleIndex = (roleIndex + 1) % roles.length;
-    typeSpeed = 500;
+    typeSpeed = 400;
   }
   setTimeout(type, typeSpeed);
 }
@@ -112,18 +103,53 @@ document.addEventListener('DOMContentLoaded', type);
 
 
 /* ============================================================
-   NAV — SCROLL HIDE/SHOW + SCROLLED STATE
+   SKILL BARS ANIMATION ON SCROLL
+============================================================ */
+function initSkillBars() {
+  const skillFills = document.querySelectorAll('.skill-fill');
+  if (!skillFills.length) return;
+
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    skillFills.forEach(fill => {
+      fill.style.width = fill.getAttribute('data-progress') || '85%';
+    });
+    return;
+  }
+
+  const skillsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        skillFills.forEach((fill, index) => {
+          setTimeout(() => {
+            fill.style.width = fill.getAttribute('data-progress') || '85%';
+          }, index * 100);
+        });
+        skillsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  const skillsCard = document.querySelector('.skills-progress-card');
+  if (skillsCard) {
+    skillsObserver.observe(skillsCard);
+  }
+}
+document.addEventListener('DOMContentLoaded', initSkillBars);
+
+
+/* ============================================================
+   NAV SCROLL SPY & FROSTED GLASS EFFECT
 ============================================================ */
 const nav = document.getElementById('nav');
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a, .mobile-menu a');
 let lastScrollY = 0;
+let scrollFrameRequested = false;
 
 function syncActiveNavLinks(sectionId) {
   navLinks.forEach(link => {
     const isActive = link.getAttribute('href') === `#${sectionId}`;
     link.classList.toggle('active', isActive);
-
     if (isActive) {
       link.setAttribute('aria-current', 'page');
     } else {
@@ -138,7 +164,6 @@ function updateActiveSectionFromScroll(scrollY) {
   sections.forEach(sec => {
     const top = sec.offsetTop - 130;
     const bottom = top + sec.offsetHeight;
-
     if (scrollY >= top && scrollY < bottom) {
       activeSectionId = sec.id;
     }
@@ -158,32 +183,25 @@ window.addEventListener('scroll', () => {
 
 function handleScroll() {
   if (!nav) return;
-
   const y = window.scrollY;
 
-  // Frosted glass background after 20px
   nav.classList.toggle('scrolled', y > 20);
 
-  // Hide nav on scroll down, reveal on scroll up
-  if (y > lastScrollY + 8 && y > 80) {
+  if (y > lastScrollY + 10 && y > 100) {
     nav.classList.add('hidden');
-  } else if (y < lastScrollY || y < 80) {
+  } else if (y < lastScrollY || y < 100) {
     nav.classList.remove('hidden');
   }
 
   lastScrollY = y;
 
-  // Back-to-top button visibility
   const backTopBtn = document.getElementById('backTop');
   if (backTopBtn) {
     backTopBtn.classList.toggle('show', y > 500);
   }
 
-  // Scroll spy — highlight active nav link
   updateActiveSectionFromScroll(y);
 }
-
-let scrollFrameRequested = false;
 
 updateActiveSectionFromScroll(window.scrollY);
 
@@ -200,7 +218,7 @@ if (backTop) {
 
 
 /* ============================================================
-   MOBILE MENU
+   MOBILE NAVIGATION
 ============================================================ */
 const mobileMenu  = document.getElementById('mobileMenu');
 const hamburger   = document.getElementById('hamburger');
@@ -223,11 +241,8 @@ function closeMobileMenu() {
 }
 
 if (hamburger) {
-  hamburger.addEventListener('click', () => {
-    openMobileMenu();
-  });
+  hamburger.addEventListener('click', openMobileMenu);
 }
-
 if (mobileClose) {
   mobileClose.addEventListener('click', closeMobileMenu);
 }
@@ -245,7 +260,7 @@ document.addEventListener('keydown', e => {
 
 
 /* ============================================================
-   SMOOTH SCROLL FOR ALL ANCHOR LINKS
+   SMOOTH SCROLL FOR ANCHOR LINKS
 ============================================================ */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -260,33 +275,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 /* ============================================================
-   PROJECT ACCORDION
+   PROJECT ACCORDIONS
 ============================================================ */
 function toggleProject(header) {
-  const item   = header.closest('.project-item');
+  const item = header.closest('.project-item');
   if (!item) return;
-  
-  const body   = item.querySelector('.project-body');
-  const icon   = header.querySelector('.project-arrow i');
-  
+
+  const body = item.querySelector('.project-body');
+  const icon = header.querySelector('.project-arrow i');
   if (!body || !icon) return;
-  
+
   const isOpen = body.classList.contains('open');
 
-  // Close all open panels first
+  // Close other open accordions
   document.querySelectorAll('.project-body.open').forEach(b => {
     b.classList.remove('open');
     const headerEl = b.closest('.project-item')?.querySelector('.project-header');
-    if (headerEl) {
-      headerEl.setAttribute('aria-expanded', 'false');
-    }
+    if (headerEl) headerEl.setAttribute('aria-expanded', 'false');
     const arrowIcon = b.closest('.project-item')?.querySelector('.project-arrow i');
-    if (arrowIcon) {
-      arrowIcon.style.transform = '';
-    }
+    if (arrowIcon) arrowIcon.style.transform = '';
   });
 
-  // Open clicked panel (if it was closed)
   if (!isOpen) {
     body.classList.add('open');
     header.setAttribute('aria-expanded', 'true');
@@ -296,12 +305,12 @@ function toggleProject(header) {
   }
 }
 
-// Keyboard support for project accordion headers
 document.querySelectorAll('.project-header').forEach(header => {
   header.addEventListener('click', () => {
     toggleProject(header);
   });
 });
+
 
 /* ============================================================
    PROJECT FILTER BAR
@@ -349,68 +358,14 @@ function applyProjectFilter(filterKey) {
   }
 }
 
-function getFilterKeyFromUrl() {
-  const allowed = new Set(['all', 'ai', 'api', 'excel', 'sql', 'powerbi', 'github']);
-
-  // Supports URLs like #projects?tag=ai
-  const hash = window.location.hash || '';
-  if (hash.startsWith('#projects?')) {
-    const hashQuery = hash.slice('#projects?'.length);
-    const params = new URLSearchParams(hashQuery);
-    const hashTag = (params.get('tag') || '').toLowerCase();
-    if (allowed.has(hashTag)) return hashTag === 'sql' ? 'api' : hashTag;
-  }
-
-  // Also supports URLs like ?tag=ai#projects
-  const searchParams = new URLSearchParams(window.location.search);
-  const searchTag = (searchParams.get('tag') || '').toLowerCase();
-  if (allowed.has(searchTag)) return searchTag === 'sql' ? 'api' : searchTag;
-
-  return 'all';
-}
-
-function updateProjectsUrl(filterKey) {
-  const nextHash = filterKey === 'all' ? '#projects' : `#projects?tag=${filterKey}`;
-  if (window.location.hash !== nextHash) {
-    history.replaceState(null, '', nextHash);
-  }
-}
-
-function applyFilterAndOpenFirstVisible(filterKey) {
-  applyProjectFilter(filterKey);
-
-  const firstVisibleHeader = document.querySelector('.project-item:not(.is-filter-hidden) .project-header');
-  if (firstVisibleHeader) {
-    toggleProject(firstVisibleHeader);
-  }
-}
-
 projectFilterButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const filterKey = btn.getAttribute('data-filter') || 'all';
     setActiveFilterButton(btn);
-    applyFilterAndOpenFirstVisible(filterKey);
-    updateProjectsUrl(filterKey);
+    applyProjectFilter(filterKey);
   });
 });
 
-// Apply initial filter from URL and auto-open first visible project
-const initialFilterKey = getFilterKeyFromUrl();
-const initialActiveButton = document.querySelector(`.projects-filter-btn[data-filter="${initialFilterKey}"]`) || document.querySelector('.projects-filter-btn[data-filter="all"]');
-if (initialActiveButton) {
-  setActiveFilterButton(initialActiveButton);
-}
-applyFilterAndOpenFirstVisible(initialFilterKey);
-
-// Ensure shared #projects?tag=* links still land on Projects section
-if ((window.location.hash || '').startsWith('#projects')) {
-  const projectsSection = document.getElementById('projects');
-  if (projectsSection) {
-    window.setTimeout(() => {
-      projectsSection.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
-    }, 0);
-  }
-}
 
 /* ============================================================
    COPY EMAIL QUICK ACTION
@@ -424,18 +379,17 @@ function showCopyToast(message) {
   copyToast.classList.add('show');
   window.setTimeout(() => {
     copyToast.classList.remove('show');
-  }, 1700);
+  }, 1800);
 }
 
 if (copyEmailBtn) {
   copyEmailBtn.addEventListener('click', async () => {
     const email = 'karthickraja232205@gmail.com';
-
     try {
       await navigator.clipboard.writeText(email);
-      showCopyToast('Email copied');
+      showCopyToast('Email copied to clipboard!');
     } catch (err) {
-      showCopyToast('Copy failed, use email link');
+      showCopyToast('Copy failed, please write to: ' + email);
     }
   });
 }
@@ -460,31 +414,15 @@ if (prefersReducedMotion || !('IntersectionObserver' in window)) {
   });
 
   document.querySelectorAll('.fade-up').forEach((el, i) => {
-    // Stagger children in the same parent
-    el.style.transitionDelay = `${(i % 5) * 0.07}s`;
+    el.style.transitionDelay = `${(i % 4) * 0.06}s`;
     fadeObserver.observe(el);
   });
 }
 
 
 /* ============================================================
-   PARALLAX HERO ORBS (subtle)
+   IMAGE ERROR HANDLING
 ============================================================ */
-const orb1 = document.querySelector('.hero-orb-1');
-const orb2 = document.querySelector('.hero-orb-2');
-
-if (orb1 && orb2 && !prefersReducedMotion) {
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (y < window.innerHeight) {
-      orb1.style.transform = `translateY(${y * 0.14}px)`;
-      orb2.style.transform = `translateY(${y * -0.09}px)`;
-    }
-  }, { passive: true });
-}
-
-
-
 document.querySelectorAll('img[data-hide-on-error]').forEach(img => {
   img.addEventListener('error', () => {
     img.style.display = 'none';
@@ -499,6 +437,7 @@ document.querySelectorAll('img[data-fallback-parent-bg]').forEach(img => {
     }
   });
 });
+
 
 /* ============================================================
    FOOTER YEAR

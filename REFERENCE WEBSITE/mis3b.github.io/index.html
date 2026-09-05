@@ -1,0 +1,2757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Misab Ahamed - Portfolio</title>
+
+    <meta name="description" content="Portfolio of Misab Ahamed, Data Analyst at Dar Global. Power BI, Microsoft Fabric, SQL, Python and visual design — based in Dubai.">
+    <meta name="author" content="Misab Ahamed">
+    <meta name="theme-color" content="#d4a017">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Misab Ahamed — Data Analyst Portfolio">
+    <meta property="og:description" content="Data Analyst at Dar Global. Microsoft Fabric, Power BI, SQL, Python.">
+    <meta property="og:image" content="images/about-me.jpeg">
+    <meta property="og:locale" content="en_GB">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Misab Ahamed — Data Analyst Portfolio">
+    <meta name="twitter:description" content="Data Analyst at Dar Global. Microsoft Fabric, Power BI, SQL, Python.">
+    <meta name="twitter:image" content="images/about-me.jpeg">
+
+    <link rel="icon" type="image/jpeg" href="images/about-me.jpeg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/icomoon.css">
+
+    <style>
+        /* =========================================================
+         Theme variables — light, refined, professional
+         ========================================================= */
+
+        :root {
+            --bg: #fafbfc;
+            --bg-soft: #f4f6f9;
+            --bg-card: #ffffff;
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --accent: #d4a017;
+            --accent-light: #f4d03f;
+            --accent-soft: #fff6d6;
+            --accent-dark: #a87c0f;
+            --border: #e2e8f0;
+            --border-soft: #edf2f7;
+            --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.03);
+            --shadow-md: 0 4px 14px rgba(15, 23, 42, 0.06), 0 2px 6px rgba(15, 23, 42, 0.04);
+            --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.08), 0 6px 16px rgba(15, 23, 42, 0.04);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --transition: 0.3s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        /* =========================================================
+         Reset & base
+         ========================================================= */
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.65;
+            color: var(--text-secondary);
+            background-color: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: var(--accent-dark);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--text-primary);
+            font-weight: 700;
+            line-height: 1.25;
+            margin: 0 0 0.75rem;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.25rem);
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+        }
+
+        h3 {
+            font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+        }
+
+        p {
+            margin: 0 0 1rem;
+        }
+
+        ul {
+            padding-left: 1.25rem;
+            margin: 0 0 1rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.25rem;
+        }
+
+        /* =========================================================
+         Navbar
+         ========================================================= */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            background-color: rgba(255, 255, 255, 0);
+            transition: background-color var(--transition), box-shadow var(--transition), padding var(--transition);
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(255, 255, 255, 0.92);
+            backdrop-filter: saturate(180%) blur(12px);
+            -webkit-backdrop-filter: saturate(180%) blur(12px);
+            box-shadow: var(--shadow-sm);
+            padding: 0.65rem 0;
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .brand {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+        }
+
+        .brand .dot {
+            color: var(--accent);
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 0.25rem;
+        }
+
+        .nav-list a {
+            color: var(--text-secondary);
+            padding: 0.5rem 0.9rem;
+            font-size: 0.92rem;
+            font-weight: 500;
+            border-radius: var(--radius-sm);
+            transition: color var(--transition), background-color var(--transition);
+        }
+
+        .nav-list a:hover {
+            color: var(--text-primary);
+            background-color: var(--bg-soft);
+        }
+
+        .nav-list a.active {
+            color: var(--accent-dark);
+            background-color: var(--accent-soft);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: transparent;
+            border: 0;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+        }
+
+        @media (max-width: 880px) {
+            .nav-toggle {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .nav-list {
+                position: absolute;
+                top: 100%;
+                left: 1rem;
+                right: 1rem;
+                flex-direction: column;
+                background: #fff;
+                padding: 0.75rem;
+                border-radius: var(--radius-md);
+                box-shadow: var(--shadow-lg);
+                gap: 0.1rem;
+                opacity: 0;
+                transform: translateY(-10px);
+                pointer-events: none;
+                transition: opacity 0.25s ease, transform 0.25s ease;
+            }
+            .nav-list.open {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+            .nav-list a {
+                padding: 0.75rem 1rem;
+            }
+        }
+
+        /* =========================================================
+         Hero
+         ========================================================= */
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 7rem 0 4rem;
+            background: radial-gradient(circle at 80% 10%, var(--accent-soft) 0%, transparent 45%), radial-gradient(circle at 10% 90%, #eef2f9 0%, transparent 40%), linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            right: -10%;
+            width: 480px;
+            height: 480px;
+            background: radial-gradient(circle, var(--accent-light) 0%, transparent 70%);
+            opacity: 0.18;
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-greeting {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background-color: var(--accent-soft);
+            color: var(--accent-dark);
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 999px;
+            margin-bottom: 1.25rem;
+            letter-spacing: 0.02em;
+        }
+
+        .hero h1 {
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 .accent {
+            background: linear-gradient(120deg, var(--accent) 0%, var(--accent-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-role {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            min-height: 2rem;
+        }
+
+        .hero-role::after {
+            content: '|';
+            margin-left: 4px;
+            color: var(--accent);
+            animation: blink 1s steps(2, start) infinite;
+        }
+
+        @keyframes blink {
+            to {
+                opacity: 0;
+            }
+        }
+
+        .hero-tagline {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 540px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition), color var(--transition);
+            text-align: center;
+            min-height: 44px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-dark);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-primary);
+            border-color: var(--border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent-dark);
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat .num {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1;
+        }
+
+        .hero-stat .num .plus {
+            color: var(--accent);
+        }
+
+        .hero-stat .label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .hero-name {
+            display: block;
+        }
+
+        .hero h1 .accent {
+            display: block;
+            margin-top: 0.15em;
+        }
+
+        .hero-photo {
+            position: relative;
+            justify-self: center;
+            padding: 1.5rem;
+        }
+
+        .hero-photo::before,
+        .hero-photo::after {
+            content: '';
+            position: absolute;
+            border-radius: 28px;
+            z-index: 0;
+        }
+
+        .hero-photo::before {
+            inset: 1.5rem;
+            transform: translate(18px, 18px) rotate(4deg);
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+            opacity: 0.18;
+        }
+
+        .hero-photo::after {
+            inset: 1.5rem;
+            transform: translate(-14px, -14px) rotate(-3deg);
+            border: 2px dashed var(--accent);
+            opacity: 0.35;
+        }
+
+        .hero-photo-frame {
+            width: clamp(240px, 28vw, 320px);
+            aspect-ratio: 3 / 4;
+            border-radius: 28px;
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+            padding: 8px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            z-index: 1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-photo-frame img {
+            width: 100%;
+            height: 100%;
+            border-radius: 22px;
+            object-fit: cover;
+            object-position: center top;
+            background: #fff;
+            display: block;
+        }
+
+        .hero-badge {
+            position: absolute;
+            background: #fff;
+            padding: 0.6rem 1rem;
+            border-radius: 999px;
+            box-shadow: var(--shadow-md);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .hero-badge .pulse {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+            }
+            70% {
+                box-shadow: 0 0 0 12px rgba(34, 197, 94, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+            }
+        }
+
+        .hero-badge {
+            z-index: 3;
+        }
+
+        .hero-badge.b1 {
+            top: 6%;
+            left: -8%;
+        }
+
+        .hero-badge.b2 {
+            bottom: 8%;
+            right: -8%;
+        }
+
+        @media (max-width: 880px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+            .hero-tagline {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-actions {
+                justify-content: center;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+            .hero-badge.b1 {
+                left: -5%;
+            }
+            .hero-badge.b2 {
+                right: -5%;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .hero-badge {
+                font-size: 0.75rem;
+                padding: 0.5rem 0.8rem;
+            }
+            .hero-badge.b1 {
+                top: 0;
+                left: 0;
+            }
+            .hero-badge.b2 {
+                bottom: 0;
+                right: 0;
+            }
+            .hero-stats {
+                gap: 1.5rem;
+            }
+        }
+
+        /* =========================================================
+         Sections
+         ========================================================= */
+
+        .section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .section-alt {
+            background-color: var(--bg-soft);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 3rem;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent-dark);
+            background: var(--accent-soft);
+            padding: 0.3rem 0.9rem;
+            border-radius: 999px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* =========================================================
+         About
+         ========================================================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        @media (max-width: 880px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .about-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-soft);
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .info-list li {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0.75rem 0;
+            border-bottom: 1px dashed var(--border);
+            gap: 0.5rem;
+        }
+
+        .info-list li:last-child {
+            border-bottom: 0;
+        }
+
+        .info-list .label {
+            font-weight: 600;
+            color: var(--text-primary);
+            min-width: 110px;
+        }
+
+        .info-list .value {
+            color: var(--text-secondary);
+            flex: 1;
+        }
+
+        .skills {
+            margin-top: 1.5rem;
+        }
+
+        .skill {
+            margin-bottom: 1.1rem;
+        }
+
+        .skill-head {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.4rem;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: var(--bg-soft);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-light), var(--accent));
+            border-radius: 999px;
+            width: 0;
+            transition: width 1.4s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        /* =========================================================
+         Experience timeline
+         ========================================================= */
+
+        .timeline {
+            position: relative;
+            padding: 1rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 14px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent 0%, var(--border) 8%, var(--border) 92%, transparent 100%);
+        }
+
+        @media (min-width: 881px) {
+            .timeline::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        .tl-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .tl-item::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 1.5rem;
+            width: 18px;
+            height: 18px;
+            background: var(--accent);
+            border: 4px solid var(--bg);
+            border-radius: 50%;
+            box-shadow: 0 0 0 2px var(--accent);
+            z-index: 2;
+        }
+
+        @media (min-width: 881px) {
+            .tl-item {
+                width: 50%;
+                padding-left: 0;
+                padding-right: 3rem;
+            }
+            .tl-item:nth-child(even) {
+                margin-left: 50%;
+                padding-right: 0;
+                padding-left: 3rem;
+            }
+            .tl-item::before {
+                left: auto;
+                right: -9px;
+                top: 1.5rem;
+            }
+            .tl-item:nth-child(even)::before {
+                left: -9px;
+                right: auto;
+            }
+        }
+
+        .tl-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-soft);
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
+
+        .tl-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .tl-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .tl-date {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--accent-dark);
+            background: var(--accent-soft);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+        }
+
+        .tl-company {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .tl-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .tl-card ul {
+            padding-left: 1.1rem;
+            font-size: 0.94rem;
+        }
+
+        .tl-card .group-title {
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent-dark);
+            margin-top: 1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .tl-card .group-title:first-child {
+            margin-top: 0;
+        }
+
+        /* Education / Volunteering / Certifications grid */
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-soft);
+            transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-light);
+        }
+
+        .card .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-dark);
+            background: var(--accent-soft);
+            padding: 0.2rem 0.65rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.02em;
+        }
+
+        .card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card .sub {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Tech tags strip */
+
+        .tech-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tech-tag {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            padding: 0.4rem 0.85rem;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            border: 1px solid var(--border);
+            transition: transform var(--transition), border-color var(--transition), color var(--transition);
+            cursor: default;
+        }
+
+        .tech-tag:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+            color: var(--accent-dark);
+        }
+
+        /* =========================================================
+         Counter strip
+         ========================================================= */
+
+        .counter-strip {
+            background: linear-gradient(135deg, #fff 0%, var(--accent-soft) 100%);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-soft);
+            text-align: center;
+        }
+
+        @media (max-width: 720px) {
+            .counter-strip {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        .counter .num {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1;
+            display: inline-flex;
+            align-items: baseline;
+        }
+
+        .counter .num .plus {
+            color: var(--accent);
+            font-size: 0.7em;
+            margin-left: 2px;
+        }
+
+        .counter .label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.4rem;
+            font-weight: 500;
+        }
+
+        /* =========================================================
+         Projects
+         ========================================================= */
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-soft);
+            transition: transform var(--transition), box-shadow var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-img {
+            display: block;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(212, 160, 23, 0) 0%, rgba(212, 160, 23, 0.4) 100%);
+            opacity: 0;
+            transition: opacity var(--transition);
+        }
+
+        .project-card:hover .project-img::after {
+            opacity: 1;
+        }
+
+        .project-body {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-body h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-body h3 a {
+            color: var(--text-primary);
+        }
+
+        .project-body h3 a:hover {
+            color: var(--accent-dark);
+        }
+
+        .project-body p {
+            font-size: 0.92rem;
+            flex: 1;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-weight: 600;
+            font-size: 0.88rem;
+            color: var(--accent-dark);
+            margin-top: 0.5rem;
+        }
+
+        .project-link:hover {
+            color: var(--accent);
+        }
+
+        .project-link .arrow {
+            transition: transform var(--transition);
+        }
+
+        .project-link:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        /* =========================================================
+         Contact
+         ========================================================= */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-soft);
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--accent-soft);
+            color: var(--accent-dark);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card a {
+            color: var(--text-secondary);
+            font-size: 0.93rem;
+            word-break: break-word;
+        }
+
+        .contact-card a:hover {
+            color: var(--accent-dark);
+        }
+
+        .contact-cta {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--accent-soft) 100%);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-soft);
+        }
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .socials a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #fff;
+            color: var(--text-secondary);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--transition), background-color var(--transition), color var(--transition);
+        }
+
+        .socials a:hover {
+            background: var(--accent);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* =========================================================
+         Photography / Travel Lens
+         ========================================================= */
+
+        #photography {
+            position: relative;
+            background: radial-gradient(ellipse at 80% 10%, rgba(244, 208, 63, 0.15) 0%, transparent 50%), radial-gradient(ellipse at 10% 90%, rgba(212, 160, 23, 0.10) 0%, transparent 50%), linear-gradient(180deg, #fdfaf3 0%, #faf6ec 100%);
+            overflow: hidden;
+        }
+
+        #photography::before {
+            content: '✈';
+            position: absolute;
+            top: 8%;
+            left: 4%;
+            font-size: 3rem;
+            opacity: 0.06;
+            transform: rotate(-25deg);
+            pointer-events: none;
+        }
+
+        #photography::after {
+            content: '📷';
+            position: absolute;
+            bottom: 10%;
+            right: 5%;
+            font-size: 3rem;
+            opacity: 0.08;
+            pointer-events: none;
+        }
+
+        .lens-intro {
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+            color: var(--accent-dark);
+            text-align: center;
+            margin: -0.5rem 0 1.5rem;
+        }
+
+        /* Location carousel */
+
+        .location-carousel-wrap {
+            position: relative;
+            margin: 0 -0.5rem 1rem;
+        }
+
+        .location-carousel-wrap::before,
+        .location-carousel-wrap::after {
+            content: '';
+            position: absolute;
+            top: 1rem;
+            bottom: 1rem;
+            width: 56px;
+            pointer-events: none;
+            z-index: 2;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .location-carousel-wrap.has-prev::before {
+            opacity: 1;
+        }
+
+        .location-carousel-wrap.has-next::after {
+            opacity: 1;
+        }
+
+        .location-carousel-wrap::before {
+            left: 0;
+            background: linear-gradient(90deg, #fdfaf3 0%, rgba(253, 250, 243, 0) 100%);
+        }
+
+        .location-carousel-wrap::after {
+            right: 0;
+            background: linear-gradient(-90deg, #fdfaf3 0%, rgba(253, 250, 243, 0) 100%);
+        }
+
+        .location-carousel {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            overflow-y: visible;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: 2rem 1rem 2.5rem;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .location-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .location-stack {
+            flex: 0 0 auto;
+            width: clamp(190px, 22vw, 250px);
+            scroll-snap-align: center;
+            cursor: pointer;
+            background: transparent;
+            border: 0;
+            padding: 0;
+            font-family: inherit;
+            text-align: center;
+            position: relative;
+        }
+
+        .stack-photos {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            margin-bottom: 1.5rem;
+        }
+
+        .stack-photo {
+            position: absolute;
+            inset: 0;
+            background: #fff;
+            padding: 10px 10px 32px;
+            border-radius: 4px;
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12), 0 3px 8px rgba(15, 23, 42, 0.06);
+            transition: transform 0.5s cubic-bezier(.4, 0, .2, 1), box-shadow 0.5s ease;
+            transform-origin: center 60%;
+            will-change: transform;
+        }
+
+        .stack-photo-img {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #d2b48c;
+            border-radius: 2px;
+        }
+
+        /* Layered fan — back to front */
+
+        .stack-photo[data-i="3"] {
+            transform: rotate(8deg) translate(14px, 8px);
+            z-index: 1;
+            opacity: 0.92;
+        }
+
+        .stack-photo[data-i="2"] {
+            transform: rotate(-6deg) translate(-12px, 4px);
+            z-index: 2;
+        }
+
+        .stack-photo[data-i="1"] {
+            transform: rotate(3deg) translate(6px, -2px);
+            z-index: 3;
+        }
+
+        .stack-photo[data-i="0"] {
+            transform: rotate(-1deg);
+            z-index: 4;
+        }
+
+        .location-stack:hover .stack-photo[data-i="3"],
+        .location-stack:focus-visible .stack-photo[data-i="3"] {
+            transform: rotate(14deg) translate(28px, 14px);
+        }
+
+        .location-stack:hover .stack-photo[data-i="2"],
+        .location-stack:focus-visible .stack-photo[data-i="2"] {
+            transform: rotate(-11deg) translate(-24px, 8px);
+        }
+
+        .location-stack:hover .stack-photo[data-i="1"],
+        .location-stack:focus-visible .stack-photo[data-i="1"] {
+            transform: rotate(7deg) translate(14px, -4px);
+        }
+
+        .location-stack:hover .stack-photo[data-i="0"],
+        .location-stack:focus-visible .stack-photo[data-i="0"] {
+            transform: rotate(0deg) translateY(-10px);
+            box-shadow: 0 22px 40px rgba(15, 23, 42, 0.22), 0 8px 14px rgba(15, 23, 42, 0.08);
+        }
+
+        .stack-info {
+            padding-top: 0.25rem;
+        }
+
+        .stack-info h3 {
+            font-family: 'Caveat', cursive;
+            font-size: 1.6rem;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .stack-count {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--accent-dark);
+            background: var(--accent-soft);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .stack-count::before {
+            content: '📷';
+            font-size: 0.85rem;
+        }
+
+        /* Carousel arrows */
+
+        .carousel-arrow {
+            position: absolute;
+            top: 42%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #fff;
+            border: 1px solid var(--border-soft);
+            box-shadow: var(--shadow-md);
+            cursor: pointer;
+            font-size: 1.6rem;
+            line-height: 1;
+            color: var(--text-primary);
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, opacity 0.3s ease;
+            font-family: inherit;
+            padding: 0 0 0.15rem;
+        }
+
+        .carousel-arrow:hover {
+            background: var(--accent);
+            color: #fff;
+            transform: translateY(-50%) scale(1.08);
+        }
+
+        .carousel-arrow[hidden] {
+            display: none;
+        }
+
+        .carousel-prev {
+            left: 0;
+        }
+
+        .carousel-next {
+            right: 0;
+        }
+
+        @media (max-width: 720px) {
+            .carousel-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 1.3rem;
+            }
+            .location-stack {
+                width: clamp(170px, 60vw, 220px);
+            }
+        }
+
+        .travel-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem 3rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            padding: 1.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-soft);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .travel-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .travel-stat .ico {
+            font-size: 1.5rem;
+        }
+
+        .travel-stat .val {
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 1.15rem;
+        }
+
+        .travel-stat .lab {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Loading + empty states */
+
+        .photo-loading {
+            text-align: center;
+            padding: 4rem 1rem;
+            grid-column: 1 / -1;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            vertical-align: middle;
+            margin-right: 0.6rem;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .photo-empty {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            grid-column: 1 / -1;
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: var(--radius-lg);
+            border: 2px dashed var(--border);
+        }
+
+        .photo-empty-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .photo-empty h3 {
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .photo-empty p {
+            max-width: 520px;
+            margin: 0 auto 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .photo-empty code {
+            background: var(--bg-soft);
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+            font-size: 0.88em;
+            color: var(--accent-dark);
+            font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+        }
+
+        /* Lightbox */
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.88);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            max-width: min(92vw, 700px);
+            position: relative;
+            background: #fff;
+            padding: 14px 14px 1rem;
+            border-radius: 6px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+            animation: lb-in 0.35s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        @keyframes lb-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.96);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .lightbox-img {
+            display: block;
+            max-width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            background: var(--bg-soft);
+            border-radius: 2px;
+        }
+
+        .lightbox-caption {
+            text-align: center;
+            padding-top: 0.75rem;
+            font-family: 'Caveat', cursive;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+        }
+
+        .lightbox-close,
+        .lightbox-nav {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.95);
+            border: 0;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            cursor: pointer;
+            color: var(--text-primary);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-nav:hover {
+            background: var(--accent);
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .lightbox-close {
+            top: -22px;
+            right: -22px;
+        }
+
+        .lightbox-prev {
+            left: -22px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-next {
+            right: -22px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-prev:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-next:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        @media (max-width: 720px) {
+            .lightbox-close {
+                top: -18px;
+                right: -18px;
+                width: 40px;
+                height: 40px;
+            }
+            .lightbox-prev {
+                left: -10px;
+            }
+            .lightbox-next {
+                right: -10px;
+            }
+        }
+
+        /* =========================================================
+         Footer
+         ========================================================= */
+
+        .footer {
+            background: #fff;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-soft);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer .coffee {
+            color: var(--text-primary);
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+        }
+
+        /* =========================================================
+         Scroll-to-top
+         ========================================================= */
+
+        #scroll-top {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            font-size: 1.25rem;
+            font-weight: 700;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--transition), transform var(--transition), background-color var(--transition);
+            box-shadow: var(--shadow-lg);
+            z-index: 999;
+        }
+
+        #scroll-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        #scroll-top:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+        }
+
+        /* =========================================================
+         Reveal-on-scroll animation
+         ========================================================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Skip link */
+
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 1rem;
+            background: var(--accent);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+            z-index: 10000;
+        }
+
+        .skip-link:focus {
+            left: 1rem;
+        }
+
+        /* Reduced motion */
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.001ms !important;
+                transition-duration: 0.001ms !important;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#home">Skip to main content</a>
+
+    <header class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="#home" class="brand">Misab Ahamed<span class="dot">.</span></a>
+            <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Toggle navigation">
+          <span aria-hidden="true">☰</span>
+        </button>
+            <ul class="nav-list" id="nav-list">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#photography" class="nav-link">Lens</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <span class="hero-greeting">👋 Hello, I'm</span>
+                    <h1>
+                        <span class="hero-name">Misab Ahamed</span>
+                        <span class="accent">Data Analyst</span>
+                    </h1>
+                    <p class="hero-role" id="typing"></p>
+                    <p class="hero-tagline">
+                        Data Analyst at Dar Global, building enterprise-grade Microsoft Fabric pipelines, Power BI dashboards and AI-powered analytics that turn business questions into clear, actionable insight.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary">Get in touch</a>
+                        <a href="https://www.linkedin.com/in/misab-a-1a415b203/" class="btn btn-outline" target="_blank" rel="noopener noreferrer">View LinkedIn</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <div class="num" data-counter="8"><span>0</span><span class="plus">+</span></div>
+                            <div class="label">Projects delivered</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="num" data-counter="8"><span>0</span><span class="plus">+</span></div>
+                            <div class="label">Certifications</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="num" data-counter="1"><span>0</span><span class="plus">+</span></div>
+                            <div class="label">Years experience</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-photo">
+                    <div class="hero-photo-frame">
+                        <img src="images/about-me.jpeg" alt="Portrait of Misab Ahamed" loading="eager">
+                    </div>
+                    <div class="hero-badge b1"><span class="pulse"></span> Available for projects</div>
+                    <div class="hero-badge b2">📊 Power BI · Fabric</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="eyebrow">About me</span>
+                <h2 class="section-title">A data person who designs for clarity</h2>
+                <p class="section-subtitle">
+                    Bachelor of Technology in Information Technology, with hands-on experience delivering analytics for UAE-based enterprises. I combine statistical thinking with a designer's eye for clean, useful dashboards.
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card reveal">
+                    <h3>Profile</h3>
+                    <ul class="info-list">
+                        <li><span class="label">Name</span><span class="value">Misab Ahamed</span></li>
+                        <li><span class="label">Role</span><span class="value">Data Analyst</span></li>
+                        <li><span class="label">Company</span><span class="value">Dar Global</span></li>
+                        <li><span class="label">Location</span><span class="value">Dubai, UAE</span></li>
+                        <li><span class="label">Education</span><span class="value">B.Tech, Information Technology</span></li>
+                        <li><span class="label">Languages</span><span class="value">English, Arabic, Hindi, Malayalam, Tamil</span></li>
+                        <li><span class="label">Interests</span><span class="value">Travel, Photography, Football, Design</span></li>
+                    </ul>
+                </div>
+
+                <div class="about-card reveal">
+                    <h3>Core skills</h3>
+                    <p>Tools and techniques I work with day-to-day.</p>
+                    <div class="skills">
+                        <div class="skill">
+                            <div class="skill-head"><span>Power BI &amp; Microsoft Fabric</span><span>95%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-fill="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-head"><span>SQL</span><span>90%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-fill="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-head"><span>Python</span><span>85%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-fill="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-head"><span>Data Visualisation</span><span>90%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-fill="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-head"><span>Power Automate</span><span>85%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-fill="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-head"><span>Graphic Design (Adobe Suite)</span><span>94%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-fill="94"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section section-alt" id="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="eyebrow">Experience</span>
+                <h2 class="section-title">Work history</h2>
+                <p class="section-subtitle">From internships to enterprise analytics — a timeline of the roles that have shaped my craft.</p>
+            </div>
+
+            <div class="timeline">
+                <!-- Dar Global - Data Analyst -->
+                <div class="tl-item reveal">
+                    <div class="tl-card">
+                        <div class="tl-meta">
+                            <span class="tl-date">Oct 2025 – Present</span>
+                            <span class="tl-company">Dar Global · Dubai, UAE</span>
+                        </div>
+                        <h3 class="tl-title">Data Analyst</h3>
+
+                        <div class="group-title">Business Intelligence &amp; Reporting</div>
+                        <ul>
+                            <li>Design and maintain interactive Power BI dashboards used by management and sales teams for strategic decision-making.</li>
+                            <li>Develop KPI-driven reports for sales performance, lead management and operational monitoring.</li>
+                            <li>Deliver business insights through advanced data visualisation and analytics solutions.</li>
+                        </ul>
+
+                        <div class="group-title">Microsoft Fabric &amp; Data Engineering</div>
+                        <ul>
+                            <li>Contribute to ongoing enhancement and optimisation of Microsoft Fabric data architecture and pipelines.</li>
+                            <li>Manage data integration across multiple enterprise systems and external platforms.</li>
+                            <li>Work with structured and unstructured data from Salesforce, Oracle, SharePoint, Excel, Meta Ads, TikTok Ads, Snapchat Ads and other business sources.</li>
+                        </ul>
+
+                        <div class="group-title">Data Security &amp; Governance</div>
+                        <ul>
+                            <li>Implement and maintain Row-Level Security (RLS) across Power BI reports.</li>
+                            <li>Ensure secure, role-based access to business-critical data for different departments and management levels.</li>
+                        </ul>
+
+                        <div class="group-title">Automation &amp; Process Optimisation</div>
+                        <ul>
+                            <li>Develop Power Automate workflows to streamline reporting operations.</li>
+                            <li>Automate scheduled distribution of reports to management and business stakeholders.</li>
+                            <li>Implement password-protected PDF generation and delivery to improve report security and efficiency.</li>
+                        </ul>
+
+                        <div class="group-title">AI &amp; Analytics Innovation</div>
+                        <ul>
+                            <li>Played a key role in a cross-functional initiative to develop an AI-powered Power BI chatbot.</li>
+                            <li>Collaborated with Data Scientists and Data Engineers to enable natural-language querying and automated insight generation.</li>
+                            <li>Contributed to testing, validation and business adoption of AI-driven analytics capabilities.</li>
+                        </ul>
+
+                        <div class="group-title">Collaboration &amp; Stakeholder Engagement</div>
+                        <ul>
+                            <li>Work closely with sales, marketing, operations and management teams to translate requirements into analytical solutions.</li>
+                            <li>Participate in end-to-end analytics projects, from requirement gathering and data preparation to dashboard deployment and user adoption.</li>
+                        </ul>
+
+                        <div class="tech-cloud" aria-label="Key technologies">
+                            <span class="tech-tag">Microsoft Fabric</span>
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">Power Automate</span>
+                            <span class="tech-tag">Salesforce</span>
+                            <span class="tech-tag">Oracle</span>
+                            <span class="tech-tag">SharePoint</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Meta Ads</span>
+                            <span class="tech-tag">TikTok Ads</span>
+                            <span class="tech-tag">Snapchat Ads</span>
+                            <span class="tech-tag">Row-Level Security</span>
+                            <span class="tech-tag">AI Analytics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dar Global - Intern -->
+                <div class="tl-item reveal">
+                    <div class="tl-card">
+                        <div class="tl-meta">
+                            <span class="tl-date">Apr 2025 – Oct 2025</span>
+                            <span class="tl-company">Dar Global · Dubai, UAE</span>
+                        </div>
+                        <h3 class="tl-title">Data Analyst Intern</h3>
+                        <ul>
+                            <li>Collaborated with the Data &amp; Analytics team in building Microsoft Fabric data pipelines from the ground up.</li>
+                            <li>Assisted in integrating multiple data sources including Salesforce, Oracle, SharePoint Lists, Excel files and marketing platforms.</li>
+                            <li>Supported the development and maintenance of Power BI dashboards for business reporting and performance tracking.</li>
+                            <li>Participated in data validation, cleansing and transformation processes to improve data quality and consistency.</li>
+                            <li>Worked alongside business stakeholders to gather reporting requirements and translate them into actionable dashboards.</li>
+                            <li>Contributed to the implementation of Row-Level Security (RLS) for secure access to departmental reports.</li>
+                            <li>Assisted in automating reporting workflows using Power Automate.</li>
+                            <li>Supported the development of web-based solutions for hosting and distributing Power BI reports across the organisation.</li>
+                            <li>Gained hands-on experience collaborating with Data Engineers, Data Scientists and business teams on enterprise analytics initiatives.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- BizAdepts -->
+                <div class="tl-item reveal">
+                    <div class="tl-card">
+                        <div class="tl-meta">
+                            <span class="tl-date">Dec 2024 – Mar 2025</span>
+                            <span class="tl-company">BizAdepts</span>
+                        </div>
+                        <h3 class="tl-title">Data Analyst</h3>
+                        <ul>
+                            <li>Proficient in Power BI, Power Query, Excel and Microsoft Office Suite, specialising in data-driven visualisations for decision-making.</li>
+                            <li>Key projects: Sales Dashboard for Bizzac, and Customer Loyalty Dashboard for Animal World — using SQL Server for data management.</li>
+                            <li>Delivered tailored solutions to meet client needs, improving satisfaction and retention while handling large datasets accurately.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- PwC -->
+                <div class="tl-item reveal">
+                    <div class="tl-card">
+                        <div class="tl-meta">
+                            <span class="tl-date">Nov 2024 – Dec 2024</span>
+                            <span class="tl-company">PwC</span>
+                        </div>
+                        <h3 class="tl-title">Data Analyst Intern</h3>
+                        <ul>
+                            <li>Completed a virtual job simulation analysing real business problems and datasets, including call centre data, customer risk and churn, and gender diversity trends.</li>
+                            <li>Designed and delivered tailored Power BI dashboards and KPIs that supported customer retention and operational efficiency.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section" id="education">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="eyebrow">Education</span>
+                <h2 class="section-title">Academic background</h2>
+            </div>
+            <div class="card-grid">
+                <div class="card reveal">
+                    <span class="tag">2020 – 2024</span>
+                    <h3>Bachelor of Technology</h3>
+                    <p class="sub">MEA Engineering College (APJ Abdul Kalam University)</p>
+                    <p style="margin-top: 0.75rem; font-size: 0.9rem;">Branch: Information Technology · Grade: First Class</p>
+                </div>
+                <div class="card reveal">
+                    <span class="tag">2018 – 2020</span>
+                    <h3>Higher Secondary</h3>
+                    <p class="sub">Indian School Ajman, UAE</p>
+                    <p style="margin-top: 0.75rem; font-size: 0.9rem;">Stream: Computer Science · Grade: First Class</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteering -->
+    <section class="section section-alt" id="volunteering">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="eyebrow">Beyond work</span>
+                <h2 class="section-title">Volunteering &amp; leadership</h2>
+            </div>
+            <div class="card-grid">
+                <div class="card reveal">
+                    <span class="tag">IEEE · 2021–2024</span>
+                    <h3>Design Team &amp; Leadership</h3>
+                    <p class="sub">IEEE MEA SB · EdSoc KC · i5 · XTrinia</p>
+                    <p style="margin-top: 0.75rem; font-size: 0.9rem;">Led design and analytics initiatives, coordinated events and boosted programme outcomes.</p>
+                </div>
+                <div class="card reveal">
+                    <span class="tag">MEA EC SU · 2023–2024</span>
+                    <h3>Technical Club Secretary</h3>
+                    <p class="sub">Student Union</p>
+                    <p style="margin-top: 0.75rem; font-size: 0.9rem;">Built event network infrastructure and led technical teams for large-scale college gatherings.</p>
+                </div>
+                <div class="card reveal">
+                    <span class="tag">MEA FOSS · 2023–2024</span>
+                    <h3>Vice Chairperson</h3>
+                    <p class="sub">Free &amp; Open Source Software club</p>
+                    <p style="margin-top: 0.75rem; font-size: 0.9rem;">Spearheaded open-source workshops and hackathons; grew the FOSS community on campus.</p>
+                </div>
+                <div class="card reveal">
+                    <span class="tag">MEA NANMA · 2022–2023</span>
+                    <h3>Joint Secretary</h3>
+                    <p class="sub">Charity Wing</p>
+                    <p style="margin-top: 0.75rem; font-size: 0.9rem;">Coordinated charity events and fundraising; handled technical execution for smooth operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counter strip -->
+    <section class="section" id="stats">
+        <div class="container">
+            <div class="counter-strip reveal">
+                <div class="counter">
+                    <div class="num" data-counter="8"><span>0</span><span class="plus">+</span></div>
+                    <div class="label">Certifications</div>
+                </div>
+                <div class="counter">
+                    <div class="num" data-counter="8"><span>0</span><span class="plus">+</span></div>
+                    <div class="label">Projects</div>
+                </div>
+                <div class="counter">
+                    <div class="num" data-counter="4"><span>0</span><span class="plus">+</span></div>
+                    <div class="label">Volunteering roles</div>
+                </div>
+                <div class="counter">
+                    <div class="num" data-counter="5"><span>0</span><span class="plus">+</span></div>
+                    <div class="label">Languages spoken</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section section-alt" id="certifications">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="eyebrow">Credentials</span>
+                <h2 class="section-title">Certifications</h2>
+                <p class="section-subtitle">Continuously levelling up across data, analytics and AI.</p>
+            </div>
+            <div class="card-grid">
+                <div class="card reveal"><span class="tag">IBM</span>
+                    <h3>Turning Data into Decisions Using Python</h3>
+                    <p class="sub">Dec 2024</p>
+                </div>
+                <div class="card reveal"><span class="tag">Microsoft</span>
+                    <h3>Career Essentials in Data Analysis</h3>
+                    <p class="sub">Aug 2024</p>
+                </div>
+                <div class="card reveal"><span class="tag">NASBA</span>
+                    <h3>Learning Data Analytics: Foundations</h3>
+                    <p class="sub">Aug 2024</p>
+                </div>
+                <div class="card reveal"><span class="tag">micro1</span>
+                    <h3>Certified Data Analyst</h3>
+                    <p class="sub">Jan 2025</p>
+                </div>
+                <div class="card reveal"><span class="tag">PwC</span>
+                    <h3>Certified Power BI</h3>
+                    <p class="sub">Dec 2024</p>
+                </div>
+                <div class="card reveal"><span class="tag">Coursera</span>
+                    <h3>Google AI Essentials</h3>
+                    <p class="sub">Jul 2024</p>
+                </div>
+                <div class="card reveal"><span class="tag">HackerRank</span>
+                    <h3>Python &amp; SQL</h3>
+                    <p class="sub">Jul 2024</p>
+                </div>
+                <div class="card reveal"><span class="tag">LinkedIn</span>
+                    <h3>Introduction to Artificial Intelligence</h3>
+                    <p class="sub">Jul 2024</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2.5rem;">
+                <a href="https://www.linkedin.com/in/misab-a-1a415b203/details/certifications/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View all credentials</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="eyebrow">Selected work</span>
+                <h2 class="section-title">Projects</h2>
+                <p class="section-subtitle">A handful of dashboards and analytics builds. More on LinkedIn.</p>
+            </div>
+            <div class="project-grid">
+                <article class="project-card reveal">
+                    <a class="project-img" href="https://www.linkedin.com/posts/misab-a-1a415b203_dataanalytics-customerretention-datavisualization-activity-7270108406336675840-WkXN" target="_blank" rel="noopener noreferrer" aria-label="Customer Retention Dashboard" style="background-image: url('images/proj_1.jpg');"></a>
+                    <div class="project-body">
+                        <h3><a href="https://www.linkedin.com/posts/misab-a-1a415b203_dataanalytics-customerretention-datavisualization-activity-7270108406336675840-WkXN" target="_blank" rel="noopener noreferrer">Customer Retention Dashboard</a></h3>
+                        <p>Interactive dashboards for churn analysis and customer risk — built during the PwC virtual internship to support retention strategy.</p>
+                        <a class="project-link" href="https://www.linkedin.com/posts/misab-a-1a415b203_dataanalytics-customerretention-datavisualization-activity-7270108406336675840-WkXN" target="_blank" rel="noopener noreferrer">View on LinkedIn <span class="arrow">→</span></a>
+                    </div>
+                </article>
+
+                <article class="project-card reveal">
+                    <a class="project-img" href="https://www.linkedin.com/posts/misab-a-1a415b203_dataanalysis-datavisualization-callcentertrends-activity-7267858954620153856-Z2CA" target="_blank" rel="noopener noreferrer" aria-label="Call Centre Performance Dashboard" style="background-image: url('images/proj_2.jpg');"></a>
+                    <div class="project-body">
+                        <h3><a href="https://www.linkedin.com/posts/misab-a-1a415b203_dataanalysis-datavisualization-callcentertrends-activity-7267858954620153856-Z2CA" target="_blank" rel="noopener noreferrer">Call Centre Performance Dashboard</a></h3>
+                        <p>Analysed 5,000 client records to visualise call volume, speed of answer and customer satisfaction — aligned to brand guidelines.</p>
+                        <a class="project-link" href="https://www.linkedin.com/posts/misab-a-1a415b203_dataanalysis-datavisualization-callcentertrends-activity-7267858954620153856-Z2CA" target="_blank" rel="noopener noreferrer">View on LinkedIn <span class="arrow">→</span></a>
+                    </div>
+                </article>
+
+                <article class="project-card reveal">
+                    <a class="project-img" href="https://www.linkedin.com/posts/misab-a-1a415b203_dataanalytics-powerbi-interactivedashboard-activity-7267122875466211330-xSU6" target="_blank" rel="noopener noreferrer" aria-label="Ladhidh Fruits Power BI Dashboard" style="background-image: url('images/proj_3.jpg');"></a>
+                    <div class="project-body">
+                        <h3><a href="https://www.linkedin.com/posts/misab-a-1a415b203_dataanalytics-powerbi-interactivedashboard-activity-7267122875466211330-xSU6" target="_blank" rel="noopener noreferrer">Power BI Dashboard — Ladhidh Fruits</a></h3>
+                        <p>Global sales, top regions, profitability trends and salesperson performance — using AI features and Power Query for advanced transformations.</p>
+                        <a class="project-link" href="https://www.linkedin.com/posts/misab-a-1a415b203_dataanalytics-powerbi-interactivedashboard-activity-7267122875466211330-xSU6" target="_blank" rel="noopener noreferrer">View on LinkedIn <span class="arrow">→</span></a>
+                    </div>
+                </article>
+            </div>
+
+            <div style="text-align: center; margin-top: 2.5rem;">
+                <a href="https://www.linkedin.com/in/misab-a-1a415b203/" class="btn btn-outline" target="_blank" rel="noopener noreferrer">More on LinkedIn →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photography / Travel Lens -->
+    <section class="section" id="photography">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="eyebrow">Through my lens</span>
+                <h2 class="section-title">Travel Lens</h2>
+                <p class="lens-intro">when I'm not analysing data, I'm chasing light…</p>
+                <p class="section-subtitle">A scrapbook of moments collected on the road. Each folder on GitHub becomes a tab here — drop a new folder of photos and they show up automatically.</p>
+            </div>
+
+            <div class="location-carousel-wrap reveal">
+                <button class="carousel-arrow carousel-prev" id="carousel-prev" type="button" aria-label="Previous locations" hidden>‹</button>
+                <div class="location-carousel" id="location-carousel" role="region" aria-label="Travel locations" aria-live="polite" aria-busy="true">
+                    <div class="photo-loading">
+                        <span class="spinner" aria-hidden="true"></span> Loading the scrapbook…
+                    </div>
+                </div>
+                <button class="carousel-arrow carousel-next" id="carousel-next" type="button" aria-label="Next locations" hidden>›</button>
+            </div>
+
+            <div class="travel-stats reveal">
+                <div class="travel-stat" id="ts-locations"><span class="ico" aria-hidden="true">📍</span><span class="val">—</span><span class="lab">locations</span></div>
+                <div class="travel-stat" id="ts-photos"><span class="ico" aria-hidden="true">🖼️</span><span class="val">—</span><span class="lab">photographs</span></div>
+                <div class="travel-stat"><span class="ico" aria-hidden="true">📸</span><span class="val">Always</span><span class="lab">behind the lens</span></div>
+                <div class="travel-stat"><span class="ico" aria-hidden="true">☕</span><span class="val">Forever</span><span class="lab">curious</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption" hidden>
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close photo viewer">✕</button>
+            <button class="lightbox-nav lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous photo">‹</button>
+            <button class="lightbox-nav lightbox-next" id="lightbox-next" type="button" aria-label="Next photo">›</button>
+            <img class="lightbox-img" id="lightbox-img" src="" alt="">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <section class="section section-alt" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="eyebrow">Get in touch</span>
+                <h2 class="section-title">Let's talk</h2>
+                <p class="section-subtitle">Always happy to discuss analytics, dashboard design or new opportunities.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card reveal">
+                    <div class="contact-icon"><span class="icon-map-signs" aria-hidden="true"></span></div>
+                    <h3>Location</h3>
+                    <p>Dubai, United Arab Emirates</p>
+                </div>
+                <div class="contact-card reveal">
+                    <div class="contact-icon"><span class="icon-phone2" aria-hidden="true"></span></div>
+                    <h3>Phone</h3>
+                    <p><a href="tel:+971588732855">+971 58 873 2855</a></p>
+                </div>
+                <div class="contact-card reveal">
+                    <div class="contact-icon"><span class="icon-paper-plane" aria-hidden="true"></span></div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:misabahmed@gmail.com">misabahmed@gmail.com</a></p>
+                </div>
+                <div class="contact-card reveal">
+                    <div class="contact-icon"><span class="icon-linkedin" aria-hidden="true"></span></div>
+                    <h3>LinkedIn</h3>
+                    <p><a href="https://www.linkedin.com/in/misab-a-1a415b203/" target="_blank" rel="noopener noreferrer">/in/misab-a</a></p>
+                </div>
+            </div>
+
+            <div class="contact-cta reveal">
+                <h3 style="margin-bottom: 0.5rem;">Have a question?</h3>
+                <p style="max-width: 480px; margin: 0 auto 1.25rem;">Drop me a message and I'll get back to you as soon as I can.</p>
+                <a href="https://forms.gle/T9yFt8MSwjxvtf2Q8" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open contact form</a>
+                <ul class="socials">
+                    <li><a href="https://www.linkedin.com/in/misab-a-1a415b203/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><span class="icon-linkedin" aria-hidden="true"></span></a></li>
+                    <li><a href="https://www.instagram.com/mis3b_ahmed/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span class="icon-instagram" aria-hidden="true"></span></a></li>
+                    <li><a href="https://www.behance.net/misabahmed/" target="_blank" rel="noopener noreferrer" aria-label="Behance"><span class="icon-behance" aria-hidden="true"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="coffee">Let's grab a cup of coffee ☕</p>
+            <p>&copy; <span id="year"></span> Misab Ahamed · Crafted with care in Dubai</p>
+        </div>
+    </footer>
+
+    <button id="scroll-top" type="button" aria-label="Scroll to top" title="Scroll to top">↑</button>
+
+    <script>
+        (function() {
+            'use strict';
+
+            /* ---------- Navbar scroll & mobile toggle ---------- */
+            var navbar = document.getElementById('navbar');
+            var navToggle = document.getElementById('nav-toggle');
+            var navList = document.getElementById('nav-list');
+
+            function onScroll() {
+                if (window.pageYOffset > 30) navbar.classList.add('scrolled');
+                else navbar.classList.remove('scrolled');
+
+                var top = window.pageYOffset > 400;
+                var st = document.getElementById('scroll-top');
+                if (st) st.classList.toggle('visible', top);
+
+                // Active nav link
+                var fromTop = window.pageYOffset + 120;
+                document.querySelectorAll('section[id]').forEach(function(sec) {
+                    var link = document.querySelector('.nav-link[href="#' + sec.id + '"]');
+                    if (!link) return;
+                    if (sec.offsetTop <= fromTop && sec.offsetTop + sec.offsetHeight > fromTop) {
+                        document.querySelectorAll('.nav-link').forEach(function(l) {
+                            l.classList.remove('active');
+                        });
+                        link.classList.add('active');
+                    }
+                });
+            }
+            window.addEventListener('scroll', onScroll, {
+                passive: true
+            });
+            onScroll();
+
+            navToggle.addEventListener('click', function() {
+                var open = navList.classList.toggle('open');
+                navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            navList.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    navList.classList.remove('open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            /* ---------- Scroll to top ---------- */
+            document.getElementById('scroll-top').addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            /* ---------- Typing animation ---------- */
+            var typeEl = document.getElementById('typing');
+            if (typeEl) {
+                var phrases = [
+                    'Data Analyst at Dar Global',
+                    'Microsoft Fabric Specialist',
+                    'Power BI Developer',
+                    'Graphic Designer',
+                    'Storyteller with data'
+                ];
+                var p = 0,
+                    c = 0,
+                    deleting = false;
+
+                function tick() {
+                    var cur = phrases[p];
+                    if (!deleting) {
+                        typeEl.textContent = cur.substring(0, c + 1);
+                        c++;
+                        if (c === cur.length) {
+                            deleting = true;
+                            return setTimeout(tick, 1600);
+                        }
+                        return setTimeout(tick, 90);
+                    }
+                    typeEl.textContent = cur.substring(0, c - 1);
+                    c--;
+                    if (c === 0) {
+                        deleting = false;
+                        p = (p + 1) % phrases.length;
+                        return setTimeout(tick, 350);
+                    }
+                    setTimeout(tick, 45);
+                }
+                tick();
+            }
+
+            /* ---------- Footer year ---------- */
+            var yr = document.getElementById('year');
+            if (yr) yr.textContent = new Date().getFullYear();
+
+            /* ---------- Reveal on scroll ---------- */
+            if ('IntersectionObserver' in window) {
+                var io = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in');
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.12,
+                    rootMargin: '0px 0px -40px 0px'
+                });
+                document.querySelectorAll('.reveal').forEach(function(el) {
+                    io.observe(el);
+                });
+            } else {
+                document.querySelectorAll('.reveal').forEach(function(el) {
+                    el.classList.add('in');
+                });
+            }
+
+            /* ---------- Counter animation ---------- */
+            function animateCounter(el) {
+                var target = parseInt(el.getAttribute('data-counter'), 10) || 0;
+                var span = el.querySelector('span');
+                if (!span) return;
+                var start = 0;
+                var duration = 1400;
+                var startTime = null;
+
+                function step(ts) {
+                    if (!startTime) startTime = ts;
+                    var progress = Math.min((ts - startTime) / duration, 1);
+                    var eased = 1 - Math.pow(1 - progress, 3);
+                    span.textContent = Math.floor(start + (target - start) * eased);
+                    if (progress < 1) requestAnimationFrame(step);
+                    else span.textContent = target;
+                }
+                requestAnimationFrame(step);
+            }
+
+            if ('IntersectionObserver' in window) {
+                var cIo = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            animateCounter(entry.target);
+                            cIo.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.5
+                });
+                document.querySelectorAll('[data-counter]').forEach(function(el) {
+                    cIo.observe(el);
+                });
+            } else {
+                document.querySelectorAll('[data-counter]').forEach(animateCounter);
+            }
+
+            /* ---------- Skill bar fill ---------- */
+            if ('IntersectionObserver' in window) {
+                var sIo = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            var fill = entry.target;
+                            fill.style.width = fill.getAttribute('data-fill') + '%';
+                            sIo.unobserve(fill);
+                        }
+                    });
+                }, {
+                    threshold: 0.4
+                });
+                document.querySelectorAll('.skill-fill').forEach(function(el) {
+                    sIo.observe(el);
+                });
+            } else {
+                document.querySelectorAll('.skill-fill').forEach(function(el) {
+                    el.style.width = el.getAttribute('data-fill') + '%';
+                });
+            }
+
+            /* ---------- Travel Lens: auto-loaded from GitHub folder structure ----------
+               Drop folders under images/travel/<location-name>/ on GitHub.
+               Each subfolder becomes a filter tab; every image inside becomes a polaroid.
+               Folder names with hyphens/underscores are auto-prettified.
+            */
+            var REPO_OWNER = 'mis3b';
+            var REPO_NAME = 'mis3b.github.io';
+            var TRAVEL_PATH = 'images/travel';
+            var CACHE_KEY = 'travel-photos-v2';
+            var CACHE_TTL_MS = 10 * 60 * 1000;
+            var IMAGE_RE = /\.(jpe?g|png|webp|gif|avif)$/i;
+            var ROTATIONS = [-2.6, 1.8, -1.2, 2.7, -2.1, 1.4, -1.8, 2.2, -2.4, 1.1, -1.5, 2.0];
+
+            var lb = document.getElementById('lightbox');
+            var lbImg = document.getElementById('lightbox-img');
+            var lbCap = document.getElementById('lightbox-caption');
+            var carousel = document.getElementById('location-carousel');
+            var carouselWrap = carousel ? carousel.parentElement : null;
+            var carouselPrev = document.getElementById('carousel-prev');
+            var carouselNext = document.getElementById('carousel-next');
+
+            var allPhotos = [];
+            var visibleList = [];
+            var currentIdx = 0;
+
+            function escapeHtml(s) {
+                return String(s).replace(/[&<>"']/g, function(c) {
+                    return {
+                        '&': '&amp;',
+                        '<': '&lt;',
+                        '>': '&gt;',
+                        '"': '&quot;',
+                        "'": '&#39;'
+                    }[c];
+                });
+            }
+
+            function folderToLabel(name) {
+                return String(name)
+                    .split(/[-_]+/)
+                    .filter(Boolean)
+                    .map(function(w) {
+                        if (w.length <= 4 && w === w.toUpperCase()) return w;
+                        return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
+                    })
+                    .join(' ');
+            }
+
+            function getCached() {
+                try {
+                    var raw = localStorage.getItem(CACHE_KEY);
+                    if (!raw) return null;
+                    var c = JSON.parse(raw);
+                    if (!c || !c.ts || (Date.now() - c.ts) > CACHE_TTL_MS) return null;
+                    return c.data;
+                } catch (e) {
+                    return null;
+                }
+            }
+
+            function setCached(data) {
+                try {
+                    localStorage.setItem(CACHE_KEY, JSON.stringify({
+                        ts: Date.now(),
+                        data: data
+                    }));
+                } catch (e) {}
+            }
+
+            function fetchJson(url) {
+                return fetch(url, {
+                        headers: {
+                            'Accept': 'application/vnd.github.v3+json'
+                        }
+                    })
+                    .then(function(r) {
+                        if (!r.ok) throw new Error('HTTP ' + r.status);
+                        return r.json();
+                    });
+            }
+
+            function loadTravelPhotos() {
+                if (!carousel) return;
+                var cached = getCached();
+                if (cached) {
+                    renderPhotos(cached);
+                    return;
+                }
+
+                var api = 'https://api.github.com/repos/' + REPO_OWNER + '/' + REPO_NAME + '/contents/' + TRAVEL_PATH;
+                fetchJson(api).then(function(items) {
+                    var folders = (items || []).filter(function(i) {
+                        return i.type === 'dir';
+                    });
+                    if (!folders.length) {
+                        renderPhotos([]);
+                        return;
+                    }
+
+                    return Promise.all(folders.map(function(folder) {
+                        return fetchJson(folder.url).then(function(files) {
+                            return (files || [])
+                                .filter(function(f) {
+                                    return f.type === 'file' && IMAGE_RE.test(f.name);
+                                })
+                                .map(function(img) {
+                                    return {
+                                        loc: folderToLabel(folder.name),
+                                        cat: folder.name.toLowerCase(),
+                                        url: img.download_url,
+                                        name: img.name
+                                    };
+                                });
+                        }).catch(function() {
+                            return [];
+                        });
+                    })).then(function(groups) {
+                        var flat = [].concat.apply([], groups);
+                        setCached(flat);
+                        renderPhotos(flat);
+                    });
+                }).catch(function() {
+                    renderError();
+                });
+            }
+
+            function renderPhotos(data) {
+                allPhotos = data || [];
+                carousel.setAttribute('aria-busy', 'false');
+
+                if (!allPhotos.length) {
+                    carousel.innerHTML =
+                        '<div class="photo-empty">' +
+                        '  <div class="photo-empty-icon" aria-hidden="true">📸</div>' +
+                        '  <h3>No photographs yet</h3>' +
+                        '  <p>Drop your travel photos into <code>images/travel/&lt;location&gt;/</code> on GitHub. ' +
+                        '     Each folder becomes a stack here automatically.</p>' +
+                        '  <p style="font-size:0.85rem;color:var(--text-muted);">e.g. <code>images/travel/dubai-marina/sunset.jpg</code></p>' +
+                        '</div>';
+                    updateStats(0, 0);
+                    updateArrows();
+                    return;
+                }
+
+                // Group photos by location category
+                var byCat = {};
+                var order = [];
+                allPhotos.forEach(function(p) {
+                    if (!byCat[p.cat]) {
+                        byCat[p.cat] = {
+                            label: p.loc,
+                            photos: []
+                        };
+                        order.push(p.cat);
+                    }
+                    byCat[p.cat].photos.push(p);
+                });
+                order.sort(function(a, b) {
+                    return byCat[a].label.localeCompare(byCat[b].label);
+                });
+
+                // Build location stacks
+                carousel.innerHTML = order.map(function(cat) {
+                    var info = byCat[cat];
+                    var top = info.photos.slice(0, 4);
+                    var stackImgs = top.map(function(p, i) {
+                        return '<div class="stack-photo" data-i="' + i + '">' +
+                            '  <div class="stack-photo-img" style="background-image:url(\'' + escapeHtml(p.url) + '\');"></div>' +
+                            '</div>';
+                    }).join('');
+                    return '<button type="button" class="location-stack" data-cat="' + escapeHtml(cat) + '" aria-label="Open ' + escapeHtml(info.label) + ' — ' + info.photos.length + ' photos">' +
+                        '  <div class="stack-photos">' + stackImgs + '</div>' +
+                        '  <div class="stack-info">' +
+                        '    <h3>' + escapeHtml(info.label) + '</h3>' +
+                        '    <span class="stack-count">' + info.photos.length + ' photo' + (info.photos.length === 1 ? '' : 's') + '</span>' +
+                        '  </div>' +
+                        '</button>';
+                }).join('');
+
+                updateStats(order.length, allPhotos.length);
+                wireUpStacks(byCat);
+                requestAnimationFrame(updateArrows);
+            }
+
+            function renderError() {
+                if (!carousel) return;
+                carousel.setAttribute('aria-busy', 'false');
+                carousel.innerHTML =
+                    '<div class="photo-empty">' +
+                    '  <div class="photo-empty-icon" aria-hidden="true">📡</div>' +
+                    '  <h3>Couldn\'t load photos right now</h3>' +
+                    '  <p>Find them on <a href="https://www.instagram.com/mis3b_ahmed/" target="_blank" rel="noopener noreferrer">Instagram</a> instead.</p>' +
+                    '</div>';
+                updateArrows();
+            }
+
+            function updateStats(locs, photos) {
+                var l = document.querySelector('#ts-locations .val');
+                var p = document.querySelector('#ts-photos .val');
+                if (l) l.textContent = locs;
+                if (p) p.textContent = photos;
+            }
+
+            function wireUpStacks(byCat) {
+                var stacks = document.querySelectorAll('.location-stack');
+                stacks.forEach(function(stack) {
+                    stack.addEventListener('click', function() {
+                        var cat = stack.getAttribute('data-cat');
+                        var bucket = byCat[cat];
+                        if (!bucket || !bucket.photos.length) return;
+                        visibleList = bucket.photos.slice();
+                        openLightbox(0);
+                    });
+                });
+            }
+
+            function updateArrows() {
+                if (!carousel || !carouselWrap) return;
+                var max = carousel.scrollWidth - carousel.clientWidth;
+                var overflows = max > 4;
+                var atStart = carousel.scrollLeft <= 4;
+                var atEnd = carousel.scrollLeft >= max - 4;
+
+                if (carouselPrev) carouselPrev.hidden = !overflows || atStart;
+                if (carouselNext) carouselNext.hidden = !overflows || atEnd;
+                carouselWrap.classList.toggle('has-prev', overflows && !atStart);
+                carouselWrap.classList.toggle('has-next', overflows && !atEnd);
+            }
+
+            function scrollCarousel(dir) {
+                if (!carousel) return;
+                var stack = carousel.querySelector('.location-stack');
+                var step = stack ? (stack.offsetWidth + 24) * 2 : carousel.clientWidth * 0.7;
+                carousel.scrollBy({
+                    left: dir * step,
+                    behavior: 'smooth'
+                });
+            }
+
+            if (carouselPrev) carouselPrev.addEventListener('click', function() {
+                scrollCarousel(-1);
+            });
+            if (carouselNext) carouselNext.addEventListener('click', function() {
+                scrollCarousel(1);
+            });
+            if (carousel) {
+                carousel.addEventListener('scroll', updateArrows, {
+                    passive: true
+                });
+                window.addEventListener('resize', updateArrows);
+            }
+
+            function openLightbox(i) {
+                if (!visibleList.length || !lb) return;
+                currentIdx = (i + visibleList.length) % visibleList.length;
+                var p = visibleList[currentIdx];
+                if (!p) return;
+                lbImg.src = p.url;
+                lbImg.alt = p.loc;
+                lbCap.textContent = p.loc + ' · ' + (currentIdx + 1) + '/' + visibleList.length;
+                lb.removeAttribute('hidden');
+                requestAnimationFrame(function() {
+                    lb.classList.add('open');
+                });
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                if (!lb) return;
+                lb.classList.remove('open');
+                document.body.style.overflow = '';
+                setTimeout(function() {
+                    lb.setAttribute('hidden', '');
+                }, 300);
+            }
+
+            function navLb(d) {
+                openLightbox(currentIdx + d);
+            }
+
+            if (lb) {
+                document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+                document.getElementById('lightbox-prev').addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    navLb(-1);
+                });
+                document.getElementById('lightbox-next').addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    navLb(1);
+                });
+                lb.addEventListener('click', function(e) {
+                    if (e.target === lb) closeLightbox();
+                });
+                document.addEventListener('keydown', function(e) {
+                    if (!lb.classList.contains('open')) return;
+                    if (e.key === 'Escape') closeLightbox();
+                    else if (e.key === 'ArrowLeft') navLb(-1);
+                    else if (e.key === 'ArrowRight') navLb(1);
+                });
+            }
+
+            loadTravelPhotos();
+        })();
+    </script>
+
+</body>
+
+</html>

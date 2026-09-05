@@ -3,25 +3,26 @@
 ============================================================ */
 :root {
   /* Professional Light Theme — Golden */
-  --bg-primary:    #fcfbf9;
-  --bg-secondary:  #f5f3ec;
-  --bg-card:       #ffffff;
-  --bg-elevated:   #fdfaf3;
+  --bg-primary: #fcfbf9;
+  --bg-secondary: #f5f3ec;
+  --bg-card: #ffffff;
+  --bg-elevated: #fdfaf3;
 
-  --text-primary:   #1c1a17;
+  --text-primary: #1c1a17;
   --text-secondary: #4a453c;
-  --text-muted:     #787265;
+  --text-muted: #787265;
 
-  --accent:        #b8860b; /* professional gold */
-  --accent-warm:   #d4af37;
-  --accent-teal:   #f5d061;
-  --accent-soft:   rgba(184, 134, 11, 0.08);
-  --accent-glow:   rgba(184, 134, 11, 0.12);
-  --grad-warm:     linear-gradient(135deg, #b8860b 0%, #d4af37 100%);
-  --grad-hero:     linear-gradient(135deg, #5c4305 0%, #1c1a17 60%, #8b6508 100%);
-  --bg-card-rgb:   255, 255, 255;
-  
-  --border:       rgba(28, 26, 23, 0.08);
+  --accent: #b8860b;
+  /* professional gold */
+  --accent-warm: #d4af37;
+  --accent-teal: #f5d061;
+  --accent-soft: rgba(184, 134, 11, 0.08);
+  --accent-glow: rgba(184, 134, 11, 0.12);
+  --grad-warm: linear-gradient(135deg, #b8860b 0%, #d4af37 100%);
+  --grad-hero: linear-gradient(135deg, #5c4305 0%, #1c1a17 60%, #8b6508 100%);
+  --bg-card-rgb: 255, 255, 255;
+
+  --border: rgba(28, 26, 23, 0.08);
   --border-hover: rgba(28, 26, 23, 0.16);
 
   --radius-sm: 8px;
@@ -38,32 +39,35 @@
 
 [data-theme="dark"] {
   /* Professional Dark Theme — Dark Golden */
-  --bg-primary:    #11100e;
-  --bg-secondary:  #1f1d1a;
-  --bg-card:       #1a1815;
-  --bg-elevated:   #25221d;
+  --bg-primary: #11100e;
+  --bg-secondary: #1f1d1a;
+  --bg-card: #1a1815;
+  --bg-elevated: #25221d;
 
-  --text-primary:   #f7f5f0;
+  --text-primary: #f7f5f0;
   --text-secondary: #a8a295;
-  --text-muted:     #7a7466;
+  --text-muted: #7a7466;
 
-  --accent:        #d4af37; /* bright gold */
-  --accent-warm:   #ffd700;
-  --accent-teal:   #e5c158;
-  --accent-soft:   rgba(212, 175, 55, 0.12);
-  --accent-glow:   rgba(212, 175, 55, 0.2);
-  --grad-warm:     linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
-  --grad-hero:     linear-gradient(135deg, #403206 0%, #11100e 60%, #8a7014 100%);
-  --bg-card-rgb:   26, 24, 21;
+  --accent: #d4af37;
+  /* bright gold */
+  --accent-warm: #ffd700;
+  --accent-teal: #e5c158;
+  --accent-soft: rgba(212, 175, 55, 0.12);
+  --accent-glow: rgba(212, 175, 55, 0.2);
+  --grad-warm: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
+  --grad-hero: linear-gradient(135deg, #403206 0%, #11100e 60%, #8a7014 100%);
+  --bg-card-rgb: 26, 24, 21;
 
-  --border:       rgba(212, 175, 55, 0.15);
+  --border: rgba(212, 175, 55, 0.15);
   --border-hover: rgba(212, 175, 55, 0.3);
 }
 
 /* ============================================================
    RESET & BASE
 ============================================================ */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -79,7 +83,9 @@ html {
     scroll-behavior: auto;
   }
 
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -150,9 +156,18 @@ button {
 /* ============================================================
    SCROLLBAR
 ============================================================ */
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: var(--bg-primary); }
-::-webkit-scrollbar-thumb { background: var(--text-muted); border-radius: 3px; }
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 3px;
+}
 
 /* ============================================================
    SUBTLE NOISE OVERLAY
@@ -236,7 +251,9 @@ body::after {
 ============================================================ */
 .nav {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: var(--nav-h);
   z-index: 100;
   border-bottom: 1px solid transparent;
@@ -461,8 +478,10 @@ body::after {
 
 .mobile-close {
   position: absolute;
-  top: 18px; right: 18px;
-  width: 42px; height: 42px;
+  top: 18px;
+  right: 18px;
+  width: 42px;
+  height: 42px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
@@ -489,8 +508,8 @@ body::after {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(37,99,235,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(37,99,235,0.06) 1px, transparent 1px);
+    linear-gradient(rgba(37, 99, 235, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.06) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse 75% 65% at 50% 45%, black 25%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 45%, black 25%, transparent 75%);
@@ -504,15 +523,19 @@ body::after {
 }
 
 .hero-orb-1 {
-  width: 700px; height: 700px;
+  width: 700px;
+  height: 700px;
   background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, transparent 65%);
-  top: -140px; right: -120px;
+  top: -140px;
+  right: -120px;
 }
 
 .hero-orb-2 {
-  width: 500px; height: 500px;
+  width: 500px;
+  height: 500px;
   background: radial-gradient(circle, rgba(20, 184, 166, 0.08) 0%, transparent 65%);
-  bottom: -60px; left: -80px;
+  bottom: -60px;
+  left: -80px;
 }
 
 .hero-inner {
@@ -578,15 +601,25 @@ body::after {
 }
 
 .hero-eyebrow-dot {
-  width: 8px; height: 8px;
+  width: 8px;
+  height: 8px;
   background: var(--accent);
   border-radius: 50%;
   animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.45; transform: scale(0.72); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.45;
+    transform: scale(0.72);
+  }
 }
 
 .hero-title {
@@ -628,8 +661,15 @@ body::after {
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 .hero-subtitle {
@@ -709,7 +749,9 @@ body::after {
 .hero-panel::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 3px;
   background: var(--grad-warm);
 }
@@ -721,7 +763,8 @@ body::after {
 }
 
 .profile-img-wrap {
-  width: 64px; height: 64px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid var(--bg-elevated);
@@ -831,7 +874,8 @@ body::after {
 }
 
 .avail-dot {
-  width: 8px; height: 8px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: #4ade80;
   animation: pulse 2s infinite;
@@ -1002,7 +1046,8 @@ body::after {
 .skill-icon {
   font-size: 1.65rem;
   color: var(--accent);
-  width: 50px; height: 50px;
+  width: 50px;
+  height: 50px;
   background: var(--accent-glow);
   border-radius: var(--radius-sm);
   display: grid;
@@ -1116,7 +1161,8 @@ body::after {
 }
 
 .project-arrow {
-  width: 40px; height: 40px;
+  width: 40px;
+  height: 40px;
   border: 1px solid var(--border);
   border-radius: 50%;
   display: grid;
@@ -1193,13 +1239,13 @@ body::after {
   align-items: start;
 }
 
-.project-body-inner > * {
+.project-body-inner>* {
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.28s var(--ease), transform 0.35s var(--ease);
 }
 
-.project-body.open .project-body-inner > * {
+.project-body.open .project-body-inner>* {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1394,7 +1440,8 @@ body::after {
   position: absolute;
   left: -5px;
   top: 7px;
-  width: 11px; height: 11px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
   background: var(--bg-primary);
   border: 2px solid var(--text-muted);
@@ -1521,7 +1568,8 @@ body::after {
 }
 
 .contact-icon {
-  width: 40px; height: 40px;
+  width: 40px;
+  height: 40px;
   background: var(--accent-glow);
   border-radius: var(--radius-sm);
   display: grid;
@@ -1564,7 +1612,9 @@ body::after {
 .contact-right::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 3px;
   background: linear-gradient(90deg, var(--accent), var(--accent-teal));
 }
@@ -1682,8 +1732,10 @@ body::after {
 ============================================================ */
 .back-top {
   position: fixed;
-  bottom: 24px; right: 24px;
-  width: 42px; height: 42px;
+  bottom: 24px;
+  right: 24px;
+  width: 42px;
+  height: 42px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
@@ -1735,6 +1787,7 @@ body::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .project-thumb img,
   .copy-toast {
     transition: none;
@@ -2163,7 +2216,9 @@ body::after {
 .highlight-card::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 3px;
   background: var(--grad-warm);
   transform: scaleX(0);
@@ -2182,7 +2237,8 @@ body::after {
 }
 
 .highlight-icon {
-  width: 52px; height: 52px;
+  width: 52px;
+  height: 52px;
   background: var(--accent-soft);
   border-radius: var(--radius-sm);
   display: grid;
@@ -2228,7 +2284,9 @@ body::after {
 .exp-card::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
   width: 4px;
   background: var(--grad-warm);
   border-radius: 4px 0 0 4px;
@@ -2336,6 +2394,7 @@ body::after {
   .exp-card {
     padding: 24px 20px 24px 24px;
   }
+
   .exp-header {
     flex-direction: column;
     gap: 12px;
@@ -2384,7 +2443,8 @@ body::after {
 }
 
 .cert-icon {
-  width: 48px; height: 48px;
+  width: 48px;
+  height: 48px;
   background: var(--accent-soft);
   border-radius: var(--radius-sm);
   display: grid;
@@ -2430,7 +2490,8 @@ body::after {
 }
 
 .cert-dot {
-  width: 5px; height: 5px;
+  width: 5px;
+  height: 5px;
   background: #16a34a;
   border-radius: 50%;
   animation: pulse 2s infinite;
@@ -2440,6 +2501,7 @@ body::after {
   .certs-grid {
     grid-template-columns: 1fr;
   }
+
   .highlights-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2470,17 +2532,35 @@ body::after {
 }
 
 .sbdot {
-  width: 7px; height: 7px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   flex-shrink: 0;
 }
 
-.skill-badge-demo.adv { color: #2563eb; }
-.skill-badge-demo.adv .sbdot { background: #2563eb; }
-.skill-badge-demo.int { color: #14b8a6; }
-.skill-badge-demo.int .sbdot { background: #14b8a6; }
-.skill-badge-demo.fam { color: var(--text-muted); }
-.skill-badge-demo.fam .sbdot { background: var(--text-muted); }
+.skill-badge-demo.adv {
+  color: #2563eb;
+}
+
+.skill-badge-demo.adv .sbdot {
+  background: #2563eb;
+}
+
+.skill-badge-demo.int {
+  color: #14b8a6;
+}
+
+.skill-badge-demo.int .sbdot {
+  background: #14b8a6;
+}
+
+.skill-badge-demo.fam {
+  color: var(--text-muted);
+}
+
+.skill-badge-demo.fam .sbdot {
+  background: var(--text-muted);
+}
 
 /* Category grid — 2 columns on desktop, 1 on mobile */
 .skill-cats-grid {
@@ -2504,7 +2584,9 @@ body::after {
 .skill-cat-card::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 3px;
   background: linear-gradient(90deg, var(--cat-clr, #2563eb), transparent);
   transform: scaleX(0);
@@ -2517,14 +2599,19 @@ body::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at top left, var(--cat-clr-soft, rgba(37,99,235,0.06)), transparent 60%);
+  background: radial-gradient(ellipse at top left, var(--cat-clr-soft, rgba(37, 99, 235, 0.06)), transparent 60%);
   opacity: 0;
   transition: opacity 0.45s var(--ease);
   pointer-events: none;
 }
 
-.skill-cat-card:hover::before { transform: scaleX(1); }
-.skill-cat-card:hover::after  { opacity: 1; }
+.skill-cat-card:hover::before {
+  transform: scaleX(1);
+}
+
+.skill-cat-card:hover::after {
+  opacity: 1;
+}
 
 .skill-cat-card:hover {
   border-color: var(--cat-clr);
@@ -2543,9 +2630,10 @@ body::after {
 }
 
 .skill-cat-icon-wrap {
-  width: 46px; height: 46px;
+  width: 46px;
+  height: 46px;
   border-radius: var(--radius-sm);
-  background: var(--cat-clr-soft, rgba(37,99,235,0.1));
+  background: var(--cat-clr-soft, rgba(37, 99, 235, 0.1));
   color: var(--cat-clr, var(--accent));
   display: grid;
   place-items: center;
@@ -2556,7 +2644,7 @@ body::after {
 
 .skill-cat-card:hover .skill-cat-icon-wrap {
   transform: scale(1.1) rotate(-4deg);
-  background: var(--cat-clr-soft, rgba(37,99,235,0.18));
+  background: var(--cat-clr-soft, rgba(37, 99, 235, 0.18));
 }
 
 .skill-cat-name {
@@ -2602,7 +2690,8 @@ body::after {
 }
 
 .sp-icon {
-  width: 28px; height: 28px;
+  width: 28px;
+  height: 28px;
   border-radius: 6px;
   background: var(--cat-clr-soft, var(--accent-soft));
   color: var(--cat-clr, var(--accent));
@@ -2685,6 +2774,7 @@ body::after {
     grid-template-columns: 1fr;
     gap: 14px;
   }
+
   .skill-cat-card {
     padding: 22px 20px 18px;
   }
@@ -2695,24 +2785,31 @@ body::after {
     gap: 14px;
     margin-bottom: 24px;
   }
+
   .skill-cat-head {
     gap: 12px;
     margin-bottom: 16px;
   }
+
   .skill-cat-icon-wrap {
-    width: 40px; height: 40px;
+    width: 40px;
+    height: 40px;
     font-size: 1.1rem;
   }
+
   .skill-cat-name {
     font-size: 0.92rem;
   }
+
   .skill-pill {
     padding: 8px 10px;
   }
+
   .sp-name {
     font-size: 0.8rem;
   }
 }
+
 /* ============================================================
    SKILL CARDS — PER-SKILL CARD GRID (skc-)
 ============================================================ */
@@ -2892,12 +2989,14 @@ body::after {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
   }
+
   .skc-card {
     min-height: 150px;
     padding: 18px 8px 14px;
     border-radius: 16px;
     gap: 8px;
   }
+
   .skc-icon {
     width: 46px;
     height: 46px;
@@ -2911,14 +3010,17 @@ body::after {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
+
   .skc-icon {
     width: 40px;
     height: 40px;
     font-size: 1.2rem;
   }
+
   .skc-name {
     font-size: 0.72rem;
   }
+
   .skc-badge {
     font-size: 0.54rem;
     padding: 2px 7px;
@@ -3073,7 +3175,7 @@ body::after {
   opacity: 0.04;
 }
 
-.live-link-card > * {
+.live-link-card>* {
   position: relative;
   z-index: 1;
 }
@@ -3154,14 +3256,17 @@ body::after {
     padding: 12px 14px;
     gap: 12px;
   }
+
   .llc-icon {
     width: 36px;
     height: 36px;
     font-size: 1rem;
   }
+
   .llc-title {
     font-size: 0.82rem;
   }
+
   .llc-sub {
     font-size: 0.68rem;
   }
