@@ -47,7 +47,7 @@ Proven track record of tracking **AED 15M+** in commercial opportunities, saving
 
 | Metric | Detail |
 | :--- | :--- |
-| 💼 **Experience** | **1+ Years** Hands-on Data Analyst & Power BI Developer Experience |
+| 💼 **Experience** | **1.5+ Years** Hands-on Data Analyst & Power BI Developer Experience |
 | 📊 **Dashboards Built** | **9+** Interactive Multi-Page BI Dashboards |
 | 🔍 **Data Analyzed** | **150,000+** Data Records Cleaned & Processed |
 | 🚀 **Projects Completed** | **8+** End-to-End Analytics, ETL & Machine Learning Projects |
